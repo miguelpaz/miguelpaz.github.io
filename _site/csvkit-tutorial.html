@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Miguel Paz" />
+    <meta name="description" content="Courses, tools, tutorial, classes, events and other stuff">
+    <link rel="favicon" href="static/img/favicon.ico">
+
+    
+      <title>Working on your data with CSVKit</title>
+    
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="https://www.linkedin.com/in/miguelpaz">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+	<div class="blog-post">
+		<h3 id="title_main">
+		  <strong>Working on your data with CSVKit</strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		June  1, 2016
+			&nbsp;&nbsp;
+			
+			 <span class="label label-success">Courses</span>
+			
+			 <span class="label label-success">Tutorials</span>
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>CSVKit is a nice tool to manipulate, organize, analyze and work with data, using the comma-separated values (csv) format. It is very light and fast. It is built in the Python programming language.</p>
+
+<p>To access it, you will need to use the <code>command line</code>. Open the Terminal  in Mac OSX or Command Prompt in Windows for that.</p>
+
+<p>This tutorial is simple and explanatory, and it is based on the great documentation in the <a href="https://csvkit.readthedocs.io/en/540/tutorial.html">CSVKit tutorial page</a>, which has a lot more things, many of which you might not use right away.</p>
+
+<h2>Installation</h2>
+
+<p>There are several ways to install CSVKit in your machine.</p>
+
+<p>You will need to have the most recent release of Python in your computer. <a href="https://www.python.org/downloads/">Download it here</a>.</p>
+
+<p>A lot of people like to use <code>pip</code> to <a href="https://www.python.org/downloads/">install stuff</a> in their computers, which comes with the Python package. Journalist and coder Amanda Bee has <a href="https://github.com/amandabee/CUNY-data-storytelling/wiki/Tutorial:-Installing-CSVKit">wrote about installing CSVKit</a> in her CUNY data storytelling class, for Mac (OSX) users. The bullets are from her:</p>
+
+<ul>
+<li>Use sudo <code>easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you&rsquo;ll never touch the terminal again after this semester, this is your best route.</li>
+<li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code>pip install csvkit</code> at the command line. If you get an error that suggests you don&rsquo;t have permission to install it, try <code>sudo pip install csvkit to install</code> with root privileges. Try <code>man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
+<li>Alternatively, you can install pip with easy_install (using sudo easy_install pip) and then install CSVkit with sudo pip install csvkit. Choosing this option won&rsquo;t mean you can&rsquo;t install Homebrew later.</li>
+</ul>
+
+
+<p>For Windows users as well, <code>pip</code> is already installed if you&rsquo;re using Python 2 >=2.7.9 or Python 3 >=3.4 downloaded from <a href="python.org">Python.org</a>, but you&rsquo;ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
+
+<p>Here is the message when your are done:</p>
+
+<pre><code>        Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
+      Running setup.py install for xlrd ... done
+      Running setup.py install for sqlalchemy ... done
+      Found existing installation: openpyxl 2.2.0
+        Uninstalling openpyxl-2.2.0:
+          Successfully uninstalled openpyxl-2.2.0
+      Running setup.py install for openpyxl ... done
+      Found existing installation: six 1.5.2
+        Uninstalling six-1.5.2:
+          Successfully uninstalled six-1.5.2
+      Running setup.py install for dbf ... done
+      Running setup.py install for csvkit ... done
+    Successfully installed csvkit-0.9.1 dbf-0.94.3 openpyxl-2.2.0b1 six-1.10.0 sqlalchemy-1.0.13 xlrd-0.9.4
+</code></pre>
+
+<p>—</p>
+
+<h2>Basics of CSVKit</h2>
+
+<p>After you are done installing it, now it is time to use it!</p>
+
+<p>First, lets create a new directory to store the data you will be working with. I recommend calling it <code>csvkit_data</code>.</p>
+
+<p>So run this in the command line:</p>
+
+<pre><code>        mkdir csvkit_data
+</code></pre>
+
+<p>Now, go to that directory:</p>
+
+<pre><code>        cd csvkit_data
+</code></pre>
+
+<p>And then, lets fetch some data to use, analyze, manipulate and play with. We prepared some data for you (csv format) about the GDP per capita all over the work, according to the IMF database. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv">Access the data here:</a></p>
+
+<p>Now lets load it to that directory:</p>
+
+<pre><code>        curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
+</code></pre>
+
+<p>Finally, lets take a look at the data with the command <code>csvlook</code>, to see what we will analyze.</p>
+
+<pre><code>        csvlook csvkit_example_data.csv
+</code></pre>
+
+<p>The data will look messy, and it is way visually better to see it in an Excel or Google Sheets, but this is just to have a general outlook, not to really read it.</p>
+
+<p>Another command you may use is <code>csvcut</code>, which lets you see and cut the columns of you data files.</p>
+
+<p>Lets look at the column headers, to see what we will need. Run:</p>
+
+<pre><code>        csvcut -n csvkit_example_data.csv
+          1: country
+          2: 2001
+          3: 2002
+          4: 2003
+          5: 2004
+          6: 2005
+          7: 2006
+          8: 2007
+          9: 2008
+         10: 2009
+         11: 2010
+         12: 2011
+         13: 2012
+         14: 2013
+         15: 2014
+</code></pre>
+
+<p>So now you see that the GDP data is organized with one columns with the country names, and the rest with the years, while the respective rows will carry the information.</p>
+
+<p>Lets say there is too much data, and you only want to know how was the GDP per capita in those countries during the 2008/2009 financial crisis, and a couple of years later just to see how the wealth grew.</p>
+
+<p>For that, lets use the <code>csvcut</code> again.</p>
+
+<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv
+</code></pre>
+
+<p><em>If you are using non-numbered columns, you might as well just write their names instead of the assigned numbers</em></p>
+
+<p>CSVKit allows you what they call “pipe” actions, which basically means to write in the same line, to save time, several functions, separated by a | bar. Try this:</p>
+
+<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
+</code></pre>
+
+<hr />
+
+<h2>Playing with the numbers</h2>
+
+<p>CSVKit has a command called <code>csvstat</code>, which basically lets you to get a succinct analysis out of your data, before you can really dig into it you want.</p>
+
+<p>It gives you the minimum of a certain column, the maximum, the average, the median and even standard deviation.</p>
+
+<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+</code></pre>
+
+<p>You will get something like this:</p>
+
+<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+              1. country
+                &lt;type 'unicode'&gt;
+                Nulls: False
+                Unique values: 199
+                Max length: 30
+
+              2. 2008
+                &lt;type 'float'&gt;
+                Nulls: False
+                Min: 0.0
+                Max: 193648.1
+                Sum: 3156734.6
+                Mean: 15862.9879397
+                Median: 4912.3
+                Standard Deviation: 25667.7567268
+                Unique values: 197
+                5 most frequent values:
+                    0.0:    3
+                    7112.4: 1
+                    3920.0: 1
+                    9999.1: 1
+                    4342.8: 1
+</code></pre>
+
+<p>You can see, for instance, that in 2009, after the financial crash, the median of the GDP per capital was lower than in 2008, but it grew back in 2010 and 2011.</p>
+
+<p>Another great function of this is to “query” the data to find what you want. Lets say you only need to look for the the numbers about Brazil.</p>
+
+<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
+</code></pre>
+
+<p>Please be advised that the query is case sensitive, <em>BRAZIL</em> or <em>brazil</em> won’t find anything.</p>
+
+<p>Now, in case you haven’t noticed, the csv is alphabetical order. If you want you want to sort it out differently, lets say in reverse, use the following code.</p>
+
+<pre><code>             csvkit_example_data.csv | csvsort -c country  -r | csvlook  
+</code></pre>
+
+<p>The <code>-r</code> actually means <code>reverse</code>. If you want to know all the sorting functionalities, <a href="https://csvkit.readthedocs.io/en/540/scripts/csvsort.html">check this page</a>.</p>
+
+<hr />
+
+<h2>Converting to other data formats</h2>
+
+<p>You can convert data into Excel or to other formats as well with csvkit.</p>
+
+<p>Convert Excel to CSV:
+<code>in2csv data.xls &gt; data.csv</code></p>
+
+<p>Convert JSON to CSV:
+<code>in2csv data.json &gt; data.csv</code></p>
+
+<p>Convert to JSON:
+<code>csvjson data.csv &gt; data.json</code></p>
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	May 30, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/morrisjs-tutorial.html">Making a bar chart with MorrisJS</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	May 29, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/chartjs-tutorial.html">Making a bar chart with ChartJS</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	May 27, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/gh-pages-tutorial.html">GitHub Pages - publishing through the online interface</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">© All rights reserved. Powered by <a href="http://jekyllrb.com/">Jekyll</a> and
+            <a href="http://www.github.com/biomadeira/sustain">sustain</a> with ♥</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
