@@ -1,7 +1,17 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello Mundo</h1>
-<p>I'm not a bot, I will get built, I promise.</p>
-</body>
-</html>
+---
+layout: home
+---
+
+<section id="about">
+	<div class="container">
+	  <div class="avatar">
+		<img class="img-circle" src="{{ site.baseurl }}static/img/{{ site.avatar }}" alt="Responsive image">
+	  </div>
+	  <h3><strong>{{ site.author }}</strong>, is a chilean journalist,</h3>
+	  <h3>Knight International Journalism Fellow,</h3>
+	  <h3>director of <a href="http://www.poderopedia.org/" target="_blank">Poderopedia</a> and professor at CUNY Journalism School.</h3>
+	  <h3>For more information, check <a href="http://www.icfj.org/about/profiles/miguel-paz">this link</a>.</h3>
+	  <h3>Contact me at <a href="http://twitter.com/{{ site.twitter }}">@{{ site.twitter }}</a> or by <a href="mailto:{{ site.email }}">email</a>.</h3>
+	  {% include social.html %}
+	</div>
+</section>
