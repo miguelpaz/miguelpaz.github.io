@@ -82,7 +82,7 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  <h1>Line chart with Morris.js</h1>
+			  <h1 id="line-chart-with-morrisjs">Line chart with Morris.js</h1>
 
 <p><a href="http://morrisjs.github.io/morris.js/">Morris.js</a> is an easy to use, free javascript library to create interactive line and bar charts with very little code. As most similar tools, it is based in the D3.js library, with dependencies in Raphael.js and JQuery. It was developed by <a href="https://twitter.com/olly_smith">Olly Smith</a>.</p>
 
@@ -91,16 +91,15 @@
 <p>In this tutorial, you will need to access:</p>
 
 <ol>
-<li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/example2_country_dates.json">The example json data</a></li>
-<li><a href="http://morrisjs.github.io/morris.js/">The Morris.js library CDN link</a> - (<em>this will give access to the code</em>)</li>
-<li><a href="http://morrisjs.github.io/morris.js/lines.html">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
-<li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> or <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
+  <li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/example2_country_dates.json">The example json data</a></li>
+  <li><a href="http://morrisjs.github.io/morris.js/">The Morris.js library CDN link</a> - (<em>this will give access to the code</em>)</li>
+  <li><a href="http://morrisjs.github.io/morris.js/lines.html">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
+  <li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> or <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
 </ol>
-
 
 <hr />
 
-<h2>Starting point</h2>
+<h2 id="starting-point">Starting point</h2>
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
@@ -108,29 +107,28 @@
 
 <p>Your code will look like this:</p>
 
-<pre><code>    &lt;head&gt;
-      &lt;meta charset="utf-8"&gt;
-      &lt;meta name="viewport" content="width=device-width"&gt;
-      &lt;title&gt;This is a Morris.js chart!&lt;/title&gt;
-      &lt;link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"&gt;
-      &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"&gt;&lt;/script&gt;
-      &lt;script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"&gt;&lt;/script&gt;
-      &lt;script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
+<pre><code>	&lt;head&gt;
+	  &lt;meta charset="utf-8"&gt;
+	  &lt;meta name="viewport" content="width=device-width"&gt;
+	  &lt;title&gt;This is a Morris.js chart!&lt;/title&gt;
+	  &lt;link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"&gt;
+	  &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"&gt;&lt;/script&gt;
+	  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"&gt;&lt;/script&gt;
+	  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
 </code></pre>
 
 <p>Now that we have the libraries loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
 
 <p>Add the following code inside the <code>&lt;body&gt;</code> tag:</p>
 
-<pre><code>        &lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
+<pre><code>		&lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
 </code></pre>
 
-<p>This will be where the chart will render once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.</p>
+<p>This will be where the chart will render once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
+___</p>
 
-<hr />
-
-<h2>Adding the javascript</h2>
+<h2 id="adding-the-javascript">Adding the javascript</h2>
 
 <p>Now the real fun begins.</p>
 
@@ -140,19 +138,19 @@
 
 <p>Go ahead and add the following code [^Notice that this tutorial “cleaned” the code provided in the Morris.js website, taking of the comments and putting the data in the end of the code] into the javascript:</p>
 
-<pre><code>    new Morris.Line({
-      element: 'myfirstchart',
-      xkey: 'year',
-      ykeys: ['value'],
-      labels: ['Value'],
-      data: [
-        { year: '2008', value: 20 },
-        { year: '2009', value: 10 },
-        { year: '2010', value: 5 },
-        { year: '2011', value: 5 },
-        { year: '2012', value: 20 }
-      ]
-    });
+<pre><code>	new Morris.Line({
+	  element: 'myfirstchart',
+	  xkey: 'year',
+	  ykeys: ['value'],
+	  labels: ['Value'],
+	  data: [
+	    { year: '2008', value: 20 },
+	    { year: '2009', value: 10 },
+	    { year: '2010', value: 5 },
+	    { year: '2011', value: 5 },
+	    { year: '2012', value: 20 }
+	  ]
+	});
 </code></pre>
 
 <p>Voilá! You will now be able to see a small chart with a blue line and five points in it.</p>
@@ -161,7 +159,7 @@
 
 <hr />
 
-<h2>Adding your own data</h2>
+<h2 id="adding-your-own-data">Adding your own data</h2>
 
 <p>In your javascript input, you might have noticed the <strong>data</strong> line. Well, that is where your chart’s lines are coming from. That field is where you <strong>bind</strong> the data! The format recognized by Morris is <em>json</em>, which is a way to structure data used by a lot of tools.</p>
 
@@ -171,8 +169,8 @@
 
 <p>Copy and past the json after the <code>data:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>    data:
-        [
+<pre><code>	data:
+		[
   {
     "index": "Unemployment rate",
     "rate": 9,
@@ -215,11 +213,11 @@
 <p>So this part of your code will look like this:</p>
 
 <pre><code>new Morris.Line({
-      element: 'myfirstchart',
-      xkey: 'dates',
-      ykeys: ['rate'],
-      labels: ['Unemployment rate'],
-      xLabels: ['year'],
+	  element: 'myfirstchart',
+	  xkey: 'dates',
+	  ykeys: ['rate'],
+	  labels: ['Unemployment rate'],
+	  xLabels: ['year'],
 </code></pre>
 
 <p>Which will render this:</p>
@@ -228,15 +226,15 @@
 
 <hr />
 
-<h2>Customizing your graphic</h2>
+<h2 id="customizing-your-graphic">Customizing your graphic</h2>
 
 <p>To add some good-looking visual to your graphic, we will now use some options Morris has to offer to change fonts and colors. We will also use some CSS to give it a title, a legend, units and a source - all good practices when charting.</p>
 
-<h3>Text-size, colors and goals</h3>
+<h3 id="text-size-colors-and-goals">Text-size, colors and goals</h3>
 
 <p>Lets start with the text-size, the colors and some goals (references in the chart). After the code mentioned above, and before the data, lets add the following lines:</p>
 
-<pre><code>    lineColors: [''],
+<pre><code>	lineColors: [''],
   postUnits: [''],
   goals: [''],
   goalStrokeWidth: [''],
@@ -247,14 +245,13 @@
 </code></pre>
 
 <ul>
-<li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code>#C00</code>;</li>
-<li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code>%</code> inside the brackets and it will add the sign to the Y axis;</li>
-<li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code>[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
-<li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code>#000</code>;</li>
-<li>Point size is how big are the data points. If you want no points, use it 0. I will use 3px;</li>
-<li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code>#777</code>;</li>
+  <li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code>#C00</code>;</li>
+  <li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code>%</code> inside the brackets and it will add the sign to the Y axis;</li>
+  <li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code>[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
+  <li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code>#000</code>;</li>
+  <li>Point size is how big are the data points. If you want no points, use it 0. I will use 3px;</li>
+  <li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code>#777</code>;</li>
 </ul>
-
 
 <p>In case you have noticed, Morris make it default to show the tooltip all the time, even if you don’t want. It is kind of annoying, so we will set for the tooltip to appear only when you hover.</p>
 
@@ -262,28 +259,28 @@
 
 <p>So far out code looks like this (I am not adding the data for size limits):</p>
 
-<pre><code>    new Morris.Line({
-                      element: 'myfirstchart',
-                      xkey: 'dates',
-                      ykeys: ['rate'],
-                      labels: ['Unemployment rate'],
-              xLabels: ['year'],
-              lineColors: ['#C00'],
-                    postUnits: ['%'],
-                  goals: ['7.7'],
-                  goalStrokeWidth: ['2px'],
-              goalLineColors: ['#000'],
-                  pointSize: ['3px'],
-                  gridTextSize: ['14px'],
-                  gridTextColor: ['#777'],
-              hideHover: ['auto'],
+<pre><code>	new Morris.Line({
+					  element: 'myfirstchart',
+					  xkey: 'dates',
+					  ykeys: ['rate'],
+					  labels: ['Unemployment rate'],
+	          xLabels: ['year'],
+	          lineColors: ['#C00'],
+				    postUnits: ['%'],
+			      goals: ['7.7'],
+			      goalStrokeWidth: ['2px'],
+	          goalLineColors: ['#000'],
+			      pointSize: ['3px'],
+			      gridTextSize: ['14px'],
+			      gridTextColor: ['#777'],
+	          hideHover: ['auto'],
 </code></pre>
 
 <p>The result for now is this:</p>
 
 <p><img src="https://github.com/miguelpaz/jlab/blob/master/images/chart_morrisjs_3.png?raw=true" alt="MorrisJS chart" /></p>
 
-<h3>Custom fonts</h3>
+<h3 id="custom-fonts">Custom fonts</h3>
 
 <p>Now, we are ready to add some good looking fonts here. In this example we will use <em>Roboto</em>, but you might as well use any <a href="https://www.google.com/fonts">Google Fonts</a> option.</p>
 
@@ -297,41 +294,41 @@
 
 <p>Above the <code>&lt;div&gt;</code> tag, add <code>&lt;h1&gt;</code> (title) and <code>&lt;p&gt;</code> (legend), as well as some <code>&lt;h5&gt;</code> (source) below the chart. Like this:</p>
 
-<pre><code>    &lt;body&gt;
-      &lt;h1&gt;US unemployment rate&lt;/h1&gt;
-      &lt;p&gt;Unemployment refers to the share of the labor force that is without work but available for and seeking employment. Measured in % of total labor force&lt;/p&gt;
-      &lt;div id="myfirstchart" style="height: 250px;"&gt;
-      &lt;/div&gt;
-      &lt;h5&gt;Source: World Bank &lt;/h5&gt;
+<pre><code>	&lt;body&gt;
+	  &lt;h1&gt;US unemployment rate&lt;/h1&gt;
+	  &lt;p&gt;Unemployment refers to the share of the labor force that is without work but available for and seeking employment. Measured in % of total labor force&lt;/p&gt;
+	  &lt;div id="myfirstchart" style="height: 250px;"&gt;
+	  &lt;/div&gt;
+	  &lt;h5&gt;Source: World Bank &lt;/h5&gt;
 
-    &lt;/body&gt;
+	&lt;/body&gt;
 </code></pre>
 
 <p>To apply the font - and some other styles (like margin or padding) that you want - go to the CSS panel and add your styles. We will only add a few things:</p>
 
-<pre><code>    body {
-      padding: 0px 20px 10px 30px;
-      font-family: 'Roboto', sans-serif;
-    }
+<pre><code>	body {
+	  padding: 0px 20px 10px 30px;
+	  font-family: 'Roboto', sans-serif;
+	}
 
-    p {
-        line-height: 1.4em;
-        }
+	p {
+		line-height: 1.4em;
+		}
 
-    h5 {
-      border-top: 1px solid #000;
-      display: inline;
-      font-weight: 400;
-    }
+	h5 {
+	  border-top: 1px solid #000;
+	  display: inline;
+	  font-weight: 400;
+	}
 </code></pre>
 
-<h3>Make it responsive</h3>
+<h3 id="make-it-responsive">Make it responsive</h3>
 
 <p>Finally, we have to make our chart responsive, so it fits several kinds of screens.</p>
 
 <p>Fortunately, Morris allows us to do it rather easily. Just add the following line to the code: <code>resize: ['true'],</code></p>
 
-<p>This will apply the 100% width to fit the screen. Let’s make it a little bit higher too: in the HTML, apply the height to 350px, like this: <code>&lt;div id="myfirstchart" style="height: 350px;"&gt;</code></p>
+<p>This will apply the 100% width to fit the screen. Let’s make it a little bit higher too: in the HTML, apply the height to 350px, like this: ` &lt;div id="myfirstchart" style="height: 350px;"&gt;`</p>
 
 <p>Your chart will now look like this:</p>
 
@@ -339,7 +336,7 @@
 
 <hr />
 
-<h2>Try adding more data to see how it looks</h2>
+<h2 id="try-adding-more-data-to-see-how-it-looks">Try adding more data to see how it looks</h2>
 
 <p>We prepared some more data to you, so you know how it looks when you add more stuff to it.</p>
 
@@ -351,11 +348,11 @@
 
 <hr />
 
-<h4>Check out the code</h4>
+<h4 id="check-out-the-code">Check out the code</h4>
 
 <p><a href="https://jsbin.com/mohehow/edit?html,css,js,output">Find the code here, in this JSbin.</a></p>
 
-<h4>Bonus</h4>
+<h4 id="bonus">Bonus</h4>
 
 <p>If you feel you are ready for more, try this code with a function from JQuery to retrieve the data directly from a URL, instead of adding the JSON directly into the file:</p>
 

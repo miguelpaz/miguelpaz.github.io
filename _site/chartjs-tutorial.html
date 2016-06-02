@@ -93,16 +93,15 @@
 <p>In this tutorial, you will need to access:</p>
 
 <ol>
-<li><a href="https://github.com/miguelpaz/jlab/blob/master/data/chartjs_example_data_short.json">The example json data</a></li>
-<li><a href="https://cdnjs.com/libraries/Chart.js">The ChartJS library CDN link</a> - (<em>this will give access to the code</em>)</li>
-<li><a href="http://www.chartjs.org/docs/#bar-chart">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
-<li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> our <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
+  <li><a href="https://github.com/miguelpaz/jlab/blob/master/data/chartjs_example_data_short.json">The example json data</a></li>
+  <li><a href="https://cdnjs.com/libraries/Chart.js">The ChartJS library CDN link</a> - (<em>this will give access to the code</em>)</li>
+  <li><a href="http://www.chartjs.org/docs/#bar-chart">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
+  <li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> our <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
 </ol>
-
 
 <hr />
 
-<h2>Starting point</h2>
+<h2 id="starting-point">Starting point</h2>
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
@@ -110,23 +109,23 @@
 
 <p>Your code will look like this:</p>
 
-<pre><code>    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;
-      &lt;meta charset="utf-8"&gt;
-      &lt;meta name="viewport" content="width=device-width"&gt;
-      &lt;title&gt;This is a bar chart with ChartJS&lt;/title&gt;
+<pre><code>	&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;head&gt;
+	  &lt;meta charset="utf-8"&gt;
+	  &lt;meta name="viewport" content="width=device-width"&gt;
+	  &lt;title&gt;This is a bar chart with ChartJS&lt;/title&gt;
 
-      &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
+	  &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
 
-    &lt;/head&gt;
-    &lt;body&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
 
-      &lt;canvas id="myChart" width="400" height="300"&gt;&lt;/canvas&gt;
+	  &lt;canvas id="myChart" width="400" height="300"&gt;&lt;/canvas&gt;
 
 
-    &lt;/body&gt;
-    &lt;/html&gt;
+	&lt;/body&gt;
+	&lt;/html&gt;
 </code></pre>
 
 <p>Now that we have the main library loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
@@ -138,11 +137,10 @@
 <pre><code>  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
 </code></pre>
 
-<p>This will actually call (make appear) the chart once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.</p>
+<p>This will actually call (make appear) the chart once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
+___</p>
 
-<hr />
-
-<h2>Adding the javascript</h2>
+<h2 id="adding-the-javascript">Adding the javascript</h2>
 
 <p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code>&lt;head&gt;</code> earlier.</p>
 
@@ -153,7 +151,7 @@
 
 <p>Now, we have to add the variable that will bind the data and allow us to customize it. We will use dummy data now. Go ahead and add the following code into the javascript:</p>
 
-<pre><code>    var myChart = new Chart(ctx, {
+<pre><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -171,7 +169,7 @@ data: {
 
 <hr />
 
-<h2>Adding your own data</h2>
+<h2 id="adding-your-own-data">Adding your own data</h2>
 
 <p>In your javascript input, you might have noticed the <strong>data</strong> line. That is where your chart’s lines are coming from. That field is where you <strong>bind</strong> the data! ChartJS uses json format, but it has its own specifications as how to structure data, which at first may be not so straightforward, but allows the tool to have more customization[^More advanced users can use JQuery to parse json and .csv files].</p>
 
@@ -179,15 +177,15 @@ data: {
 
 <p>Copy and past the text after the <code>dataset:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>    data: {
+<pre><code>	data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
     datasets: [
-                      {
-                        label: "GDP per capita",
-                        data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-                      }
-                      ]
-                        },
+					  {
+					    label: "GDP per capita",
+					    data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+					  }
+					  ]
+					    },
 </code></pre>
 
 <p>The bar chart will immediately appear in your screen with ChartJS default looks. It is also interactive.</p>
@@ -195,11 +193,10 @@ data: {
 <p>There are some things to understand here so you can work with other data afterwards. In this case:</p>
 
 <ul>
-<li>The X axis is defined by the <code>labels</code> array;</li>
-<li>The Y axis is plotted by the <code>data</code> field inside the <code>dataset</code> array;</li>
-<li>The actual legend/unit is defined by the <code>label</code> inside the <code>dataset</code> array;</li>
+  <li>The X axis is defined by the <code>labels</code> array;</li>
+  <li>The Y axis is plotted by the <code>data</code> field inside the <code>dataset</code> array;</li>
+  <li>The actual legend/unit is defined by the <code>label</code> inside the <code>dataset</code> array;</li>
 </ul>
-
 
 <p>The new plotted chart will look like this:</p>
 
@@ -207,52 +204,51 @@ data: {
 
 <hr />
 
-<h2>Customizing your graphic</h2>
+<h2 id="customizing-your-graphic">Customizing your graphic</h2>
 
 <p>To add some good-looking visual to your graphic, we will now use some options ChartJS has to offer to change fonts, colors and other specifications. We will also use some CSS to give it a title, a legend, units and a source - all good practices when charting.</p>
 
-<h3>Colors</h3>
+<h3 id="colors">Colors</h3>
 
 <p>Lets start with by coloring our chart, especially the bars.</p>
 
 <p>This more basic color configuration is applied, generally, within the <code>dataset</code> array. See the code below.</p>
 
-<pre><code>    datasets: [
-                  {
-                label: "GDP per capita",
-                backgroundColor: "",
-                borderColor: "",
-                borderWidth: 1,
-                hoverBackgroundColor: "",
-                hoverBorderColor: "",            
-                data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-                }
+<pre><code>	datasets: [
+				  {
+	            label: "GDP per capita",
+	            backgroundColor: "",
+	            borderColor: "",
+	            borderWidth: 1,
+	            hoverBackgroundColor: "",
+	            hoverBorderColor: "",            
+	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+	            }
 </code></pre>
 
 <ul>
-<li>Lets apply the color red <code>#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
-<li>To have some clear delimitation of the bar area, lets add a solid red <code>#c00</code> border, of 2px;</li>
-<li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code>#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
+  <li>Lets apply the color red <code>#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
+  <li>To have some clear delimitation of the bar area, lets add a solid red <code>#c00</code> border, of 2px;</li>
+  <li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code>#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
 </ul>
-
 
 <p>So far out code looks like this:</p>
 
-<pre><code>    var myChart = new Chart(ctx, {
+<pre><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
     datasets: [
-      {
-                label: "GDP per capita",
-        backgroundColor: "rgba(204, 0, 0, .4)",
-                borderColor: "#c00",
-                borderWidth: 2,
-                hoverBackgroundColor: "#59597F",            
-                data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-      }
-      ]
-      }
+	  {
+	            label: "GDP per capita",
+	    backgroundColor: "rgba(204, 0, 0, .4)",
+	            borderColor: "#c00",
+	            borderWidth: 2,
+	            hoverBackgroundColor: "#59597F",            
+	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+	  }
+	  ]
+	  }
 </code></pre>
 
 <p>The result for now is this:</p>
@@ -261,7 +257,7 @@ data: {
 
 <hr />
 
-<h3>Customization</h3>
+<h3 id="customization">Customization</h3>
 
 <p>After you input your data and added the basic color visuals, there are plenty of more things you could do. But first, you have to add the <code>options</code> config. <a href="http://www.chartjs.org/docs/#getting-started-global-chart-configuration">You can check all the ChartJS options here</a>.</p>
 
@@ -272,33 +268,31 @@ data: {
 <pre><code>  var ctx = document.getElementById("myChart").getContext("2d");
 
 
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
-            datasets: [
-                      {
-                label: "GDP per capita",
-        backgroundColor: "rgba(204, 0, 0, .4)",
-                borderColor: "#c00",
-                borderWidth: 2,
-                hoverBackgroundColor: "#59597F",         
-                data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-                      }
-                                  ]
-                    },
-        options: {
-                                }
-    });
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
+	        datasets: [
+					  {
+	            label: "GDP per capita",
+	    backgroundColor: "rgba(204, 0, 0, .4)",
+	            borderColor: "#c00",
+	            borderWidth: 2,
+	            hoverBackgroundColor: "#59597F",         
+	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+					  }
+								  ]
+				    },
+	    options: {
+								}
+	});
 </code></pre>
 
 <p>Now, we are ready to add some other customizations here, like fonts, grids and other cool stuff.</p>
 
 <hr />
-
-<h5>Interlude to get a font</h5>
-
-<p>Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice typography. We will use <a href="https://www.google.com/fonts#QuickUsePlace:quickUse"><em>Roboto</em></a> - make sure you select the light (400) and bold (700) types of font (for body and header).</p>
+<p>##### Interlude to get a font
+Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice typography. We will use <a href="https://www.google.com/fonts#QuickUsePlace:quickUse"><em>Roboto</em></a> - make sure you select the light (400) and bold (700) types of font (for body and header).</p>
 
 <p>If you want Roboto, copy and paste this link into the <code>&lt;head&gt;</code> of your HTML: <code>&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
 
@@ -311,12 +305,11 @@ data: {
 <p>Now, still inside the <code>yAxes</code>, add the <code>ticks: {}</code>, followed by the following configs:</p>
 
 <ul>
-<li><code>beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
-<li><code>fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code>&lt;head&gt;</code>;</li>
-<li><code>fontSize: 14,</code> - in pixels;</li>
-<li><code>fontColor: '#ababab',</code> - make it gray;</li>
+  <li><code>beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
+  <li><code>fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code>&lt;head&gt;</code>;</li>
+  <li><code>fontSize: 14,</code> - in pixels;</li>
+  <li><code>fontColor: '#ababab',</code> - make it gray;</li>
 </ul>
-
 
 <p>As you can see, the Y axis numbers are not the best to show the data, without the commas. There are plenty of ways to use javascript to manipulate that number. We will make something easy, almost prosaic - trick the code to show the same number, but differently.</p>
 
@@ -328,54 +321,54 @@ data: {
 
 <p>Your <code>yAxes</code> code should be the following:</p>
 
-<pre><code>        yAxes: [{
-              display: true,                
-              ticks: {
-                beginAtZero: true,
-                fontFamily: 'Roboto',
-                fontSize: 14,
-                fontColor: '#ababab',
-                callback: function(value) { return value/1000 + ',000' + '$'; },
-                },
-            }],
+<pre><code>		yAxes: [{
+			  display: true,                
+			  ticks: {
+				beginAtZero: true,
+				fontFamily: 'Roboto',
+				fontSize: 14,
+				fontColor: '#ababab',
+				callback: function(value) { return value/1000 + ',000' + '$'; },
+				},
+		    }],
 </code></pre>
 
 <p>Let’s do basically the same thing with the <code>xAxes</code>, but this time, lets make our chart cleaner. Assign <code>gridLines: {display: false},</code> to hide the vertical gridlines.</p>
 
 <p>This is the code:</p>
 
-<pre><code>        xAxes: [{
-            gridLines: {
-            display: false
-                },
-            ticks: {
-            fontFamily: "Roboto",
-            fontSize: 14,
-                },     
-          }],
+<pre><code>		xAxes: [{
+		    gridLines: {
+		    display: false
+				},
+		    ticks: {
+		    fontFamily: "Roboto",
+		    fontSize: 14,
+				},     
+	      }],
 </code></pre>
 
 <p>Before we finish, lets make sure our chart is responsive, by adding <code>responsive: true,</code> before closing the <code>options</code> config.</p>
 
 <p>Finally, lets credit the data in the HTML, after the <code>&lt;canvas&gt;</code> tag. Add the source: <code>&lt;h5&gt;Source: World Bank&lt;/h5&gt;</code>, as well as some basic CSS, to make it look better.</p>
 
-<pre><code>    body {
-      padding: 0px 20px 10px 30px;
-      font-family: 'Roboto', sans-serif;
-    }
+<pre><code>	body {
+	  padding: 0px 20px 10px 30px;
+	  font-family: 'Roboto', sans-serif;
+	}
 
-    p {
-        line-height: 1.4em;
-        }
+	p {
+		line-height: 1.4em;
+		}
 
-    h5 {
-      border-top: 1px solid #000;
-      display: inline;
-      font-weight: 400;
-    }
+	h5 {
+	  border-top: 1px solid #000;
+	  display: inline;
+	  font-weight: 400;
+	}
 </code></pre>
 
-<h3>Result</h3>
+<h3 id="result">Result</h3>
 
 <p>Your chart will now look like this:</p>
 
@@ -383,11 +376,11 @@ data: {
 
 <hr />
 
-<h4>Check out the code</h4>
+<h4 id="check-out-the-code">Check out the code</h4>
 
 <p><a href="https://jsbin.com/hopeze/edit?html,css,js,output">Find the code here, in this JSbin.</a></p>
 
-<h4>Be a pro</h4>
+<h4 id="be-a-pro">Be a pro</h4>
 
 <p>If you feel you are ready for more, try “breaking” your chart’s code so it is easier to read and manipulate. This takes more time to learn, but it is sure worth your while in the long run if you want to dig deeper.</p>
 

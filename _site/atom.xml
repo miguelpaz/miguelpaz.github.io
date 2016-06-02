@@ -6,7 +6,7 @@
   
   <link href="http://miguelpaz.github.io/"/>
   <id>http://miguelpaz.github.io/</id>
-  <updated>2016-06-02T17:29:41Z</updated>
+  <updated>2016-06-02T17:55:55Z</updated>
   <author>
     <name>Miguel Paz</name>
     <email>miguel.paz@journalism.cuny.edu</email>
@@ -25,7 +25,7 @@
 
 <p>This tutorial is simple and explanatory, and it is based on the great documentation in the <a href="https://csvkit.readthedocs.io/en/540/tutorial.html">CSVKit tutorial page</a>, which has a lot more things, many of which you might not use right away.</p>
 
-<h2>Installation</h2>
+<h2 id="installation">Installation</h2>
 
 <p>There are several ways to install CSVKit in your machine.</p>
 
@@ -34,34 +34,33 @@
 <p>A lot of people like to use <code>pip</code> to <a href="https://www.python.org/downloads/">install stuff</a> in their computers, which comes with the Python package. Journalist and coder Amanda Bee has <a href="https://github.com/amandabee/CUNY-data-storytelling/wiki/Tutorial:-Installing-CSVKit">wrote about installing CSVKit</a> in her CUNY data storytelling class, for Mac (OSX) users. The bullets are from her:</p>
 
 <ul>
-<li>Use sudo <code>easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you&rsquo;ll never touch the terminal again after this semester, this is your best route.</li>
-<li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code>pip install csvkit</code> at the command line. If you get an error that suggests you don&rsquo;t have permission to install it, try <code>sudo pip install csvkit to install</code> with root privileges. Try <code>man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
-<li>Alternatively, you can install pip with easy_install (using sudo easy_install pip) and then install CSVkit with sudo pip install csvkit. Choosing this option won&rsquo;t mean you can&rsquo;t install Homebrew later.</li>
+  <li>Use sudo <code>easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you’ll never touch the terminal again after this semester, this is your best route.</li>
+  <li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code>pip install csvkit</code> at the command line. If you get an error that suggests you don’t have permission to install it, try <code>sudo pip install csvkit to install</code> with root privileges. Try <code>man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
+  <li>Alternatively, you can install pip with easy_install (using sudo easy_install pip) and then install CSVkit with sudo pip install csvkit. Choosing this option won’t mean you can’t install Homebrew later.</li>
 </ul>
 
-
-<p>For Windows users as well, <code>pip</code> is already installed if you&rsquo;re using Python 2 >=2.7.9 or Python 3 >=3.4 downloaded from <a href="python.org">Python.org</a>, but you&rsquo;ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
+<p>For Windows users as well, <code>pip</code> is already installed if you’re using Python 2 &gt;=2.7.9 or Python 3 &gt;=3.4 downloaded from <a href="python.org">Python.org</a>, but you’ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
 
 <p>Here is the message when your are done:</p>
 
-<pre><code>        Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
-      Running setup.py install for xlrd ... done
-      Running setup.py install for sqlalchemy ... done
-      Found existing installation: openpyxl 2.2.0
-        Uninstalling openpyxl-2.2.0:
-          Successfully uninstalled openpyxl-2.2.0
-      Running setup.py install for openpyxl ... done
-      Found existing installation: six 1.5.2
-        Uninstalling six-1.5.2:
-          Successfully uninstalled six-1.5.2
-      Running setup.py install for dbf ... done
-      Running setup.py install for csvkit ... done
-    Successfully installed csvkit-0.9.1 dbf-0.94.3 openpyxl-2.2.0b1 six-1.10.0 sqlalchemy-1.0.13 xlrd-0.9.4
+<pre><code>		Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
+	  Running setup.py install for xlrd ... done
+	  Running setup.py install for sqlalchemy ... done
+	  Found existing installation: openpyxl 2.2.0
+	    Uninstalling openpyxl-2.2.0:
+	      Successfully uninstalled openpyxl-2.2.0
+	  Running setup.py install for openpyxl ... done
+	  Found existing installation: six 1.5.2
+	    Uninstalling six-1.5.2:
+	      Successfully uninstalled six-1.5.2
+	  Running setup.py install for dbf ... done
+	  Running setup.py install for csvkit ... done
+	Successfully installed csvkit-0.9.1 dbf-0.94.3 openpyxl-2.2.0b1 six-1.10.0 sqlalchemy-1.0.13 xlrd-0.9.4
 </code></pre>
 
 <p>—</p>
 
-<h2>Basics of CSVKit</h2>
+<h2 id="basics-of-csvkit">Basics of CSVKit</h2>
 
 <p>After you are done installing it, now it is time to use it!</p>
 
@@ -69,24 +68,24 @@
 
 <p>So run this in the command line:</p>
 
-<pre><code>        mkdir csvkit_data
+<pre><code>		mkdir csvkit_data
 </code></pre>
 
 <p>Now, go to that directory:</p>
 
-<pre><code>        cd csvkit_data
+<pre><code>		cd csvkit_data
 </code></pre>
 
 <p>And then, lets fetch some data to use, analyze, manipulate and play with. We prepared some data for you (csv format) about the GDP per capita all over the work, according to the IMF database. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv">Access the data here:</a></p>
 
 <p>Now lets load it to that directory:</p>
 
-<pre><code>        curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
+<pre><code>		curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
 </code></pre>
 
 <p>Finally, lets take a look at the data with the command <code>csvlook</code>, to see what we will analyze.</p>
 
-<pre><code>        csvlook csvkit_example_data.csv
+<pre><code>		csvlook csvkit_example_data.csv
 </code></pre>
 
 <p>The data will look messy, and it is way visually better to see it in an Excel or Google Sheets, but this is just to have a general outlook, not to really read it.</p>
@@ -95,22 +94,22 @@
 
 <p>Lets look at the column headers, to see what we will need. Run:</p>
 
-<pre><code>        csvcut -n csvkit_example_data.csv
-          1: country
-          2: 2001
-          3: 2002
-          4: 2003
-          5: 2004
-          6: 2005
-          7: 2006
-          8: 2007
-          9: 2008
-         10: 2009
-         11: 2010
-         12: 2011
-         13: 2012
-         14: 2013
-         15: 2014
+<pre><code>		csvcut -n csvkit_example_data.csv
+		  1: country
+		  2: 2001
+		  3: 2002
+		  4: 2003
+		  5: 2004
+		  6: 2005
+		  7: 2006
+		  8: 2007
+		  9: 2008
+		 10: 2009
+		 11: 2010
+		 12: 2011
+		 13: 2012
+		 14: 2013
+		 15: 2014
 </code></pre>
 
 <p>So now you see that the GDP data is organized with one columns with the country names, and the rest with the years, while the respective rows will carry the information.</p>
@@ -119,73 +118,80 @@
 
 <p>For that, lets use the <code>csvcut</code> again.</p>
 
-<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv
+<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv
 </code></pre>
 
 <p><em>If you are using non-numbered columns, you might as well just write their names instead of the assigned numbers</em></p>
 
-<p>CSVKit allows you what they call “pipe” actions, which basically means to write in the same line, to save time, several functions, separated by a | bar. Try this:</p>
+<table>
+  <tbody>
+    <tr>
+      <td>CSVKit allows you what they call “pipe” actions, which basically means to write in the same line, to save time, several functions, separated by a</td>
+      <td>bar. Try this:</td>
+    </tr>
+  </tbody>
+</table>
 
-<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
+<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
 </code></pre>
 
 <hr />
 
-<h2>Playing with the numbers</h2>
+<h2 id="playing-with-the-numbers">Playing with the numbers</h2>
 
 <p>CSVKit has a command called <code>csvstat</code>, which basically lets you to get a succinct analysis out of your data, before you can really dig into it you want.</p>
 
 <p>It gives you the minimum of a certain column, the maximum, the average, the median and even standard deviation.</p>
 
-<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
 </code></pre>
 
 <p>You will get something like this:</p>
 
-<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
-              1. country
-                &lt;type 'unicode'&gt;
-                Nulls: False
-                Unique values: 199
-                Max length: 30
+<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+			  1. country
+				&lt;type 'unicode'&gt;
+				Nulls: False
+				Unique values: 199
+				Max length: 30
 
-              2. 2008
-                &lt;type 'float'&gt;
-                Nulls: False
-                Min: 0.0
-                Max: 193648.1
-                Sum: 3156734.6
-                Mean: 15862.9879397
-                Median: 4912.3
-                Standard Deviation: 25667.7567268
-                Unique values: 197
-                5 most frequent values:
-                    0.0:    3
-                    7112.4: 1
-                    3920.0: 1
-                    9999.1: 1
-                    4342.8: 1
+			  2. 2008
+				&lt;type 'float'&gt;
+				Nulls: False
+				Min: 0.0
+				Max: 193648.1
+				Sum: 3156734.6
+				Mean: 15862.9879397
+				Median: 4912.3
+				Standard Deviation: 25667.7567268
+				Unique values: 197
+				5 most frequent values:
+					0.0:	3
+					7112.4:	1
+					3920.0:	1
+					9999.1:	1
+					4342.8:	1
 </code></pre>
 
 <p>You can see, for instance, that in 2009, after the financial crash, the median of the GDP per capital was lower than in 2008, but it grew back in 2010 and 2011.</p>
 
 <p>Another great function of this is to “query” the data to find what you want. Lets say you only need to look for the the numbers about Brazil.</p>
 
-<pre><code>            csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
+<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
 </code></pre>
 
 <p>Please be advised that the query is case sensitive, <em>BRAZIL</em> or <em>brazil</em> won’t find anything.</p>
 
 <p>Now, in case you haven’t noticed, the csv is alphabetical order. If you want you want to sort it out differently, lets say in reverse, use the following code.</p>
 
-<pre><code>             csvkit_example_data.csv | csvsort -c country  -r | csvlook  
+<pre><code>			 csvkit_example_data.csv | csvsort -c country  -r | csvlook  
 </code></pre>
 
 <p>The <code>-r</code> actually means <code>reverse</code>. If you want to know all the sorting functionalities, <a href="https://csvkit.readthedocs.io/en/540/scripts/csvsort.html">check this page</a>.</p>
 
 <hr />
 
-<h2>Converting to other data formats</h2>
+<h2 id="converting-to-other-data-formats">Converting to other data formats</h2>
 
 <p>You can convert data into Excel or to other formats as well with csvkit.</p>
 
@@ -207,7 +213,7 @@
   <id>http://miguelpaz.github.io/morrisjs-tutorial</id>
   <published>2016-05-30T00:00:00Z</published>
   <updated>2016-05-30T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <h1>Line chart with Morris.js</h1>
+  <content type="html"><![CDATA[ <h1 id="line-chart-with-morrisjs">Line chart with Morris.js</h1>
 
 <p><a href="http://morrisjs.github.io/morris.js/">Morris.js</a> is an easy to use, free javascript library to create interactive line and bar charts with very little code. As most similar tools, it is based in the D3.js library, with dependencies in Raphael.js and JQuery. It was developed by <a href="https://twitter.com/olly_smith">Olly Smith</a>.</p>
 
@@ -216,16 +222,15 @@
 <p>In this tutorial, you will need to access:</p>
 
 <ol>
-<li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/example2_country_dates.json">The example json data</a></li>
-<li><a href="http://morrisjs.github.io/morris.js/">The Morris.js library CDN link</a> - (<em>this will give access to the code</em>)</li>
-<li><a href="http://morrisjs.github.io/morris.js/lines.html">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
-<li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> or <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
+  <li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/example2_country_dates.json">The example json data</a></li>
+  <li><a href="http://morrisjs.github.io/morris.js/">The Morris.js library CDN link</a> - (<em>this will give access to the code</em>)</li>
+  <li><a href="http://morrisjs.github.io/morris.js/lines.html">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
+  <li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> or <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
 </ol>
-
 
 <hr />
 
-<h2>Starting point</h2>
+<h2 id="starting-point">Starting point</h2>
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
@@ -233,29 +238,28 @@
 
 <p>Your code will look like this:</p>
 
-<pre><code>    &lt;head&gt;
-      &lt;meta charset="utf-8"&gt;
-      &lt;meta name="viewport" content="width=device-width"&gt;
-      &lt;title&gt;This is a Morris.js chart!&lt;/title&gt;
-      &lt;link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"&gt;
-      &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"&gt;&lt;/script&gt;
-      &lt;script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"&gt;&lt;/script&gt;
-      &lt;script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
+<pre><code>	&lt;head&gt;
+	  &lt;meta charset="utf-8"&gt;
+	  &lt;meta name="viewport" content="width=device-width"&gt;
+	  &lt;title&gt;This is a Morris.js chart!&lt;/title&gt;
+	  &lt;link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"&gt;
+	  &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"&gt;&lt;/script&gt;
+	  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"&gt;&lt;/script&gt;
+	  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"&gt;&lt;/script&gt;
+	&lt;/head&gt;
 </code></pre>
 
 <p>Now that we have the libraries loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
 
 <p>Add the following code inside the <code>&lt;body&gt;</code> tag:</p>
 
-<pre><code>        &lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
+<pre><code>		&lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
 </code></pre>
 
-<p>This will be where the chart will render once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.</p>
+<p>This will be where the chart will render once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
+___</p>
 
-<hr />
-
-<h2>Adding the javascript</h2>
+<h2 id="adding-the-javascript">Adding the javascript</h2>
 
 <p>Now the real fun begins.</p>
 
@@ -265,19 +269,19 @@
 
 <p>Go ahead and add the following code [^Notice that this tutorial “cleaned” the code provided in the Morris.js website, taking of the comments and putting the data in the end of the code] into the javascript:</p>
 
-<pre><code>    new Morris.Line({
-      element: 'myfirstchart',
-      xkey: 'year',
-      ykeys: ['value'],
-      labels: ['Value'],
-      data: [
-        { year: '2008', value: 20 },
-        { year: '2009', value: 10 },
-        { year: '2010', value: 5 },
-        { year: '2011', value: 5 },
-        { year: '2012', value: 20 }
-      ]
-    });
+<pre><code>	new Morris.Line({
+	  element: 'myfirstchart',
+	  xkey: 'year',
+	  ykeys: ['value'],
+	  labels: ['Value'],
+	  data: [
+	    { year: '2008', value: 20 },
+	    { year: '2009', value: 10 },
+	    { year: '2010', value: 5 },
+	    { year: '2011', value: 5 },
+	    { year: '2012', value: 20 }
+	  ]
+	});
 </code></pre>
 
 <p>Voilá! You will now be able to see a small chart with a blue line and five points in it.</p>
@@ -286,7 +290,7 @@
 
 <hr />
 
-<h2>Adding your own data</h2>
+<h2 id="adding-your-own-data">Adding your own data</h2>
 
 <p>In your javascript input, you might have noticed the <strong>data</strong> line. Well, that is where your chart’s lines are coming from. That field is where you <strong>bind</strong> the data! The format recognized by Morris is <em>json</em>, which is a way to structure data used by a lot of tools.</p>
 
@@ -296,8 +300,8 @@
 
 <p>Copy and past the json after the <code>data:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>    data:
-        [
+<pre><code>	data:
+		[
   {
     "index": "Unemployment rate",
     "rate": 9,
@@ -340,11 +344,11 @@
 <p>So this part of your code will look like this:</p>
 
 <pre><code>new Morris.Line({
-      element: 'myfirstchart',
-      xkey: 'dates',
-      ykeys: ['rate'],
-      labels: ['Unemployment rate'],
-      xLabels: ['year'],
+	  element: 'myfirstchart',
+	  xkey: 'dates',
+	  ykeys: ['rate'],
+	  labels: ['Unemployment rate'],
+	  xLabels: ['year'],
 </code></pre>
 
 <p>Which will render this:</p>
@@ -353,15 +357,15 @@
 
 <hr />
 
-<h2>Customizing your graphic</h2>
+<h2 id="customizing-your-graphic">Customizing your graphic</h2>
 
 <p>To add some good-looking visual to your graphic, we will now use some options Morris has to offer to change fonts and colors. We will also use some CSS to give it a title, a legend, units and a source - all good practices when charting.</p>
 
-<h3>Text-size, colors and goals</h3>
+<h3 id="text-size-colors-and-goals">Text-size, colors and goals</h3>
 
 <p>Lets start with the text-size, the colors and some goals (references in the chart). After the code mentioned above, and before the data, lets add the following lines:</p>
 
-<pre><code>    lineColors: [''],
+<pre><code>	lineColors: [''],
   postUnits: [''],
   goals: [''],
   goalStrokeWidth: [''],
@@ -372,14 +376,13 @@
 </code></pre>
 
 <ul>
-<li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code>#C00</code>;</li>
-<li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code>%</code> inside the brackets and it will add the sign to the Y axis;</li>
-<li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code>[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
-<li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code>#000</code>;</li>
-<li>Point size is how big are the data points. If you want no points, use it 0. I will use 3px;</li>
-<li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code>#777</code>;</li>
+  <li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code>#C00</code>;</li>
+  <li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code>%</code> inside the brackets and it will add the sign to the Y axis;</li>
+  <li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code>[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
+  <li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code>#000</code>;</li>
+  <li>Point size is how big are the data points. If you want no points, use it 0. I will use 3px;</li>
+  <li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code>#777</code>;</li>
 </ul>
-
 
 <p>In case you have noticed, Morris make it default to show the tooltip all the time, even if you don’t want. It is kind of annoying, so we will set for the tooltip to appear only when you hover.</p>
 
@@ -387,28 +390,28 @@
 
 <p>So far out code looks like this (I am not adding the data for size limits):</p>
 
-<pre><code>    new Morris.Line({
-                      element: 'myfirstchart',
-                      xkey: 'dates',
-                      ykeys: ['rate'],
-                      labels: ['Unemployment rate'],
-              xLabels: ['year'],
-              lineColors: ['#C00'],
-                    postUnits: ['%'],
-                  goals: ['7.7'],
-                  goalStrokeWidth: ['2px'],
-              goalLineColors: ['#000'],
-                  pointSize: ['3px'],
-                  gridTextSize: ['14px'],
-                  gridTextColor: ['#777'],
-              hideHover: ['auto'],
+<pre><code>	new Morris.Line({
+					  element: 'myfirstchart',
+					  xkey: 'dates',
+					  ykeys: ['rate'],
+					  labels: ['Unemployment rate'],
+	          xLabels: ['year'],
+	          lineColors: ['#C00'],
+				    postUnits: ['%'],
+			      goals: ['7.7'],
+			      goalStrokeWidth: ['2px'],
+	          goalLineColors: ['#000'],
+			      pointSize: ['3px'],
+			      gridTextSize: ['14px'],
+			      gridTextColor: ['#777'],
+	          hideHover: ['auto'],
 </code></pre>
 
 <p>The result for now is this:</p>
 
 <p><img src="https://github.com/miguelpaz/jlab/blob/master/images/chart_morrisjs_3.png?raw=true" alt="MorrisJS chart" /></p>
 
-<h3>Custom fonts</h3>
+<h3 id="custom-fonts">Custom fonts</h3>
 
 <p>Now, we are ready to add some good looking fonts here. In this example we will use <em>Roboto</em>, but you might as well use any <a href="https://www.google.com/fonts">Google Fonts</a> option.</p>
 
@@ -422,41 +425,41 @@
 
 <p>Above the <code>&lt;div&gt;</code> tag, add <code>&lt;h1&gt;</code> (title) and <code>&lt;p&gt;</code> (legend), as well as some <code>&lt;h5&gt;</code> (source) below the chart. Like this:</p>
 
-<pre><code>    &lt;body&gt;
-      &lt;h1&gt;US unemployment rate&lt;/h1&gt;
-      &lt;p&gt;Unemployment refers to the share of the labor force that is without work but available for and seeking employment. Measured in % of total labor force&lt;/p&gt;
-      &lt;div id="myfirstchart" style="height: 250px;"&gt;
-      &lt;/div&gt;
-      &lt;h5&gt;Source: World Bank &lt;/h5&gt;
+<pre><code>	&lt;body&gt;
+	  &lt;h1&gt;US unemployment rate&lt;/h1&gt;
+	  &lt;p&gt;Unemployment refers to the share of the labor force that is without work but available for and seeking employment. Measured in % of total labor force&lt;/p&gt;
+	  &lt;div id="myfirstchart" style="height: 250px;"&gt;
+	  &lt;/div&gt;
+	  &lt;h5&gt;Source: World Bank &lt;/h5&gt;
 
-    &lt;/body&gt;
+	&lt;/body&gt;
 </code></pre>
 
 <p>To apply the font - and some other styles (like margin or padding) that you want - go to the CSS panel and add your styles. We will only add a few things:</p>
 
-<pre><code>    body {
-      padding: 0px 20px 10px 30px;
-      font-family: 'Roboto', sans-serif;
-    }
+<pre><code>	body {
+	  padding: 0px 20px 10px 30px;
+	  font-family: 'Roboto', sans-serif;
+	}
 
-    p {
-        line-height: 1.4em;
-        }
+	p {
+		line-height: 1.4em;
+		}
 
-    h5 {
-      border-top: 1px solid #000;
-      display: inline;
-      font-weight: 400;
-    }
+	h5 {
+	  border-top: 1px solid #000;
+	  display: inline;
+	  font-weight: 400;
+	}
 </code></pre>
 
-<h3>Make it responsive</h3>
+<h3 id="make-it-responsive">Make it responsive</h3>
 
 <p>Finally, we have to make our chart responsive, so it fits several kinds of screens.</p>
 
 <p>Fortunately, Morris allows us to do it rather easily. Just add the following line to the code: <code>resize: ['true'],</code></p>
 
-<p>This will apply the 100% width to fit the screen. Let’s make it a little bit higher too: in the HTML, apply the height to 350px, like this: <code>&lt;div id="myfirstchart" style="height: 350px;"&gt;</code></p>
+<p>This will apply the 100% width to fit the screen. Let’s make it a little bit higher too: in the HTML, apply the height to 350px, like this: ` &lt;div id="myfirstchart" style="height: 350px;"&gt;`</p>
 
 <p>Your chart will now look like this:</p>
 
@@ -464,7 +467,7 @@
 
 <hr />
 
-<h2>Try adding more data to see how it looks</h2>
+<h2 id="try-adding-more-data-to-see-how-it-looks">Try adding more data to see how it looks</h2>
 
 <p>We prepared some more data to you, so you know how it looks when you add more stuff to it.</p>
 
@@ -476,11 +479,11 @@
 
 <hr />
 
-<h4>Check out the code</h4>
+<h4 id="check-out-the-code">Check out the code</h4>
 
 <p><a href="https://jsbin.com/mohehow/edit?html,css,js,output">Find the code here, in this JSbin.</a></p>
 
-<h4>Bonus</h4>
+<h4 id="bonus">Bonus</h4>
 
 <p>If you feel you are ready for more, try this code with a function from JQuery to retrieve the data directly from a URL, instead of adding the JSON directly into the file:</p>
 
@@ -506,16 +509,15 @@
 <p>In this tutorial, you will need to access:</p>
 
 <ol>
-<li><a href="https://github.com/miguelpaz/jlab/blob/master/data/chartjs_example_data_short.json">The example json data</a></li>
-<li><a href="https://cdnjs.com/libraries/Chart.js">The ChartJS library CDN link</a> - (<em>this will give access to the code</em>)</li>
-<li><a href="http://www.chartjs.org/docs/#bar-chart">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
-<li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> our <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
+  <li><a href="https://github.com/miguelpaz/jlab/blob/master/data/chartjs_example_data_short.json">The example json data</a></li>
+  <li><a href="https://cdnjs.com/libraries/Chart.js">The ChartJS library CDN link</a> - (<em>this will give access to the code</em>)</li>
+  <li><a href="http://www.chartjs.org/docs/#bar-chart">The configuration options’ page</a> (<em>where you will chose the specs for the graphic</em>)</li>
+  <li>And a code editor - preferably an online one where you will see the results in real time. This example will use <a href="https://jsbin.com">JSbin</a>, but you can use <a href="http://codepen.io/">Codepen</a> our <a href="https://jsfiddle.net/">JSfiddle</a> as alternatives.</li>
 </ol>
-
 
 <hr />
 
-<h2>Starting point</h2>
+<h2 id="starting-point">Starting point</h2>
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
@@ -523,23 +525,23 @@
 
 <p>Your code will look like this:</p>
 
-<pre><code>    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-    &lt;head&gt;
-      &lt;meta charset="utf-8"&gt;
-      &lt;meta name="viewport" content="width=device-width"&gt;
-      &lt;title&gt;This is a bar chart with ChartJS&lt;/title&gt;
+<pre><code>	&lt;!DOCTYPE html&gt;
+	&lt;html&gt;
+	&lt;head&gt;
+	  &lt;meta charset="utf-8"&gt;
+	  &lt;meta name="viewport" content="width=device-width"&gt;
+	  &lt;title&gt;This is a bar chart with ChartJS&lt;/title&gt;
 
-      &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
+	  &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
 
-    &lt;/head&gt;
-    &lt;body&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
 
-      &lt;canvas id="myChart" width="400" height="300"&gt;&lt;/canvas&gt;
+	  &lt;canvas id="myChart" width="400" height="300"&gt;&lt;/canvas&gt;
 
 
-    &lt;/body&gt;
-    &lt;/html&gt;
+	&lt;/body&gt;
+	&lt;/html&gt;
 </code></pre>
 
 <p>Now that we have the main library loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
@@ -551,11 +553,10 @@
 <pre><code>  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
 </code></pre>
 
-<p>This will actually call (make appear) the chart once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.</p>
+<p>This will actually call (make appear) the chart once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
+___</p>
 
-<hr />
-
-<h2>Adding the javascript</h2>
+<h2 id="adding-the-javascript">Adding the javascript</h2>
 
 <p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code>&lt;head&gt;</code> earlier.</p>
 
@@ -566,7 +567,7 @@
 
 <p>Now, we have to add the variable that will bind the data and allow us to customize it. We will use dummy data now. Go ahead and add the following code into the javascript:</p>
 
-<pre><code>    var myChart = new Chart(ctx, {
+<pre><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -584,7 +585,7 @@ data: {
 
 <hr />
 
-<h2>Adding your own data</h2>
+<h2 id="adding-your-own-data">Adding your own data</h2>
 
 <p>In your javascript input, you might have noticed the <strong>data</strong> line. That is where your chart’s lines are coming from. That field is where you <strong>bind</strong> the data! ChartJS uses json format, but it has its own specifications as how to structure data, which at first may be not so straightforward, but allows the tool to have more customization[^More advanced users can use JQuery to parse json and .csv files].</p>
 
@@ -592,15 +593,15 @@ data: {
 
 <p>Copy and past the text after the <code>dataset:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>    data: {
+<pre><code>	data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
     datasets: [
-                      {
-                        label: "GDP per capita",
-                        data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-                      }
-                      ]
-                        },
+					  {
+					    label: "GDP per capita",
+					    data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+					  }
+					  ]
+					    },
 </code></pre>
 
 <p>The bar chart will immediately appear in your screen with ChartJS default looks. It is also interactive.</p>
@@ -608,11 +609,10 @@ data: {
 <p>There are some things to understand here so you can work with other data afterwards. In this case:</p>
 
 <ul>
-<li>The X axis is defined by the <code>labels</code> array;</li>
-<li>The Y axis is plotted by the <code>data</code> field inside the <code>dataset</code> array;</li>
-<li>The actual legend/unit is defined by the <code>label</code> inside the <code>dataset</code> array;</li>
+  <li>The X axis is defined by the <code>labels</code> array;</li>
+  <li>The Y axis is plotted by the <code>data</code> field inside the <code>dataset</code> array;</li>
+  <li>The actual legend/unit is defined by the <code>label</code> inside the <code>dataset</code> array;</li>
 </ul>
-
 
 <p>The new plotted chart will look like this:</p>
 
@@ -620,52 +620,51 @@ data: {
 
 <hr />
 
-<h2>Customizing your graphic</h2>
+<h2 id="customizing-your-graphic">Customizing your graphic</h2>
 
 <p>To add some good-looking visual to your graphic, we will now use some options ChartJS has to offer to change fonts, colors and other specifications. We will also use some CSS to give it a title, a legend, units and a source - all good practices when charting.</p>
 
-<h3>Colors</h3>
+<h3 id="colors">Colors</h3>
 
 <p>Lets start with by coloring our chart, especially the bars.</p>
 
 <p>This more basic color configuration is applied, generally, within the <code>dataset</code> array. See the code below.</p>
 
-<pre><code>    datasets: [
-                  {
-                label: "GDP per capita",
-                backgroundColor: "",
-                borderColor: "",
-                borderWidth: 1,
-                hoverBackgroundColor: "",
-                hoverBorderColor: "",            
-                data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-                }
+<pre><code>	datasets: [
+				  {
+	            label: "GDP per capita",
+	            backgroundColor: "",
+	            borderColor: "",
+	            borderWidth: 1,
+	            hoverBackgroundColor: "",
+	            hoverBorderColor: "",            
+	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+	            }
 </code></pre>
 
 <ul>
-<li>Lets apply the color red <code>#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
-<li>To have some clear delimitation of the bar area, lets add a solid red <code>#c00</code> border, of 2px;</li>
-<li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code>#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
+  <li>Lets apply the color red <code>#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
+  <li>To have some clear delimitation of the bar area, lets add a solid red <code>#c00</code> border, of 2px;</li>
+  <li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code>#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
 </ul>
-
 
 <p>So far out code looks like this:</p>
 
-<pre><code>    var myChart = new Chart(ctx, {
+<pre><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
     datasets: [
-      {
-                label: "GDP per capita",
-        backgroundColor: "rgba(204, 0, 0, .4)",
-                borderColor: "#c00",
-                borderWidth: 2,
-                hoverBackgroundColor: "#59597F",            
-                data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-      }
-      ]
-      }
+	  {
+	            label: "GDP per capita",
+	    backgroundColor: "rgba(204, 0, 0, .4)",
+	            borderColor: "#c00",
+	            borderWidth: 2,
+	            hoverBackgroundColor: "#59597F",            
+	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+	  }
+	  ]
+	  }
 </code></pre>
 
 <p>The result for now is this:</p>
@@ -674,7 +673,7 @@ data: {
 
 <hr />
 
-<h3>Customization</h3>
+<h3 id="customization">Customization</h3>
 
 <p>After you input your data and added the basic color visuals, there are plenty of more things you could do. But first, you have to add the <code>options</code> config. <a href="http://www.chartjs.org/docs/#getting-started-global-chart-configuration">You can check all the ChartJS options here</a>.</p>
 
@@ -685,33 +684,31 @@ data: {
 <pre><code>  var ctx = document.getElementById("myChart").getContext("2d");
 
 
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
-            datasets: [
-                      {
-                label: "GDP per capita",
-        backgroundColor: "rgba(204, 0, 0, .4)",
-                borderColor: "#c00",
-                borderWidth: 2,
-                hoverBackgroundColor: "#59597F",         
-                data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
-                      }
-                                  ]
-                    },
-        options: {
-                                }
-    });
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
+	        datasets: [
+					  {
+	            label: "GDP per capita",
+	    backgroundColor: "rgba(204, 0, 0, .4)",
+	            borderColor: "#c00",
+	            borderWidth: 2,
+	            hoverBackgroundColor: "#59597F",         
+	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
+					  }
+								  ]
+				    },
+	    options: {
+								}
+	});
 </code></pre>
 
 <p>Now, we are ready to add some other customizations here, like fonts, grids and other cool stuff.</p>
 
 <hr />
-
-<h5>Interlude to get a font</h5>
-
-<p>Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice typography. We will use <a href="https://www.google.com/fonts#QuickUsePlace:quickUse"><em>Roboto</em></a> - make sure you select the light (400) and bold (700) types of font (for body and header).</p>
+<p>##### Interlude to get a font
+Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice typography. We will use <a href="https://www.google.com/fonts#QuickUsePlace:quickUse"><em>Roboto</em></a> - make sure you select the light (400) and bold (700) types of font (for body and header).</p>
 
 <p>If you want Roboto, copy and paste this link into the <code>&lt;head&gt;</code> of your HTML: <code>&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
 
@@ -724,12 +721,11 @@ data: {
 <p>Now, still inside the <code>yAxes</code>, add the <code>ticks: {}</code>, followed by the following configs:</p>
 
 <ul>
-<li><code>beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
-<li><code>fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code>&lt;head&gt;</code>;</li>
-<li><code>fontSize: 14,</code> - in pixels;</li>
-<li><code>fontColor: '#ababab',</code> - make it gray;</li>
+  <li><code>beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
+  <li><code>fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code>&lt;head&gt;</code>;</li>
+  <li><code>fontSize: 14,</code> - in pixels;</li>
+  <li><code>fontColor: '#ababab',</code> - make it gray;</li>
 </ul>
-
 
 <p>As you can see, the Y axis numbers are not the best to show the data, without the commas. There are plenty of ways to use javascript to manipulate that number. We will make something easy, almost prosaic - trick the code to show the same number, but differently.</p>
 
@@ -741,54 +737,54 @@ data: {
 
 <p>Your <code>yAxes</code> code should be the following:</p>
 
-<pre><code>        yAxes: [{
-              display: true,                
-              ticks: {
-                beginAtZero: true,
-                fontFamily: 'Roboto',
-                fontSize: 14,
-                fontColor: '#ababab',
-                callback: function(value) { return value/1000 + ',000' + '$'; },
-                },
-            }],
+<pre><code>		yAxes: [{
+			  display: true,                
+			  ticks: {
+				beginAtZero: true,
+				fontFamily: 'Roboto',
+				fontSize: 14,
+				fontColor: '#ababab',
+				callback: function(value) { return value/1000 + ',000' + '$'; },
+				},
+		    }],
 </code></pre>
 
 <p>Let’s do basically the same thing with the <code>xAxes</code>, but this time, lets make our chart cleaner. Assign <code>gridLines: {display: false},</code> to hide the vertical gridlines.</p>
 
 <p>This is the code:</p>
 
-<pre><code>        xAxes: [{
-            gridLines: {
-            display: false
-                },
-            ticks: {
-            fontFamily: "Roboto",
-            fontSize: 14,
-                },     
-          }],
+<pre><code>		xAxes: [{
+		    gridLines: {
+		    display: false
+				},
+		    ticks: {
+		    fontFamily: "Roboto",
+		    fontSize: 14,
+				},     
+	      }],
 </code></pre>
 
 <p>Before we finish, lets make sure our chart is responsive, by adding <code>responsive: true,</code> before closing the <code>options</code> config.</p>
 
 <p>Finally, lets credit the data in the HTML, after the <code>&lt;canvas&gt;</code> tag. Add the source: <code>&lt;h5&gt;Source: World Bank&lt;/h5&gt;</code>, as well as some basic CSS, to make it look better.</p>
 
-<pre><code>    body {
-      padding: 0px 20px 10px 30px;
-      font-family: 'Roboto', sans-serif;
-    }
+<pre><code>	body {
+	  padding: 0px 20px 10px 30px;
+	  font-family: 'Roboto', sans-serif;
+	}
 
-    p {
-        line-height: 1.4em;
-        }
+	p {
+		line-height: 1.4em;
+		}
 
-    h5 {
-      border-top: 1px solid #000;
-      display: inline;
-      font-weight: 400;
-    }
+	h5 {
+	  border-top: 1px solid #000;
+	  display: inline;
+	  font-weight: 400;
+	}
 </code></pre>
 
-<h3>Result</h3>
+<h3 id="result">Result</h3>
 
 <p>Your chart will now look like this:</p>
 
@@ -796,11 +792,11 @@ data: {
 
 <hr />
 
-<h4>Check out the code</h4>
+<h4 id="check-out-the-code">Check out the code</h4>
 
 <p><a href="https://jsbin.com/hopeze/edit?html,css,js,output">Find the code here, in this JSbin.</a></p>
 
-<h4>Be a pro</h4>
+<h4 id="be-a-pro">Be a pro</h4>
 
 <p>If you feel you are ready for more, try “breaking” your chart’s code so it is easier to read and manipulate. This takes more time to learn, but it is sure worth your while in the long run if you want to dig deeper.</p>
 
@@ -815,197 +811,173 @@ data: {
   <id>http://miguelpaz.github.io/gh-pages-tutorial</id>
   <published>2016-05-27T00:00:00Z</published>
   <updated>2016-05-27T00:00:00Z</updated>
-  <content type="html"><![CDATA[ <p>This is a tutorial about how to use your online interface to publish a project in <a href="https://pages.github.com/">GitHub Pages</a>, GitHub&rsquo;s
+  <content type="html"><![CDATA[ <p>This is a tutorial about how to use your online interface to publish a project in <a href="https://pages.github.com/">GitHub Pages</a>, GitHub’s
 website builder, directly from your code repository.</p>
 
-<p>The process is neither obvious nor intuitive, but rather simple - and in this case we won&rsquo;t resort to Git, command line or other more
+<p>The process is neither obvious nor intuitive, but rather simple - and in this case we won’t resort to Git, command line or other more
 advanced resources programmers generally use to be faster and collaborate on the same repo, but that could be more difficult to learn
 at first.</p>
 
 <p>GH-Pages is a good way for you to easly upload your website or project for free, without using any CMS.</p>
 
-<p><br></p>
+<p><br /></p>
 
 <hr />
-
-<p><br></p>
-
-<ul>
-<li>First, open an account in <a href="http://github.com">no GitHub</a>, if you don&rsquo;t have one. It is free and fast.
+<p><br /></p>
 
 <ul>
-<li>Don&rsquo;t forget to confirm this account - you will get an email asking you to do so.</li>
+  <li>First, open an account in <a href="http://github.com">no GitHub</a>, if you don’t have one. It is free and fast.
+    <ul>
+      <li>Don’t forget to confirm this account - you will get an email asking you to do so.</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
-
 
 <p><img src="https://c1.staticflickr.com/1/719/22346475599_db39a9422d_z.jpg" alt="Follow the red arrows!" /></p>
 
 <ul>
-<li>After this step, access your main GitHub webpage, where you will be able to create repositories, files and sites</li>
+  <li>After this step, access your main GitHub webpage, where you will be able to create repositories, files and sites</li>
 </ul>
-
 
 <p><img src="https://c1.staticflickr.com/1/607/22544467521_46c261e0cd_z.jpg" alt="It will look like this" /></p>
 
 <ul>
-<li>Now, you should create a new repository, by clicking in <code>New Repository</code>.</li>
+  <li>Now, you should create a new repository, by clicking in <code>New Repository</code>.</li>
 </ul>
-
 
 <p><img src="https://c2.staticflickr.com/6/5636/22507327496_b147043129_o.png" alt="Not that hard!" /></p>
 
 <ul>
-<li>Give a name to your repository. Inicially, right now it can be just /<code>test</code>
-
-<ul>
-<li>Give it a brief description to your project. Something like: <code>this is a test, please don't mind this trial!</code>.</li>
-<li>A description is optional but it is useful and adds a good practice touch even to a test</li>
-</ul>
-</li>
-<li>Make sure to select the field <code>Initialize this repository with a README</code>.
-
-<ul>
-<li><strong>This is particularly important</strong>, because if you don&rsquo;t, GitHub will assume you are initializing and
+  <li>Give a name to your repository. Inicially, right now it can be just /<code>test</code>
+    <ul>
+      <li>Give it a brief description to your project. Something like: <code>this is a test, please don't mind this trial!</code>.</li>
+      <li>A description is optional but it is useful and adds a good practice touch even to a test</li>
+    </ul>
+  </li>
+  <li>Make sure to select the field <code>Initialize this repository with a README</code>.
+    <ul>
+      <li><strong>This is particularly important</strong>, because if you don’t, GitHub will assume you are initializing and
 organizing your repo through a different process, and you will not be able to populate your project just yet.
 It is easier to just check it.</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
-
 
 <p><img src="https://c2.staticflickr.com/6/5655/22345977598_c7a2a5f6c3_z.jpg" alt="Life-saving arrows" /></p>
 
 <ul>
-<li>The repo page must appear exactly as shown in the image below
-
-<ul>
-<li>Of course, note for any difference in title, content etc, but otherwhise should be the same</li>
+  <li>The repo page must appear exactly as shown in the image below
+    <ul>
+      <li>Of course, note for any difference in title, content etc, but otherwhise should be the same</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
-
 
 <p><img src="https://c2.staticflickr.com/6/5739/22345360900_9b698a4ffa_z.jpg" alt="" /></p>
 
 <ul>
-<li>Now that you are in the repo page, this is where you will add your codes.
-
-<ul>
-<li>If you have HTML and CSS ready, great!. If not, feel free to use <a href="https://github.com/voltdatalab/template-courses">this one as an example</a></li>
+  <li>Now that you are in the repo page, this is where you will add your codes.
+    <ul>
+      <li>If you have HTML and CSS ready, great!. If not, feel free to use <a href="https://github.com/voltdatalab/template-courses">this one as an example</a></li>
+    </ul>
+  </li>
+  <li>What you will do next is upload the codes, using either <code>CTRL+C + CTRL+V</code> or the <code>upload files</code> button</li>
+  <li>Add a description to your project if you haven’t done so, but ignore - for the time being - the field website.</li>
 </ul>
-</li>
-<li>What you will do next is upload the codes, using either <code>CTRL+C + CTRL+V</code> or the <code>upload files</code> button</li>
-<li>Add a description to your project if you haven&rsquo;t done so, but ignore - for the time being - the field website.</li>
-</ul>
-
 
 <p><img src="https://c1.staticflickr.com/1/690/22519805902_c437a365f6_z.jpg" alt="Ignore the website field" /></p>
 
 <ul>
-<li>If you want to copy and paste your code, click in <code>create a new file</code> button</li>
-<li>If you want to upload files, like <code>.html</code> and <code>.css</code>, click <code>upload files</code></li>
+  <li>If you want to copy and paste your code, click in <code>create a new file</code> button</li>
+  <li>If you want to upload files, like <code>.html</code> and <code>.css</code>, click <code>upload files</code></li>
 </ul>
-
 
 <p><img src="https://c1.staticflickr.com/1/590/22533313525_b7fc3c1a3d_o.png" alt="" /></p>
 
 <ul>
-<li>In this example, I will proceed with the more arcaic approach: copying and pasting
-
-<ul>
-<li>Keep in mind that this is just a very simple, easy to implement approach, and its worth doing it to see how GitHub works</li>
-<li>We will talk about the <a href="https://desktop.github.com/">desktop client</a> later</li>
-</ul>
-</li>
-<li>If you copy and paste, add a name to your initial HMTL file. In this case, as this will be your initial page
+  <li>In this example, I will proceed with the more arcaic approach: copying and pasting
+    <ul>
+      <li>Keep in mind that this is just a very simple, easy to implement approach, and its worth doing it to see how GitHub works</li>
+      <li>We will talk about the <a href="https://desktop.github.com/">desktop client</a> later</li>
+    </ul>
+  </li>
+  <li>If you copy and paste, add a name to your initial HMTL file. In this case, as this will be your initial page
 (the only one for the time being in the repo), the name <strong>must be</strong> <code>index.html</code></li>
-<li>Paste the HTML in the field below <code>Edit New File</code></li>
+  <li>Paste the HTML in the field below <code>Edit New File</code></li>
 </ul>
-
 
 <p><img src="https://c2.staticflickr.com/6/5768/22507327876_fc823a3103_o.png" alt="Main file is &lt;em&gt;index.html&lt;/em&gt;" /></p>
 
 <ul>
-<li>Scroll down and give a description to your additions/changes if you want, and click the <code>Commit</code> button.</li>
-<li>In this case, <code>Commit</code> would work like, roughly speaking, the <code>Publishing</code> button in a CMS</li>
-<li>Don&rsquo;t worry just yet with the option <code>Create a new branch</code>, it is used when you are making a separate branch in your repo,
+  <li>Scroll down and give a description to your additions/changes if you want, and click the <code>Commit</code> button.</li>
+  <li>In this case, <code>Commit</code> would work like, roughly speaking, the <code>Publishing</code> button in a CMS</li>
+  <li>Don’t worry just yet with the option <code>Create a new branch</code>, it is used when you are making a separate branch in your repo,
 which its not our case right now</li>
 </ul>
-
 
 <p><img src="https://c2.staticflickr.com/6/5677/22507327956_9550904276_b.jpg" alt="" /></p>
 
 <ul>
-<li>Now we have a published file in our repo. Note that no webpage is yet <em>live</em> - what we just did was uploading a file that
+  <li>Now we have a published file in our repo. Note that no webpage is yet <em>live</em> - what we just did was uploading a file that
 will be published</li>
-<li>We put our HTML out there, the basic structure. Now, we need to add the styles, the CSS
-
-<ul>
-<li>Do the same process you did before, if you haven&rsquo;t uploaded both at the same time</li>
+  <li>We put our HTML out there, the basic structure. Now, we need to add the styles, the CSS
+    <ul>
+      <li>Do the same process you did before, if you haven’t uploaded both at the same time</li>
+    </ul>
+  </li>
+  <li>IMPORTANT NOTE: remember to add, in the <code>&lt;head&gt;</code> tags of your HTML file, the link for the CSS, like this generic example:
+<code>&lt;link rel="stylesheet" href="home.css" type="text/css" charset="utf-8"&gt;</code>
+    <ul>
+      <li>If you don’t remember how to do it, use the code above and just change the <code>href=“#"</code> value to link to your CSS.</li>
+      <li>If you CSS is in the same folder as the HTML, just add <code>NAME OF CSS.css</code> to the <code>href</code>. If it is in a folder, add <code>FOLDER NAME/NAME OF CSS.css</code></li>
+    </ul>
+  </li>
+  <li>If you are done with all the steps, we are almost there</li>
+  <li>Go to the main page of your repository, where are your HTML and CSS files</li>
+  <li>Just above the files, on the left side, there is a small box that says <code>Branch: master</code></li>
+  <li>We will click on it and, in the text field, we will write <code>gh-pages</code></li>
+  <li>Then <code>Create Branch: gh-pages</code>
+    <ul>
+      <li>This is how GitHub will understand that you will want a proper published page, not just the files in a repo</li>
+      <li>Again, the main page will be <code>index.html</code>.</li>
+    </ul>
+  </li>
 </ul>
-</li>
-<li><p>IMPORTANT NOTE: remember to add, in the <code>&lt;head&gt;</code> tags of your HTML file, the link for the CSS, like this generic example:
-<code>&lt;link rel="stylesheet" href="home.css" type="text/css" charset="utf-8"&gt;</code></p>
-
-<ul>
-<li>If you don&rsquo;t remember how to do it, use the code above and just change the <code>href=“#"</code> value to link to your CSS.</li>
-<li>If you CSS is in the same folder as the HTML, just add <code>NAME OF CSS.css</code> to the <code>href</code>. If it is in a folder, add <code>FOLDER NAME/NAME OF CSS.css</code></li>
-</ul>
-</li>
-<li><p>If you are done with all the steps, we are almost there</p></li>
-<li>Go to the main page of your repository, where are your HTML and CSS files</li>
-<li>Just above the files, on the left side, there is a small box that says <code>Branch: master</code></li>
-<li>We will click on it and, in the text field, we will write <code>gh-pages</code></li>
-<li>Then <code>Create Branch: gh-pages</code>
-
-<ul>
-<li>This is how GitHub will understand that you will want a proper published page, not just the files in a repo</li>
-<li>Again, the main page will be <code>index.html</code>.</li>
-</ul>
-</li>
-</ul>
-
 
 <p><img src="https://c2.staticflickr.com/6/5720/22519803312_2c0f356197_o.png" alt="Important" /></p>
 
 <ul>
-<li>We are almost done</li>
-<li>You page is practically published</li>
-<li>In that field we ignored at first - <code>Edit -&gt; Website</code> - we will add another thing, not so obvious but pretty simple</li>
-<li>As GitHub uses its domain github.com for repositories, it redirects all GH-Pages sites to another domain, ending in <code>github.io</code></li>
-<li>In the field <code>Website</code>, add this: <code>http://NAME OF YOUR REPOSITORY.github.io/**NAME OF THE PROJECT</code></li>
-<li>Don&rsquo;t forget the <code>http://</code> prefix</li>
+  <li>We are almost done</li>
+  <li>You page is practically published</li>
+  <li>In that field we ignored at first - <code>Edit -&gt; Website</code> - we will add another thing, not so obvious but pretty simple</li>
+  <li>As GitHub uses its domain github.com for repositories, it redirects all GH-Pages sites to another domain, ending in <code>github.io</code></li>
+  <li>In the field <code>Website</code>, add this: <code>http://NAME OF YOUR REPOSITORY.github.io/**NAME OF THE PROJECT</code></li>
+  <li>Don’t forget the <code>http://</code> prefix</li>
 </ul>
-
 
 <p><img src="https://c1.staticflickr.com/1/658/22519803402_5213812875_b.jpg" alt="Yeah!" /></p>
 
 <ul>
-<li><p>Your project will be live in the URL you just added - click on it to see</p>
-
-<ul>
-<li>Sometimes GitHub will take up to 30 seconds to recognize changes, so be patient</li>
+  <li>Your project will be live in the URL you just added - click on it to see
+    <ul>
+      <li>Sometimes GitHub will take up to 30 seconds to recognize changes, so be patient</li>
+    </ul>
+  </li>
+  <li>One last thing: now that you have to branches in the same repo, <code>master</code> and <code>gh-pages</code>, you need to prioritize <code>gh-pages</code>
+    <ul>
+      <li>If you do changes in <code>master</code>, you webpage won’t recognize it, because it is in a different branch</li>
+    </ul>
+  </li>
+  <li>To make <code>gh-pages</code> you standard for this repo, go to `Settings_ &gt; <em>Branches</em> &gt; <em>Select gh-pages in the box</em> &gt; <em>Update</em></li>
+  <li>If you want, you can now erase the <code>master</code> branch in the <code>branches</code> tab back in your repo.
+    <ul>
+      <li>This won’t affect your page</li>
+    </ul>
+  </li>
 </ul>
-</li>
-<li><p>One last thing: now that you have to branches in the same repo, <code>master</code> and <code>gh-pages</code>, you need to prioritize <code>gh-pages</code></p>
-
-<ul>
-<li>If you do changes in <code>master</code>, you webpage won&rsquo;t recognize it, because it is in a different branch</li>
-</ul>
-</li>
-<li><p>To make <code>gh-pages</code> you standard for this repo, go to `Settings<em> > </em>Branches<em> > </em>Select gh-pages in the box<em> > </em>Update_</p></li>
-<li>If you want, you can now erase the <code>master</code> branch in the <code>branches</code> tab back in your repo.
-
-<ul>
-<li>This won&rsquo;t affect your page</li>
-</ul>
-</li>
-</ul>
-
 
 <p><img src="https://c1.staticflickr.com/1/733/21910569724_eb3275bddf_b.jpg" alt="" /></p>
+
  ]]></content>
 </entry>
 
