@@ -12,7 +12,7 @@ safe: true
 
 # edit here to achieve your personal greatness
 url: http://miguelpaz.github.io
-baseurl: ""
+baseurl: 
 title: Miguel Paz
 author: Miguel Paz
 description: Courses, tools, tutorial, classes, events and other stuff
