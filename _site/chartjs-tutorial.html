@@ -50,7 +50,7 @@
     <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+      <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
     </div>
     <div id="navbar">
       <ul class="nav navbar-nav navbar-right">
@@ -61,6 +61,7 @@
     </div>
   </div>
 </nav>
+
 
     <div class="container">
 	<div class="blog-post">
@@ -88,7 +89,7 @@
 
 <p>It is a little bit more complex than Morris, but it has a few competitive advantages. First, it is built by several people, so it is regularly updated. There are more chart types and is built to be responsive in mobile right from the start. Beyond all that, for the data geeks, it also offers logarithmic or even entirely custom scales with ease. Not being enough, ChartJS is very lightweight (~31kB).</p>
 
-<p>One disadvantage is that the json data must have some specific properties that it understands, like <code>labels</code> and <code>data</code>, so you have to adapt all your dataset. Because of this, however, the tool allows advanced users to perform more customizations.</p>
+<p>One disadvantage is that the json data must have some specific properties that it understands, like <code class="highlighter-rouge">labels</code> and <code class="highlighter-rouge">data</code>, so you have to adapt all your dataset. Because of this, however, the tool allows advanced users to perform more customizations.</p>
 
 <p>In this tutorial, you will need to access:</p>
 
@@ -105,53 +106,56 @@
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
-<p>Open another tab in your browser and go to the <a href="https://cdnjs.com/libraries/Chart.js">ChartJS CDN page</a>. Copy and paste the one line of code - <code>&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;</code> -  in the <code>&lt;head&gt;</code> of your [document][you can also put it in the <code>&lt;body&gt;</code> tag, but it loads first if it is in the <code>&lt;head&gt;</code>].</p>
+<p>Open another tab in your browser and go to the <a href="https://cdnjs.com/libraries/Chart.js">ChartJS CDN page</a>. Copy and paste the one line of code - <code class="highlighter-rouge">&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;</code> -  in the <code class="highlighter-rouge">&lt;head&gt;</code> of your [document][you can also put it in the <code class="highlighter-rouge">&lt;body&gt;</code> tag, but it loads first if it is in the <code class="highlighter-rouge">&lt;head&gt;</code>].</p>
 
 <p>Your code will look like this:</p>
 
-<pre><code>	&lt;!DOCTYPE html&gt;
-	&lt;html&gt;
-	&lt;head&gt;
-	  &lt;meta charset="utf-8"&gt;
-	  &lt;meta name="viewport" content="width=device-width"&gt;
-	  &lt;title&gt;This is a bar chart with ChartJS&lt;/title&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="cp">&lt;!DOCTYPE html&gt;</span>
+	<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;head&gt;</span>
+	  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;title&gt;</span>This is a bar chart with ChartJS<span class="nt">&lt;/title&gt;</span>
 
-	  &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
+	  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-	&lt;/head&gt;
-	&lt;body&gt;
+	<span class="nt">&lt;/head&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
 
-	  &lt;canvas id="myChart" width="400" height="300"&gt;&lt;/canvas&gt;
+	  <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"myChart"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"300"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
 
 
-	&lt;/body&gt;
-	&lt;/html&gt;
+	<span class="nt">&lt;/body&gt;</span>
+	<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+</div>
 
-<p>Now that we have the main library loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
+<p>Now that we have the main library loaded the <code class="highlighter-rouge">&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code class="highlighter-rouge">&lt;body&gt;</code> tag.</p>
 
-<p>Instead of a <code>&lt;div&gt;</code>, ChartJS uses the <code>&lt;canvas&gt;</code> tag.</p>
+<p>Instead of a <code class="highlighter-rouge">&lt;div&gt;</code>, ChartJS uses the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag.</p>
 
-<p>Add the following code inside the <code>&lt;body&gt;</code> tag:</p>
+<p>Add the following code inside the <code class="highlighter-rouge">&lt;body&gt;</code> tag:</p>
 
-<pre><code>  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
 </code></pre>
+</div>
 
 <p>This will actually call (make appear) the chart once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
 ___</p>
 
 <h2 id="adding-the-javascript">Adding the javascript</h2>
 
-<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code>&lt;head&gt;</code> earlier.</p>
+<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code class="highlighter-rouge">&lt;head&gt;</code> earlier.</p>
 
 <p>ChartJS’ way of “calling” the line chart is fairly simple. Just:</p>
 
-<pre><code>var ctx = document.getElementById("myChart");
+<div class="highlighter-rouge"><pre class="highlight"><code>var ctx = document.getElementById("myChart");
 </code></pre>
+</div>
 
 <p>Now, we have to add the variable that will bind the data and allow us to customize it. We will use dummy data now. Go ahead and add the following code into the javascript:</p>
 
-<pre><code>	var myChart = new Chart(ctx, {
+<div class="highlighter-rouge"><pre class="highlight"><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -162,6 +166,7 @@ data: {
 },
 });
 </code></pre>
+</div>
 
 <p>You will now be able to see a small chart some bars.</p>
 
@@ -175,9 +180,9 @@ data: {
 
 <p>Lets use as example this <a href="https://github.com/miguelpaz/jlab/blob/master/data/chartjs_example_data_short.json">simple dataset</a>, which show us the 2014 per capita GDP of seven countries.</p>
 
-<p>Copy and past the text after the <code>dataset:</code> in your javascript. It will result in something like this:</p>
+<p>Copy and past the text after the <code class="highlighter-rouge">dataset:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>	data: {
+<div class="highlighter-rouge"><pre class="highlight"><code>	data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
     datasets: [
 					  {
@@ -187,15 +192,16 @@ data: {
 					  ]
 					    },
 </code></pre>
+</div>
 
 <p>The bar chart will immediately appear in your screen with ChartJS default looks. It is also interactive.</p>
 
 <p>There are some things to understand here so you can work with other data afterwards. In this case:</p>
 
 <ul>
-  <li>The X axis is defined by the <code>labels</code> array;</li>
-  <li>The Y axis is plotted by the <code>data</code> field inside the <code>dataset</code> array;</li>
-  <li>The actual legend/unit is defined by the <code>label</code> inside the <code>dataset</code> array;</li>
+  <li>The X axis is defined by the <code class="highlighter-rouge">labels</code> array;</li>
+  <li>The Y axis is plotted by the <code class="highlighter-rouge">data</code> field inside the <code class="highlighter-rouge">dataset</code> array;</li>
+  <li>The actual legend/unit is defined by the <code class="highlighter-rouge">label</code> inside the <code class="highlighter-rouge">dataset</code> array;</li>
 </ul>
 
 <p>The new plotted chart will look like this:</p>
@@ -212,9 +218,9 @@ data: {
 
 <p>Lets start with by coloring our chart, especially the bars.</p>
 
-<p>This more basic color configuration is applied, generally, within the <code>dataset</code> array. See the code below.</p>
+<p>This more basic color configuration is applied, generally, within the <code class="highlighter-rouge">dataset</code> array. See the code below.</p>
 
-<pre><code>	datasets: [
+<div class="highlighter-rouge"><pre class="highlight"><code>	datasets: [
 				  {
 	            label: "GDP per capita",
 	            backgroundColor: "",
@@ -225,16 +231,17 @@ data: {
 	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
 	            }
 </code></pre>
+</div>
 
 <ul>
-  <li>Lets apply the color red <code>#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
-  <li>To have some clear delimitation of the bar area, lets add a solid red <code>#c00</code> border, of 2px;</li>
-  <li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code>#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
+  <li>Lets apply the color red <code class="highlighter-rouge">#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
+  <li>To have some clear delimitation of the bar area, lets add a solid red <code class="highlighter-rouge">#c00</code> border, of 2px;</li>
+  <li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code class="highlighter-rouge">#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
 </ul>
 
 <p>So far out code looks like this:</p>
 
-<pre><code>	var myChart = new Chart(ctx, {
+<div class="highlighter-rouge"><pre class="highlight"><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
@@ -250,6 +257,7 @@ data: {
 	  ]
 	  }
 </code></pre>
+</div>
 
 <p>The result for now is this:</p>
 
@@ -259,13 +267,13 @@ data: {
 
 <h3 id="customization">Customization</h3>
 
-<p>After you input your data and added the basic color visuals, there are plenty of more things you could do. But first, you have to add the <code>options</code> config. <a href="http://www.chartjs.org/docs/#getting-started-global-chart-configuration">You can check all the ChartJS options here</a>.</p>
+<p>After you input your data and added the basic color visuals, there are plenty of more things you could do. But first, you have to add the <code class="highlighter-rouge">options</code> config. <a href="http://www.chartjs.org/docs/#getting-started-global-chart-configuration">You can check all the ChartJS options here</a>.</p>
 
-<p>After the end of your data, when you closed it with a comma, lets add this small line of code <code>options: {}</code>.</p>
+<p>After the end of your data, when you closed it with a comma, lets add this small line of code <code class="highlighter-rouge">options: {}</code>.</p>
 
 <p>You code will look like this:</p>
 
-<pre><code>  var ctx = document.getElementById("myChart").getContext("2d");
+<div class="highlighter-rouge"><pre class="highlight"><code>  var ctx = document.getElementById("myChart").getContext("2d");
 
 
 	var myChart = new Chart(ctx, {
@@ -287,6 +295,7 @@ data: {
 								}
 	});
 </code></pre>
+</div>
 
 <p>Now, we are ready to add some other customizations here, like fonts, grids and other cool stuff.</p>
 
@@ -294,34 +303,34 @@ data: {
 <p>##### Interlude to get a font
 Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice typography. We will use <a href="https://www.google.com/fonts#QuickUsePlace:quickUse"><em>Roboto</em></a> - make sure you select the light (400) and bold (700) types of font (for body and header).</p>
 
-<p>If you want Roboto, copy and paste this link into the <code>&lt;head&gt;</code> of your HTML: <code>&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
+<p>If you want Roboto, copy and paste this link into the <code class="highlighter-rouge">&lt;head&gt;</code> of your HTML: <code class="highlighter-rouge">&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
 
 <hr />
 
-<p>Lets add some smooth animation right out of the box, so your chart get even more atention. Lets add a 3 seconds (or 3,000 milliseconds) animation: <code>animation: {duration: 3000},</code></p>
+<p>Lets add some smooth animation right out of the box, so your chart get even more atention. Lets add a 3 seconds (or 3,000 milliseconds) animation: <code class="highlighter-rouge">animation: {duration: 3000},</code></p>
 
-<p>Now, lets configure the <code>scale</code>, where the better part of certain charts is. First, the <code>yAxes: [ { } ]</code>. Inside it, simply add one <code>display: true</code> - nothing happens, but you will see later why we did it.</p>
+<p>Now, lets configure the <code class="highlighter-rouge">scale</code>, where the better part of certain charts is. First, the <code class="highlighter-rouge">yAxes: [ { } ]</code>. Inside it, simply add one <code class="highlighter-rouge">display: true</code> - nothing happens, but you will see later why we did it.</p>
 
-<p>Now, still inside the <code>yAxes</code>, add the <code>ticks: {}</code>, followed by the following configs:</p>
+<p>Now, still inside the <code class="highlighter-rouge">yAxes</code>, add the <code class="highlighter-rouge">ticks: {}</code>, followed by the following configs:</p>
 
 <ul>
-  <li><code>beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
-  <li><code>fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code>&lt;head&gt;</code>;</li>
-  <li><code>fontSize: 14,</code> - in pixels;</li>
-  <li><code>fontColor: '#ababab',</code> - make it gray;</li>
+  <li><code class="highlighter-rouge">beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
+  <li><code class="highlighter-rouge">fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code class="highlighter-rouge">&lt;head&gt;</code>;</li>
+  <li><code class="highlighter-rouge">fontSize: 14,</code> - in pixels;</li>
+  <li><code class="highlighter-rouge">fontColor: '#ababab',</code> - make it gray;</li>
 </ul>
 
 <p>As you can see, the Y axis numbers are not the best to show the data, without the commas. There are plenty of ways to use javascript to manipulate that number. We will make something easy, almost prosaic - trick the code to show the same number, but differently.</p>
 
-<p>Lets add a javascript <code>function</code> to do that, using the <code>callback</code> option:</p>
+<p>Lets add a javascript <code class="highlighter-rouge">function</code> to do that, using the <code class="highlighter-rouge">callback</code> option:</p>
 
-<p><code>callback: function(value) { return value/1000 + ',000' + '$'; },</code></p>
+<p><code class="highlighter-rouge">callback: function(value) { return value/1000 + ',000' + '$'; },</code></p>
 
 <p>What we did here was to divide the original format by 1,000 and then add the zeroes again with a comma, plus the dollar sign. This happens because you cannot input comma in a data that is separated by another comma, as the code will read a different number - for instance: 10,000 would read 10 and 000, not 10000. Now it looks better.</p>
 
-<p>Your <code>yAxes</code> code should be the following:</p>
+<p>Your <code class="highlighter-rouge">yAxes</code> code should be the following:</p>
 
-<pre><code>		yAxes: [{
+<div class="highlighter-rouge"><pre class="highlight"><code>		yAxes: [{
 			  display: true,                
 			  ticks: {
 				beginAtZero: true,
@@ -332,12 +341,13 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 				},
 		    }],
 </code></pre>
+</div>
 
-<p>Let’s do basically the same thing with the <code>xAxes</code>, but this time, lets make our chart cleaner. Assign <code>gridLines: {display: false},</code> to hide the vertical gridlines.</p>
+<p>Let’s do basically the same thing with the <code class="highlighter-rouge">xAxes</code>, but this time, lets make our chart cleaner. Assign <code class="highlighter-rouge">gridLines: {display: false},</code> to hide the vertical gridlines.</p>
 
 <p>This is the code:</p>
 
-<pre><code>		xAxes: [{
+<div class="highlighter-rouge"><pre class="highlight"><code>		xAxes: [{
 		    gridLines: {
 		    display: false
 				},
@@ -347,12 +357,13 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 				},     
 	      }],
 </code></pre>
+</div>
 
-<p>Before we finish, lets make sure our chart is responsive, by adding <code>responsive: true,</code> before closing the <code>options</code> config.</p>
+<p>Before we finish, lets make sure our chart is responsive, by adding <code class="highlighter-rouge">responsive: true,</code> before closing the <code class="highlighter-rouge">options</code> config.</p>
 
-<p>Finally, lets credit the data in the HTML, after the <code>&lt;canvas&gt;</code> tag. Add the source: <code>&lt;h5&gt;Source: World Bank&lt;/h5&gt;</code>, as well as some basic CSS, to make it look better.</p>
+<p>Finally, lets credit the data in the HTML, after the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag. Add the source: <code class="highlighter-rouge">&lt;h5&gt;Source: World Bank&lt;/h5&gt;</code>, as well as some basic CSS, to make it look better.</p>
 
-<pre><code>	body {
+<div class="highlighter-rouge"><pre class="highlight"><code>	body {
 	  padding: 0px 20px 10px 30px;
 	  font-family: 'Roboto', sans-serif;
 	}
@@ -367,6 +378,7 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 	  font-weight: 400;
 	}
 </code></pre>
+</div>
 
 <h3 id="result">Result</h3>
 

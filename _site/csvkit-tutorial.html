@@ -50,7 +50,7 @@
     <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+      <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
     </div>
     <div id="navbar">
       <ul class="nav navbar-nav navbar-right">
@@ -61,6 +61,7 @@
     </div>
   </div>
 </nav>
+
 
     <div class="container">
 	<div class="blog-post">
@@ -84,7 +85,7 @@
 			<div class="blogpost">
 			  <p>CSVKit is a nice tool to manipulate, organize, analyze and work with data, using the comma-separated values (csv) format. It is very light and fast. It is built in the Python programming language.</p>
 
-<p>To access it, you will need to use the <code>command line</code>. Open the Terminal  in Mac OSX or Command Prompt in Windows for that.</p>
+<p>To access it, you will need to use the <code class="highlighter-rouge">command line</code>. Open the Terminal  in Mac OSX or Command Prompt in Windows for that.</p>
 
 <p>This tutorial is simple and explanatory, and it is based on the great documentation in the <a href="https://csvkit.readthedocs.io/en/540/tutorial.html">CSVKit tutorial page</a>, which has a lot more things, many of which you might not use right away.</p>
 
@@ -94,19 +95,19 @@
 
 <p>You will need to have the most recent release of Python in your computer. <a href="https://www.python.org/downloads/">Download it here</a>.</p>
 
-<p>A lot of people like to use <code>pip</code> to <a href="https://www.python.org/downloads/">install stuff</a> in their computers, which comes with the Python package. Journalist and coder Amanda Bee has <a href="https://github.com/amandabee/CUNY-data-storytelling/wiki/Tutorial:-Installing-CSVKit">wrote about installing CSVKit</a> in her CUNY data storytelling class, for Mac (OSX) users. The bullets are from her:</p>
+<p>A lot of people like to use <code class="highlighter-rouge">pip</code> to <a href="https://www.python.org/downloads/">install stuff</a> in their computers, which comes with the Python package. Journalist and coder Amanda Bee has <a href="https://github.com/amandabee/CUNY-data-storytelling/wiki/Tutorial:-Installing-CSVKit">wrote about installing CSVKit</a> in her CUNY data storytelling class, for Mac (OSX) users. The bullets are from her:</p>
 
 <ul>
-  <li>Use sudo <code>easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you’ll never touch the terminal again after this semester, this is your best route.</li>
-  <li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code>pip install csvkit</code> at the command line. If you get an error that suggests you don’t have permission to install it, try <code>sudo pip install csvkit to install</code> with root privileges. Try <code>man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
+  <li>Use sudo <code class="highlighter-rouge">easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you’ll never touch the terminal again after this semester, this is your best route.</li>
+  <li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code class="highlighter-rouge">pip install csvkit</code> at the command line. If you get an error that suggests you don’t have permission to install it, try <code class="highlighter-rouge">sudo pip install csvkit to install</code> with root privileges. Try <code class="highlighter-rouge">man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
   <li>Alternatively, you can install pip with easy_install (using sudo easy_install pip) and then install CSVkit with sudo pip install csvkit. Choosing this option won’t mean you can’t install Homebrew later.</li>
 </ul>
 
-<p>For Windows users as well, <code>pip</code> is already installed if you’re using Python 2 &gt;=2.7.9 or Python 3 &gt;=3.4 downloaded from <a href="python.org">Python.org</a>, but you’ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
+<p>For Windows users as well, <code class="highlighter-rouge">pip</code> is already installed if you’re using Python 2 &gt;=2.7.9 or Python 3 &gt;=3.4 downloaded from <a href="python.org">Python.org</a>, but you’ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
 
 <p>Here is the message when your are done:</p>
 
-<pre><code>		Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
+<div class="highlighter-rouge"><pre class="highlight"><code>		Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
 	  Running setup.py install for xlrd ... done
 	  Running setup.py install for sqlalchemy ... done
 	  Found existing installation: openpyxl 2.2.0
@@ -120,6 +121,7 @@
 	  Running setup.py install for csvkit ... done
 	Successfully installed csvkit-0.9.1 dbf-0.94.3 openpyxl-2.2.0b1 six-1.10.0 sqlalchemy-1.0.13 xlrd-0.9.4
 </code></pre>
+</div>
 
 <p>—</p>
 
@@ -127,37 +129,41 @@
 
 <p>After you are done installing it, now it is time to use it!</p>
 
-<p>First, lets create a new directory to store the data you will be working with. I recommend calling it <code>csvkit_data</code>.</p>
+<p>First, lets create a new directory to store the data you will be working with. I recommend calling it <code class="highlighter-rouge">csvkit_data</code>.</p>
 
 <p>So run this in the command line:</p>
 
-<pre><code>		mkdir csvkit_data
+<div class="highlighter-rouge"><pre class="highlight"><code>		mkdir csvkit_data
 </code></pre>
+</div>
 
 <p>Now, go to that directory:</p>
 
-<pre><code>		cd csvkit_data
+<div class="highlighter-rouge"><pre class="highlight"><code>		cd csvkit_data
 </code></pre>
+</div>
 
 <p>And then, lets fetch some data to use, analyze, manipulate and play with. We prepared some data for you (csv format) about the GDP per capita all over the work, according to the IMF database. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv">Access the data here:</a></p>
 
 <p>Now lets load it to that directory:</p>
 
-<pre><code>		curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>		curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
 </code></pre>
+</div>
 
-<p>Finally, lets take a look at the data with the command <code>csvlook</code>, to see what we will analyze.</p>
+<p>Finally, lets take a look at the data with the command <code class="highlighter-rouge">csvlook</code>, to see what we will analyze.</p>
 
-<pre><code>		csvlook csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>		csvlook csvkit_example_data.csv
 </code></pre>
+</div>
 
 <p>The data will look messy, and it is way visually better to see it in an Excel or Google Sheets, but this is just to have a general outlook, not to really read it.</p>
 
-<p>Another command you may use is <code>csvcut</code>, which lets you see and cut the columns of you data files.</p>
+<p>Another command you may use is <code class="highlighter-rouge">csvcut</code>, which lets you see and cut the columns of you data files.</p>
 
 <p>Lets look at the column headers, to see what we will need. Run:</p>
 
-<pre><code>		csvcut -n csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>		csvcut -n csvkit_example_data.csv
 		  1: country
 		  2: 2001
 		  3: 2002
@@ -174,15 +180,17 @@
 		 14: 2013
 		 15: 2014
 </code></pre>
+</div>
 
 <p>So now you see that the GDP data is organized with one columns with the country names, and the rest with the years, while the respective rows will carry the information.</p>
 
 <p>Lets say there is too much data, and you only want to know how was the GDP per capita in those countries during the 2008/2009 financial crisis, and a couple of years later just to see how the wealth grew.</p>
 
-<p>For that, lets use the <code>csvcut</code> again.</p>
+<p>For that, lets use the <code class="highlighter-rouge">csvcut</code> again.</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv
 </code></pre>
+</div>
 
 <p><em>If you are using non-numbered columns, you might as well just write their names instead of the assigned numbers</em></p>
 
@@ -195,23 +203,25 @@
   </tbody>
 </table>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
 </code></pre>
+</div>
 
 <hr />
 
 <h2 id="playing-with-the-numbers">Playing with the numbers</h2>
 
-<p>CSVKit has a command called <code>csvstat</code>, which basically lets you to get a succinct analysis out of your data, before you can really dig into it you want.</p>
+<p>CSVKit has a command called <code class="highlighter-rouge">csvstat</code>, which basically lets you to get a succinct analysis out of your data, before you can really dig into it you want.</p>
 
 <p>It gives you the minimum of a certain column, the maximum, the average, the median and even standard deviation.</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
 </code></pre>
+</div>
 
 <p>You will get something like this:</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
 			  1. country
 				&lt;type 'unicode'&gt;
 				Nulls: False
@@ -235,22 +245,25 @@
 					9999.1:	1
 					4342.8:	1
 </code></pre>
+</div>
 
 <p>You can see, for instance, that in 2009, after the financial crash, the median of the GDP per capital was lower than in 2008, but it grew back in 2010 and 2011.</p>
 
 <p>Another great function of this is to “query” the data to find what you want. Lets say you only need to look for the the numbers about Brazil.</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
 </code></pre>
+</div>
 
 <p>Please be advised that the query is case sensitive, <em>BRAZIL</em> or <em>brazil</em> won’t find anything.</p>
 
 <p>Now, in case you haven’t noticed, the csv is alphabetical order. If you want you want to sort it out differently, lets say in reverse, use the following code.</p>
 
-<pre><code>			 csvkit_example_data.csv | csvsort -c country  -r | csvlook  
+<div class="highlighter-rouge"><pre class="highlight"><code>			 csvkit_example_data.csv | csvsort -c country  -r | csvlook  
 </code></pre>
+</div>
 
-<p>The <code>-r</code> actually means <code>reverse</code>. If you want to know all the sorting functionalities, <a href="https://csvkit.readthedocs.io/en/540/scripts/csvsort.html">check this page</a>.</p>
+<p>The <code class="highlighter-rouge">-r</code> actually means <code class="highlighter-rouge">reverse</code>. If you want to know all the sorting functionalities, <a href="https://csvkit.readthedocs.io/en/540/scripts/csvsort.html">check this page</a>.</p>
 
 <hr />
 
@@ -259,13 +272,13 @@
 <p>You can convert data into Excel or to other formats as well with csvkit.</p>
 
 <p>Convert Excel to CSV:
-<code>in2csv data.xls &gt; data.csv</code></p>
+<code class="highlighter-rouge">in2csv data.xls &gt; data.csv</code></p>
 
 <p>Convert JSON to CSV:
-<code>in2csv data.json &gt; data.csv</code></p>
+<code class="highlighter-rouge">in2csv data.json &gt; data.csv</code></p>
 
 <p>Convert to JSON:
-<code>csvjson data.csv &gt; data.json</code></p>
+<code class="highlighter-rouge">csvjson data.csv &gt; data.json</code></p>
 
 			   <hr>
 			   <div class="related-posts">

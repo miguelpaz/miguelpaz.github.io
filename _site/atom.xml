@@ -6,7 +6,7 @@
   
   <link href="http://miguelpaz.github.io/"/>
   <id>http://miguelpaz.github.io/</id>
-  <updated>2016-06-02T17:55:55Z</updated>
+  <updated>2016-06-03T11:03:34Z</updated>
   <author>
     <name>Miguel Paz</name>
     <email>miguel.paz@journalism.cuny.edu</email>
@@ -21,7 +21,7 @@
   <updated>2016-06-01T00:00:00Z</updated>
   <content type="html"><![CDATA[ <p>CSVKit is a nice tool to manipulate, organize, analyze and work with data, using the comma-separated values (csv) format. It is very light and fast. It is built in the Python programming language.</p>
 
-<p>To access it, you will need to use the <code>command line</code>. Open the Terminal  in Mac OSX or Command Prompt in Windows for that.</p>
+<p>To access it, you will need to use the <code class="highlighter-rouge">command line</code>. Open the Terminal  in Mac OSX or Command Prompt in Windows for that.</p>
 
 <p>This tutorial is simple and explanatory, and it is based on the great documentation in the <a href="https://csvkit.readthedocs.io/en/540/tutorial.html">CSVKit tutorial page</a>, which has a lot more things, many of which you might not use right away.</p>
 
@@ -31,19 +31,19 @@
 
 <p>You will need to have the most recent release of Python in your computer. <a href="https://www.python.org/downloads/">Download it here</a>.</p>
 
-<p>A lot of people like to use <code>pip</code> to <a href="https://www.python.org/downloads/">install stuff</a> in their computers, which comes with the Python package. Journalist and coder Amanda Bee has <a href="https://github.com/amandabee/CUNY-data-storytelling/wiki/Tutorial:-Installing-CSVKit">wrote about installing CSVKit</a> in her CUNY data storytelling class, for Mac (OSX) users. The bullets are from her:</p>
+<p>A lot of people like to use <code class="highlighter-rouge">pip</code> to <a href="https://www.python.org/downloads/">install stuff</a> in their computers, which comes with the Python package. Journalist and coder Amanda Bee has <a href="https://github.com/amandabee/CUNY-data-storytelling/wiki/Tutorial:-Installing-CSVKit">wrote about installing CSVKit</a> in her CUNY data storytelling class, for Mac (OSX) users. The bullets are from her:</p>
 
 <ul>
-  <li>Use sudo <code>easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you’ll never touch the terminal again after this semester, this is your best route.</li>
-  <li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code>pip install csvkit</code> at the command line. If you get an error that suggests you don’t have permission to install it, try <code>sudo pip install csvkit to install</code> with root privileges. Try <code>man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
+  <li>Use sudo <code class="highlighter-rouge">easy_install</code> csvkit to install CSVkit. Then <a href="http://csvkit.readthedocs.org/">read a bit</a> about what it does. If you secretly think you’ll never touch the terminal again after this semester, this is your best route.</li>
+  <li>Install <a href="http://brew.sh/">Homebrew</a>. Then do <code class="highlighter-rouge">pip install csvkit</code> at the command line. If you get an error that suggests you don’t have permission to install it, try <code class="highlighter-rouge">sudo pip install csvkit to install</code> with root privileges. Try <code class="highlighter-rouge">man sudo</code> if you want to understand what the command does. If you want to explore more programming, this is probably your best option.</li>
   <li>Alternatively, you can install pip with easy_install (using sudo easy_install pip) and then install CSVkit with sudo pip install csvkit. Choosing this option won’t mean you can’t install Homebrew later.</li>
 </ul>
 
-<p>For Windows users as well, <code>pip</code> is already installed if you’re using Python 2 &gt;=2.7.9 or Python 3 &gt;=3.4 downloaded from <a href="python.org">Python.org</a>, but you’ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
+<p>For Windows users as well, <code class="highlighter-rouge">pip</code> is already installed if you’re using Python 2 &gt;=2.7.9 or Python 3 &gt;=3.4 downloaded from <a href="python.org">Python.org</a>, but you’ll need to <a href="https://pip.pypa.io/en/stable/installing/#upgrading-pip">upgrade pip</a>.</p>
 
 <p>Here is the message when your are done:</p>
 
-<pre><code>		Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
+<div class="highlighter-rouge"><pre class="highlight"><code>		Installing collected packages: xlrd, sqlalchemy, openpyxl, six, dbf, csvkit
 	  Running setup.py install for xlrd ... done
 	  Running setup.py install for sqlalchemy ... done
 	  Found existing installation: openpyxl 2.2.0
@@ -57,6 +57,7 @@
 	  Running setup.py install for csvkit ... done
 	Successfully installed csvkit-0.9.1 dbf-0.94.3 openpyxl-2.2.0b1 six-1.10.0 sqlalchemy-1.0.13 xlrd-0.9.4
 </code></pre>
+</div>
 
 <p>—</p>
 
@@ -64,37 +65,41 @@
 
 <p>After you are done installing it, now it is time to use it!</p>
 
-<p>First, lets create a new directory to store the data you will be working with. I recommend calling it <code>csvkit_data</code>.</p>
+<p>First, lets create a new directory to store the data you will be working with. I recommend calling it <code class="highlighter-rouge">csvkit_data</code>.</p>
 
 <p>So run this in the command line:</p>
 
-<pre><code>		mkdir csvkit_data
+<div class="highlighter-rouge"><pre class="highlight"><code>		mkdir csvkit_data
 </code></pre>
+</div>
 
 <p>Now, go to that directory:</p>
 
-<pre><code>		cd csvkit_data
+<div class="highlighter-rouge"><pre class="highlight"><code>		cd csvkit_data
 </code></pre>
+</div>
 
 <p>And then, lets fetch some data to use, analyze, manipulate and play with. We prepared some data for you (csv format) about the GDP per capita all over the work, according to the IMF database. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv">Access the data here:</a></p>
 
 <p>Now lets load it to that directory:</p>
 
-<pre><code>		curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>		curl -L -O https://raw.githubusercontent.com/miguelpaz/jlab/master/data/csvkit_example_data.csv
 </code></pre>
+</div>
 
-<p>Finally, lets take a look at the data with the command <code>csvlook</code>, to see what we will analyze.</p>
+<p>Finally, lets take a look at the data with the command <code class="highlighter-rouge">csvlook</code>, to see what we will analyze.</p>
 
-<pre><code>		csvlook csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>		csvlook csvkit_example_data.csv
 </code></pre>
+</div>
 
 <p>The data will look messy, and it is way visually better to see it in an Excel or Google Sheets, but this is just to have a general outlook, not to really read it.</p>
 
-<p>Another command you may use is <code>csvcut</code>, which lets you see and cut the columns of you data files.</p>
+<p>Another command you may use is <code class="highlighter-rouge">csvcut</code>, which lets you see and cut the columns of you data files.</p>
 
 <p>Lets look at the column headers, to see what we will need. Run:</p>
 
-<pre><code>		csvcut -n csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>		csvcut -n csvkit_example_data.csv
 		  1: country
 		  2: 2001
 		  3: 2002
@@ -111,15 +116,17 @@
 		 14: 2013
 		 15: 2014
 </code></pre>
+</div>
 
 <p>So now you see that the GDP data is organized with one columns with the country names, and the rest with the years, while the respective rows will carry the information.</p>
 
 <p>Lets say there is too much data, and you only want to know how was the GDP per capita in those countries during the 2008/2009 financial crisis, and a couple of years later just to see how the wealth grew.</p>
 
-<p>For that, lets use the <code>csvcut</code> again.</p>
+<p>For that, lets use the <code class="highlighter-rouge">csvcut</code> again.</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv
 </code></pre>
+</div>
 
 <p><em>If you are using non-numbered columns, you might as well just write their names instead of the assigned numbers</em></p>
 
@@ -132,23 +139,25 @@
   </tbody>
 </table>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvlook | head
 </code></pre>
+</div>
 
 <hr />
 
 <h2 id="playing-with-the-numbers">Playing with the numbers</h2>
 
-<p>CSVKit has a command called <code>csvstat</code>, which basically lets you to get a succinct analysis out of your data, before you can really dig into it you want.</p>
+<p>CSVKit has a command called <code class="highlighter-rouge">csvstat</code>, which basically lets you to get a succinct analysis out of your data, before you can really dig into it you want.</p>
 
 <p>It gives you the minimum of a certain column, the maximum, the average, the median and even standard deviation.</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
 </code></pre>
+</div>
 
 <p>You will get something like this:</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvstat
 			  1. country
 				&lt;type 'unicode'&gt;
 				Nulls: False
@@ -172,22 +181,25 @@
 					9999.1:	1
 					4342.8:	1
 </code></pre>
+</div>
 
 <p>You can see, for instance, that in 2009, after the financial crash, the median of the GDP per capital was lower than in 2008, but it grew back in 2010 and 2011.</p>
 
 <p>Another great function of this is to “query” the data to find what you want. Lets say you only need to look for the the numbers about Brazil.</p>
 
-<pre><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
+<div class="highlighter-rouge"><pre class="highlight"><code>			csvcut -c 1,9,10,11,12 csvkit_example_data.csv | csvgrep -c country -m Brazil | csvlook
 </code></pre>
+</div>
 
 <p>Please be advised that the query is case sensitive, <em>BRAZIL</em> or <em>brazil</em> won’t find anything.</p>
 
 <p>Now, in case you haven’t noticed, the csv is alphabetical order. If you want you want to sort it out differently, lets say in reverse, use the following code.</p>
 
-<pre><code>			 csvkit_example_data.csv | csvsort -c country  -r | csvlook  
+<div class="highlighter-rouge"><pre class="highlight"><code>			 csvkit_example_data.csv | csvsort -c country  -r | csvlook  
 </code></pre>
+</div>
 
-<p>The <code>-r</code> actually means <code>reverse</code>. If you want to know all the sorting functionalities, <a href="https://csvkit.readthedocs.io/en/540/scripts/csvsort.html">check this page</a>.</p>
+<p>The <code class="highlighter-rouge">-r</code> actually means <code class="highlighter-rouge">reverse</code>. If you want to know all the sorting functionalities, <a href="https://csvkit.readthedocs.io/en/540/scripts/csvsort.html">check this page</a>.</p>
 
 <hr />
 
@@ -196,13 +208,13 @@
 <p>You can convert data into Excel or to other formats as well with csvkit.</p>
 
 <p>Convert Excel to CSV:
-<code>in2csv data.xls &gt; data.csv</code></p>
+<code class="highlighter-rouge">in2csv data.xls &gt; data.csv</code></p>
 
 <p>Convert JSON to CSV:
-<code>in2csv data.json &gt; data.csv</code></p>
+<code class="highlighter-rouge">in2csv data.json &gt; data.csv</code></p>
 
 <p>Convert to JSON:
-<code>csvjson data.csv &gt; data.json</code></p>
+<code class="highlighter-rouge">csvjson data.csv &gt; data.json</code></p>
  ]]></content>
 </entry>
 
@@ -234,11 +246,11 @@
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
-<p>Open another tab in your browser and go to the <a href="http://morrisjs.github.io/morris.js/">Morris.js</a> webpage. Scroll down a little bit to the “Getting started” section and copy and paste the four lines of code in the <code>&lt;head&gt;</code> of your HTML. You could also put it in the <code>&lt;body&gt;</code> tag, but it loads first if it is in the <code>&lt;head&gt;</code>.</p>
+<p>Open another tab in your browser and go to the <a href="http://morrisjs.github.io/morris.js/">Morris.js</a> webpage. Scroll down a little bit to the “Getting started” section and copy and paste the four lines of code in the <code class="highlighter-rouge">&lt;head&gt;</code> of your HTML. You could also put it in the <code class="highlighter-rouge">&lt;body&gt;</code> tag, but it loads first if it is in the <code class="highlighter-rouge">&lt;head&gt;</code>.</p>
 
 <p>Your code will look like this:</p>
 
-<pre><code>	&lt;head&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;head&gt;
 	  &lt;meta charset="utf-8"&gt;
 	  &lt;meta name="viewport" content="width=device-width"&gt;
 	  &lt;title&gt;This is a Morris.js chart!&lt;/title&gt;
@@ -248,13 +260,15 @@
 	  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"&gt;&lt;/script&gt;
 	&lt;/head&gt;
 </code></pre>
+</div>
 
-<p>Now that we have the libraries loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
+<p>Now that we have the libraries loaded the <code class="highlighter-rouge">&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code class="highlighter-rouge">&lt;body&gt;</code> tag.</p>
 
-<p>Add the following code inside the <code>&lt;body&gt;</code> tag:</p>
+<p>Add the following code inside the <code class="highlighter-rouge">&lt;body&gt;</code> tag:</p>
 
-<pre><code>		&lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>		&lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
 </code></pre>
+</div>
 
 <p>This will be where the chart will render once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
 ___</p>
@@ -263,13 +277,13 @@ ___</p>
 
 <p>Now the real fun begins.</p>
 
-<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code>&lt;head&gt;</code> earlier.</p>
+<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code class="highlighter-rouge">&lt;head&gt;</code> earlier.</p>
 
 <p>Morris.js way of “calling” the line chart is fairly simple. I will use the basic example given by their website, and we will change it later.</p>
 
 <p>Go ahead and add the following code [^Notice that this tutorial “cleaned” the code provided in the Morris.js website, taking of the comments and putting the data in the end of the code] into the javascript:</p>
 
-<pre><code>	new Morris.Line({
+<div class="highlighter-rouge"><pre class="highlight"><code>	new Morris.Line({
 	  element: 'myfirstchart',
 	  xkey: 'year',
 	  ykeys: ['value'],
@@ -283,6 +297,7 @@ ___</p>
 	  ]
 	});
 </code></pre>
+</div>
 
 <p>Voilá! You will now be able to see a small chart with a blue line and five points in it.</p>
 
@@ -298,9 +313,9 @@ ___</p>
 
 <p>Lets use as example this <a href="https://github.com/miguelpaz/jlab/blob/master/data/example5_us_time_short.json">simple dataset</a> compiled by this tutorial - in this case US GDP unemployment rate.</p>
 
-<p>Copy and past the json after the <code>data:</code> in your javascript. It will result in something like this:</p>
+<p>Copy and past the json after the <code class="highlighter-rouge">data:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>	data:
+<div class="highlighter-rouge"><pre class="highlight"><code>	data:
 		[
   {
     "index": "Unemployment rate",
@@ -328,28 +343,30 @@ ___</p>
   }
 ]
 </code></pre>
+</div>
 
 <p>Right after you input the data, nothing will happen just yet, but that is just because the code is not reading your data columns properly, so we will now address that issue.</p>
 
 <p>We will now work with the axis of our chart: the X (horizontal) and the Y (vertical).</p>
 
-<p>In your javascript panel, go to <code>xkey</code> option. This will define which data that will be used to define the X axis of the graphic - in this case, the <em>dates</em>[^We deliberately added the ’s’ after ‘date’ so you know where to look].</p>
+<p>In your javascript panel, go to <code class="highlighter-rouge">xkey</code> option. This will define which data that will be used to define the X axis of the graphic - in this case, the <em>dates</em>[^We deliberately added the ’s’ after ‘date’ so you know where to look].</p>
 
-<p><em>Note that the <strong>year</strong> is here recognized as a <strong>number</strong>, not a <strong>string</strong> - so Morris.js would see it as a date with quotation marks, like this <code>”2012”</code>. Check all the valid date formats for this library <a href="http://morrisjs.github.io/morris.js/lines.html">here</a>.</em></p>
+<p><em>Note that the <strong>year</strong> is here recognized as a <strong>number</strong>, not a <strong>string</strong> - so Morris.js would see it as a date with quotation marks, like this <code class="highlighter-rouge">”2012”</code>. Check all the valid date formats for this library <a href="http://morrisjs.github.io/morris.js/lines.html">here</a>.</em></p>
 
-<p>We will leave the <code>ykeys</code> with the <code>value</code> field. In the <code>label</code> field you can add anything you want, as long as it is in quotes - this will reflect in the <em>tooltip</em> of your chart - we will add <code>'Unemployment rate'</code>.</p>
+<p>We will leave the <code class="highlighter-rouge">ykeys</code> with the <code class="highlighter-rouge">value</code> field. In the <code class="highlighter-rouge">label</code> field you can add anything you want, as long as it is in quotes - this will reflect in the <em>tooltip</em> of your chart - we will add <code class="highlighter-rouge">'Unemployment rate'</code>.</p>
 
-<p>Also add this line: <code>xLabels: ['year'],</code>. This will avoid your chart to read the months when it renders, leaving only the years in the X axis.</p>
+<p>Also add this line: <code class="highlighter-rouge">xLabels: ['year'],</code>. This will avoid your chart to read the months when it renders, leaving only the years in the X axis.</p>
 
 <p>So this part of your code will look like this:</p>
 
-<pre><code>new Morris.Line({
+<div class="highlighter-rouge"><pre class="highlight"><code>new Morris.Line({
 	  element: 'myfirstchart',
 	  xkey: 'dates',
 	  ykeys: ['rate'],
 	  labels: ['Unemployment rate'],
 	  xLabels: ['year'],
 </code></pre>
+</div>
 
 <p>Which will render this:</p>
 
@@ -365,7 +382,7 @@ ___</p>
 
 <p>Lets start with the text-size, the colors and some goals (references in the chart). After the code mentioned above, and before the data, lets add the following lines:</p>
 
-<pre><code>	lineColors: [''],
+<div class="highlighter-rouge"><pre class="highlight"><code>	lineColors: [''],
   postUnits: [''],
   goals: [''],
   goalStrokeWidth: [''],
@@ -374,23 +391,24 @@ ___</p>
   gridTextSize: [''],
   gridTextColor: [''],
 </code></pre>
+</div>
 
 <ul>
-  <li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code>#C00</code>;</li>
-  <li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code>%</code> inside the brackets and it will add the sign to the Y axis;</li>
-  <li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code>[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
-  <li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code>#000</code>;</li>
+  <li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code class="highlighter-rouge">#C00</code>;</li>
+  <li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code class="highlighter-rouge">%</code> inside the brackets and it will add the sign to the Y axis;</li>
+  <li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code class="highlighter-rouge">[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
+  <li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code class="highlighter-rouge">#000</code>;</li>
   <li>Point size is how big are the data points. If you want no points, use it 0. I will use 3px;</li>
-  <li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code>#777</code>;</li>
+  <li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code class="highlighter-rouge">#777</code>;</li>
 </ul>
 
 <p>In case you have noticed, Morris make it default to show the tooltip all the time, even if you don’t want. It is kind of annoying, so we will set for the tooltip to appear only when you hover.</p>
 
-<p>Add the following line: <code>hideHover: ['auto’],</code>. This will do the trick.</p>
+<p>Add the following line: <code class="highlighter-rouge">hideHover: ['auto’],</code>. This will do the trick.</p>
 
 <p>So far out code looks like this (I am not adding the data for size limits):</p>
 
-<pre><code>	new Morris.Line({
+<div class="highlighter-rouge"><pre class="highlight"><code>	new Morris.Line({
 					  element: 'myfirstchart',
 					  xkey: 'dates',
 					  ykeys: ['rate'],
@@ -406,6 +424,7 @@ ___</p>
 			      gridTextColor: ['#777'],
 	          hideHover: ['auto'],
 </code></pre>
+</div>
 
 <p>The result for now is this:</p>
 
@@ -417,15 +436,15 @@ ___</p>
 
 <p>In the <a href="https://www.google.com/fonts#QuickUsePlace:quickUse">Roboto page</a>, make sure you select the light (400) and bold (700) types of font (for body and header).</p>
 
-<p>Copy and paste this link into the <code>&lt;head&gt;</code> of your HTML: <code>&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
+<p>Copy and paste this link into the <code class="highlighter-rouge">&lt;head&gt;</code> of your HTML: <code class="highlighter-rouge">&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
 
-<p>Then, back to your javascript panel, proceed to add the option to enable it into the chart: <code>gridTextFamily: ['Roboto'],</code></p>
+<p>Then, back to your javascript panel, proceed to add the option to enable it into the chart: <code class="highlighter-rouge">gridTextFamily: ['Roboto'],</code></p>
 
 <p>Very nice. We are now almost done, lets just add some title, legend and source back in the HTML panel.</p>
 
-<p>Above the <code>&lt;div&gt;</code> tag, add <code>&lt;h1&gt;</code> (title) and <code>&lt;p&gt;</code> (legend), as well as some <code>&lt;h5&gt;</code> (source) below the chart. Like this:</p>
+<p>Above the <code class="highlighter-rouge">&lt;div&gt;</code> tag, add <code class="highlighter-rouge">&lt;h1&gt;</code> (title) and <code class="highlighter-rouge">&lt;p&gt;</code> (legend), as well as some <code class="highlighter-rouge">&lt;h5&gt;</code> (source) below the chart. Like this:</p>
 
-<pre><code>	&lt;body&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;body&gt;
 	  &lt;h1&gt;US unemployment rate&lt;/h1&gt;
 	  &lt;p&gt;Unemployment refers to the share of the labor force that is without work but available for and seeking employment. Measured in % of total labor force&lt;/p&gt;
 	  &lt;div id="myfirstchart" style="height: 250px;"&gt;
@@ -434,10 +453,11 @@ ___</p>
 
 	&lt;/body&gt;
 </code></pre>
+</div>
 
 <p>To apply the font - and some other styles (like margin or padding) that you want - go to the CSS panel and add your styles. We will only add a few things:</p>
 
-<pre><code>	body {
+<div class="highlighter-rouge"><pre class="highlight"><code>	body {
 	  padding: 0px 20px 10px 30px;
 	  font-family: 'Roboto', sans-serif;
 	}
@@ -452,12 +472,13 @@ ___</p>
 	  font-weight: 400;
 	}
 </code></pre>
+</div>
 
 <h3 id="make-it-responsive">Make it responsive</h3>
 
 <p>Finally, we have to make our chart responsive, so it fits several kinds of screens.</p>
 
-<p>Fortunately, Morris allows us to do it rather easily. Just add the following line to the code: <code>resize: ['true'],</code></p>
+<p>Fortunately, Morris allows us to do it rather easily. Just add the following line to the code: <code class="highlighter-rouge">resize: ['true'],</code></p>
 
 <p>This will apply the 100% width to fit the screen. Let’s make it a little bit higher too: in the HTML, apply the height to 350px, like this: ` &lt;div id="myfirstchart" style="height: 350px;"&gt;`</p>
 
@@ -504,7 +525,7 @@ ___</p>
 
 <p>It is a little bit more complex than Morris, but it has a few competitive advantages. First, it is built by several people, so it is regularly updated. There are more chart types and is built to be responsive in mobile right from the start. Beyond all that, for the data geeks, it also offers logarithmic or even entirely custom scales with ease. Not being enough, ChartJS is very lightweight (~31kB).</p>
 
-<p>One disadvantage is that the json data must have some specific properties that it understands, like <code>labels</code> and <code>data</code>, so you have to adapt all your dataset. Because of this, however, the tool allows advanced users to perform more customizations.</p>
+<p>One disadvantage is that the json data must have some specific properties that it understands, like <code class="highlighter-rouge">labels</code> and <code class="highlighter-rouge">data</code>, so you have to adapt all your dataset. Because of this, however, the tool allows advanced users to perform more customizations.</p>
 
 <p>In this tutorial, you will need to access:</p>
 
@@ -521,53 +542,56 @@ ___</p>
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
-<p>Open another tab in your browser and go to the <a href="https://cdnjs.com/libraries/Chart.js">ChartJS CDN page</a>. Copy and paste the one line of code - <code>&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;</code> -  in the <code>&lt;head&gt;</code> of your [document][you can also put it in the <code>&lt;body&gt;</code> tag, but it loads first if it is in the <code>&lt;head&gt;</code>].</p>
+<p>Open another tab in your browser and go to the <a href="https://cdnjs.com/libraries/Chart.js">ChartJS CDN page</a>. Copy and paste the one line of code - <code class="highlighter-rouge">&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;</code> -  in the <code class="highlighter-rouge">&lt;head&gt;</code> of your [document][you can also put it in the <code class="highlighter-rouge">&lt;body&gt;</code> tag, but it loads first if it is in the <code class="highlighter-rouge">&lt;head&gt;</code>].</p>
 
 <p>Your code will look like this:</p>
 
-<pre><code>	&lt;!DOCTYPE html&gt;
-	&lt;html&gt;
-	&lt;head&gt;
-	  &lt;meta charset="utf-8"&gt;
-	  &lt;meta name="viewport" content="width=device-width"&gt;
-	  &lt;title&gt;This is a bar chart with ChartJS&lt;/title&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="cp">&lt;!DOCTYPE html&gt;</span>
+	<span class="nt">&lt;html&gt;</span>
+	<span class="nt">&lt;head&gt;</span>
+	  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;title&gt;</span>This is a bar chart with ChartJS<span class="nt">&lt;/title&gt;</span>
 
-	  &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"&gt;&lt;/script&gt;
+	  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-	&lt;/head&gt;
-	&lt;body&gt;
+	<span class="nt">&lt;/head&gt;</span>
+	<span class="nt">&lt;body&gt;</span>
 
-	  &lt;canvas id="myChart" width="400" height="300"&gt;&lt;/canvas&gt;
+	  <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"myChart"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"300"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
 
 
-	&lt;/body&gt;
-	&lt;/html&gt;
+	<span class="nt">&lt;/body&gt;</span>
+	<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+</div>
 
-<p>Now that we have the main library loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
+<p>Now that we have the main library loaded the <code class="highlighter-rouge">&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code class="highlighter-rouge">&lt;body&gt;</code> tag.</p>
 
-<p>Instead of a <code>&lt;div&gt;</code>, ChartJS uses the <code>&lt;canvas&gt;</code> tag.</p>
+<p>Instead of a <code class="highlighter-rouge">&lt;div&gt;</code>, ChartJS uses the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag.</p>
 
-<p>Add the following code inside the <code>&lt;body&gt;</code> tag:</p>
+<p>Add the following code inside the <code class="highlighter-rouge">&lt;body&gt;</code> tag:</p>
 
-<pre><code>  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
 </code></pre>
+</div>
 
 <p>This will actually call (make appear) the chart once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
 ___</p>
 
 <h2 id="adding-the-javascript">Adding the javascript</h2>
 
-<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code>&lt;head&gt;</code> earlier.</p>
+<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code class="highlighter-rouge">&lt;head&gt;</code> earlier.</p>
 
 <p>ChartJS’ way of “calling” the line chart is fairly simple. Just:</p>
 
-<pre><code>var ctx = document.getElementById("myChart");
+<div class="highlighter-rouge"><pre class="highlight"><code>var ctx = document.getElementById("myChart");
 </code></pre>
+</div>
 
 <p>Now, we have to add the variable that will bind the data and allow us to customize it. We will use dummy data now. Go ahead and add the following code into the javascript:</p>
 
-<pre><code>	var myChart = new Chart(ctx, {
+<div class="highlighter-rouge"><pre class="highlight"><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -578,6 +602,7 @@ data: {
 },
 });
 </code></pre>
+</div>
 
 <p>You will now be able to see a small chart some bars.</p>
 
@@ -591,9 +616,9 @@ data: {
 
 <p>Lets use as example this <a href="https://github.com/miguelpaz/jlab/blob/master/data/chartjs_example_data_short.json">simple dataset</a>, which show us the 2014 per capita GDP of seven countries.</p>
 
-<p>Copy and past the text after the <code>dataset:</code> in your javascript. It will result in something like this:</p>
+<p>Copy and past the text after the <code class="highlighter-rouge">dataset:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>	data: {
+<div class="highlighter-rouge"><pre class="highlight"><code>	data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
     datasets: [
 					  {
@@ -603,15 +628,16 @@ data: {
 					  ]
 					    },
 </code></pre>
+</div>
 
 <p>The bar chart will immediately appear in your screen with ChartJS default looks. It is also interactive.</p>
 
 <p>There are some things to understand here so you can work with other data afterwards. In this case:</p>
 
 <ul>
-  <li>The X axis is defined by the <code>labels</code> array;</li>
-  <li>The Y axis is plotted by the <code>data</code> field inside the <code>dataset</code> array;</li>
-  <li>The actual legend/unit is defined by the <code>label</code> inside the <code>dataset</code> array;</li>
+  <li>The X axis is defined by the <code class="highlighter-rouge">labels</code> array;</li>
+  <li>The Y axis is plotted by the <code class="highlighter-rouge">data</code> field inside the <code class="highlighter-rouge">dataset</code> array;</li>
+  <li>The actual legend/unit is defined by the <code class="highlighter-rouge">label</code> inside the <code class="highlighter-rouge">dataset</code> array;</li>
 </ul>
 
 <p>The new plotted chart will look like this:</p>
@@ -628,9 +654,9 @@ data: {
 
 <p>Lets start with by coloring our chart, especially the bars.</p>
 
-<p>This more basic color configuration is applied, generally, within the <code>dataset</code> array. See the code below.</p>
+<p>This more basic color configuration is applied, generally, within the <code class="highlighter-rouge">dataset</code> array. See the code below.</p>
 
-<pre><code>	datasets: [
+<div class="highlighter-rouge"><pre class="highlight"><code>	datasets: [
 				  {
 	            label: "GDP per capita",
 	            backgroundColor: "",
@@ -641,16 +667,17 @@ data: {
 	            data: [11726.8, 7590.0, 1581.5, 12735.9, 6483.9, 46297.0, 54629.5 ]
 	            }
 </code></pre>
+</div>
 
 <ul>
-  <li>Lets apply the color red <code>#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
-  <li>To have some clear delimitation of the bar area, lets add a solid red <code>#c00</code> border, of 2px;</li>
-  <li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code>#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
+  <li>Lets apply the color red <code class="highlighter-rouge">#c00</code> here, using both the Hex color and Rgba (to get transparency). To convert Hex to Rgba, use <a href="http://hex2rgba.devoth.com/">this tool</a>.</li>
+  <li>To have some clear delimitation of the bar area, lets add a solid red <code class="highlighter-rouge">#c00</code> border, of 2px;</li>
+  <li>For the hover, lets add some nice dark solid blue, to emphasize the bar we are in. Add: <code class="highlighter-rouge">#59597F</code> to that field, and cut out the hover border color, since we don’t need it;</li>
 </ul>
 
 <p>So far out code looks like this:</p>
 
-<pre><code>	var myChart = new Chart(ctx, {
+<div class="highlighter-rouge"><pre class="highlight"><code>	var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
     labels: ["Brazil", "China", "India", "Russia", "South Africa", "United Kingdom", "United States"],
@@ -666,6 +693,7 @@ data: {
 	  ]
 	  }
 </code></pre>
+</div>
 
 <p>The result for now is this:</p>
 
@@ -675,13 +703,13 @@ data: {
 
 <h3 id="customization">Customization</h3>
 
-<p>After you input your data and added the basic color visuals, there are plenty of more things you could do. But first, you have to add the <code>options</code> config. <a href="http://www.chartjs.org/docs/#getting-started-global-chart-configuration">You can check all the ChartJS options here</a>.</p>
+<p>After you input your data and added the basic color visuals, there are plenty of more things you could do. But first, you have to add the <code class="highlighter-rouge">options</code> config. <a href="http://www.chartjs.org/docs/#getting-started-global-chart-configuration">You can check all the ChartJS options here</a>.</p>
 
-<p>After the end of your data, when you closed it with a comma, lets add this small line of code <code>options: {}</code>.</p>
+<p>After the end of your data, when you closed it with a comma, lets add this small line of code <code class="highlighter-rouge">options: {}</code>.</p>
 
 <p>You code will look like this:</p>
 
-<pre><code>  var ctx = document.getElementById("myChart").getContext("2d");
+<div class="highlighter-rouge"><pre class="highlight"><code>  var ctx = document.getElementById("myChart").getContext("2d");
 
 
 	var myChart = new Chart(ctx, {
@@ -703,6 +731,7 @@ data: {
 								}
 	});
 </code></pre>
+</div>
 
 <p>Now, we are ready to add some other customizations here, like fonts, grids and other cool stuff.</p>
 
@@ -710,34 +739,34 @@ data: {
 <p>##### Interlude to get a font
 Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice typography. We will use <a href="https://www.google.com/fonts#QuickUsePlace:quickUse"><em>Roboto</em></a> - make sure you select the light (400) and bold (700) types of font (for body and header).</p>
 
-<p>If you want Roboto, copy and paste this link into the <code>&lt;head&gt;</code> of your HTML: <code>&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
+<p>If you want Roboto, copy and paste this link into the <code class="highlighter-rouge">&lt;head&gt;</code> of your HTML: <code class="highlighter-rouge">&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
 
 <hr />
 
-<p>Lets add some smooth animation right out of the box, so your chart get even more atention. Lets add a 3 seconds (or 3,000 milliseconds) animation: <code>animation: {duration: 3000},</code></p>
+<p>Lets add some smooth animation right out of the box, so your chart get even more atention. Lets add a 3 seconds (or 3,000 milliseconds) animation: <code class="highlighter-rouge">animation: {duration: 3000},</code></p>
 
-<p>Now, lets configure the <code>scale</code>, where the better part of certain charts is. First, the <code>yAxes: [ { } ]</code>. Inside it, simply add one <code>display: true</code> - nothing happens, but you will see later why we did it.</p>
+<p>Now, lets configure the <code class="highlighter-rouge">scale</code>, where the better part of certain charts is. First, the <code class="highlighter-rouge">yAxes: [ { } ]</code>. Inside it, simply add one <code class="highlighter-rouge">display: true</code> - nothing happens, but you will see later why we did it.</p>
 
-<p>Now, still inside the <code>yAxes</code>, add the <code>ticks: {}</code>, followed by the following configs:</p>
+<p>Now, still inside the <code class="highlighter-rouge">yAxes</code>, add the <code class="highlighter-rouge">ticks: {}</code>, followed by the following configs:</p>
 
 <ul>
-  <li><code>beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
-  <li><code>fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code>&lt;head&gt;</code>;</li>
-  <li><code>fontSize: 14,</code> - in pixels;</li>
-  <li><code>fontColor: '#ababab',</code> - make it gray;</li>
+  <li><code class="highlighter-rouge">beginAtZero: true,</code> - this will tell your chart to start a zero, which is often the case, unless your baseline is different;</li>
+  <li><code class="highlighter-rouge">fontFamily: 'Roboto',</code> - don’t forget the font’s link in the <code class="highlighter-rouge">&lt;head&gt;</code>;</li>
+  <li><code class="highlighter-rouge">fontSize: 14,</code> - in pixels;</li>
+  <li><code class="highlighter-rouge">fontColor: '#ababab',</code> - make it gray;</li>
 </ul>
 
 <p>As you can see, the Y axis numbers are not the best to show the data, without the commas. There are plenty of ways to use javascript to manipulate that number. We will make something easy, almost prosaic - trick the code to show the same number, but differently.</p>
 
-<p>Lets add a javascript <code>function</code> to do that, using the <code>callback</code> option:</p>
+<p>Lets add a javascript <code class="highlighter-rouge">function</code> to do that, using the <code class="highlighter-rouge">callback</code> option:</p>
 
-<p><code>callback: function(value) { return value/1000 + ',000' + '$'; },</code></p>
+<p><code class="highlighter-rouge">callback: function(value) { return value/1000 + ',000' + '$'; },</code></p>
 
 <p>What we did here was to divide the original format by 1,000 and then add the zeroes again with a comma, plus the dollar sign. This happens because you cannot input comma in a data that is separated by another comma, as the code will read a different number - for instance: 10,000 would read 10 and 000, not 10000. Now it looks better.</p>
 
-<p>Your <code>yAxes</code> code should be the following:</p>
+<p>Your <code class="highlighter-rouge">yAxes</code> code should be the following:</p>
 
-<pre><code>		yAxes: [{
+<div class="highlighter-rouge"><pre class="highlight"><code>		yAxes: [{
 			  display: true,                
 			  ticks: {
 				beginAtZero: true,
@@ -748,12 +777,13 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 				},
 		    }],
 </code></pre>
+</div>
 
-<p>Let’s do basically the same thing with the <code>xAxes</code>, but this time, lets make our chart cleaner. Assign <code>gridLines: {display: false},</code> to hide the vertical gridlines.</p>
+<p>Let’s do basically the same thing with the <code class="highlighter-rouge">xAxes</code>, but this time, lets make our chart cleaner. Assign <code class="highlighter-rouge">gridLines: {display: false},</code> to hide the vertical gridlines.</p>
 
 <p>This is the code:</p>
 
-<pre><code>		xAxes: [{
+<div class="highlighter-rouge"><pre class="highlight"><code>		xAxes: [{
 		    gridLines: {
 		    display: false
 				},
@@ -763,12 +793,13 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 				},     
 	      }],
 </code></pre>
+</div>
 
-<p>Before we finish, lets make sure our chart is responsive, by adding <code>responsive: true,</code> before closing the <code>options</code> config.</p>
+<p>Before we finish, lets make sure our chart is responsive, by adding <code class="highlighter-rouge">responsive: true,</code> before closing the <code class="highlighter-rouge">options</code> config.</p>
 
-<p>Finally, lets credit the data in the HTML, after the <code>&lt;canvas&gt;</code> tag. Add the source: <code>&lt;h5&gt;Source: World Bank&lt;/h5&gt;</code>, as well as some basic CSS, to make it look better.</p>
+<p>Finally, lets credit the data in the HTML, after the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag. Add the source: <code class="highlighter-rouge">&lt;h5&gt;Source: World Bank&lt;/h5&gt;</code>, as well as some basic CSS, to make it look better.</p>
 
-<pre><code>	body {
+<div class="highlighter-rouge"><pre class="highlight"><code>	body {
 	  padding: 0px 20px 10px 30px;
 	  font-family: 'Roboto', sans-serif;
 	}
@@ -783,6 +814,7 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 	  font-weight: 400;
 	}
 </code></pre>
+</div>
 
 <h3 id="result">Result</h3>
 
@@ -842,19 +874,19 @@ at first.</p>
 <p><img src="https://c1.staticflickr.com/1/607/22544467521_46c261e0cd_z.jpg" alt="It will look like this" /></p>
 
 <ul>
-  <li>Now, you should create a new repository, by clicking in <code>New Repository</code>.</li>
+  <li>Now, you should create a new repository, by clicking in <code class="highlighter-rouge">New Repository</code>.</li>
 </ul>
 
 <p><img src="https://c2.staticflickr.com/6/5636/22507327496_b147043129_o.png" alt="Not that hard!" /></p>
 
 <ul>
-  <li>Give a name to your repository. Inicially, right now it can be just /<code>test</code>
+  <li>Give a name to your repository. Inicially, right now it can be just /<code class="highlighter-rouge">test</code>
     <ul>
-      <li>Give it a brief description to your project. Something like: <code>this is a test, please don't mind this trial!</code>.</li>
+      <li>Give it a brief description to your project. Something like: <code class="highlighter-rouge">this is a test, please don't mind this trial!</code>.</li>
       <li>A description is optional but it is useful and adds a good practice touch even to a test</li>
     </ul>
   </li>
-  <li>Make sure to select the field <code>Initialize this repository with a README</code>.
+  <li>Make sure to select the field <code class="highlighter-rouge">Initialize this repository with a README</code>.
     <ul>
       <li><strong>This is particularly important</strong>, because if you don’t, GitHub will assume you are initializing and
 organizing your repo through a different process, and you will not be able to populate your project just yet.
@@ -881,15 +913,15 @@ It is easier to just check it.</li>
       <li>If you have HTML and CSS ready, great!. If not, feel free to use <a href="https://github.com/voltdatalab/template-courses">this one as an example</a></li>
     </ul>
   </li>
-  <li>What you will do next is upload the codes, using either <code>CTRL+C + CTRL+V</code> or the <code>upload files</code> button</li>
+  <li>What you will do next is upload the codes, using either <code class="highlighter-rouge">CTRL+C + CTRL+V</code> or the <code class="highlighter-rouge">upload files</code> button</li>
   <li>Add a description to your project if you haven’t done so, but ignore - for the time being - the field website.</li>
 </ul>
 
 <p><img src="https://c1.staticflickr.com/1/690/22519805902_c437a365f6_z.jpg" alt="Ignore the website field" /></p>
 
 <ul>
-  <li>If you want to copy and paste your code, click in <code>create a new file</code> button</li>
-  <li>If you want to upload files, like <code>.html</code> and <code>.css</code>, click <code>upload files</code></li>
+  <li>If you want to copy and paste your code, click in <code class="highlighter-rouge">create a new file</code> button</li>
+  <li>If you want to upload files, like <code class="highlighter-rouge">.html</code> and <code class="highlighter-rouge">.css</code>, click <code class="highlighter-rouge">upload files</code></li>
 </ul>
 
 <p><img src="https://c1.staticflickr.com/1/590/22533313525_b7fc3c1a3d_o.png" alt="" /></p>
@@ -902,16 +934,16 @@ It is easier to just check it.</li>
     </ul>
   </li>
   <li>If you copy and paste, add a name to your initial HMTL file. In this case, as this will be your initial page
-(the only one for the time being in the repo), the name <strong>must be</strong> <code>index.html</code></li>
-  <li>Paste the HTML in the field below <code>Edit New File</code></li>
+(the only one for the time being in the repo), the name <strong>must be</strong> <code class="highlighter-rouge">index.html</code></li>
+  <li>Paste the HTML in the field below <code class="highlighter-rouge">Edit New File</code></li>
 </ul>
 
 <p><img src="https://c2.staticflickr.com/6/5768/22507327876_fc823a3103_o.png" alt="Main file is &lt;em&gt;index.html&lt;/em&gt;" /></p>
 
 <ul>
-  <li>Scroll down and give a description to your additions/changes if you want, and click the <code>Commit</code> button.</li>
-  <li>In this case, <code>Commit</code> would work like, roughly speaking, the <code>Publishing</code> button in a CMS</li>
-  <li>Don’t worry just yet with the option <code>Create a new branch</code>, it is used when you are making a separate branch in your repo,
+  <li>Scroll down and give a description to your additions/changes if you want, and click the <code class="highlighter-rouge">Commit</code> button.</li>
+  <li>In this case, <code class="highlighter-rouge">Commit</code> would work like, roughly speaking, the <code class="highlighter-rouge">Publishing</code> button in a CMS</li>
+  <li>Don’t worry just yet with the option <code class="highlighter-rouge">Create a new branch</code>, it is used when you are making a separate branch in your repo,
 which its not our case right now</li>
 </ul>
 
@@ -925,21 +957,21 @@ will be published</li>
       <li>Do the same process you did before, if you haven’t uploaded both at the same time</li>
     </ul>
   </li>
-  <li>IMPORTANT NOTE: remember to add, in the <code>&lt;head&gt;</code> tags of your HTML file, the link for the CSS, like this generic example:
-<code>&lt;link rel="stylesheet" href="home.css" type="text/css" charset="utf-8"&gt;</code>
+  <li>IMPORTANT NOTE: remember to add, in the <code class="highlighter-rouge">&lt;head&gt;</code> tags of your HTML file, the link for the CSS, like this generic example:
+<code class="highlighter-rouge">&lt;link rel="stylesheet" href="home.css" type="text/css" charset="utf-8"&gt;</code>
     <ul>
-      <li>If you don’t remember how to do it, use the code above and just change the <code>href=“#"</code> value to link to your CSS.</li>
-      <li>If you CSS is in the same folder as the HTML, just add <code>NAME OF CSS.css</code> to the <code>href</code>. If it is in a folder, add <code>FOLDER NAME/NAME OF CSS.css</code></li>
+      <li>If you don’t remember how to do it, use the code above and just change the <code class="highlighter-rouge">href=“#"</code> value to link to your CSS.</li>
+      <li>If you CSS is in the same folder as the HTML, just add <code class="highlighter-rouge">NAME OF CSS.css</code> to the <code class="highlighter-rouge">href</code>. If it is in a folder, add <code class="highlighter-rouge">FOLDER NAME/NAME OF CSS.css</code></li>
     </ul>
   </li>
   <li>If you are done with all the steps, we are almost there</li>
   <li>Go to the main page of your repository, where are your HTML and CSS files</li>
-  <li>Just above the files, on the left side, there is a small box that says <code>Branch: master</code></li>
-  <li>We will click on it and, in the text field, we will write <code>gh-pages</code></li>
-  <li>Then <code>Create Branch: gh-pages</code>
+  <li>Just above the files, on the left side, there is a small box that says <code class="highlighter-rouge">Branch: master</code></li>
+  <li>We will click on it and, in the text field, we will write <code class="highlighter-rouge">gh-pages</code></li>
+  <li>Then <code class="highlighter-rouge">Create Branch: gh-pages</code>
     <ul>
       <li>This is how GitHub will understand that you will want a proper published page, not just the files in a repo</li>
-      <li>Again, the main page will be <code>index.html</code>.</li>
+      <li>Again, the main page will be <code class="highlighter-rouge">index.html</code>.</li>
     </ul>
   </li>
 </ul>
@@ -949,10 +981,10 @@ will be published</li>
 <ul>
   <li>We are almost done</li>
   <li>You page is practically published</li>
-  <li>In that field we ignored at first - <code>Edit -&gt; Website</code> - we will add another thing, not so obvious but pretty simple</li>
-  <li>As GitHub uses its domain github.com for repositories, it redirects all GH-Pages sites to another domain, ending in <code>github.io</code></li>
-  <li>In the field <code>Website</code>, add this: <code>http://NAME OF YOUR REPOSITORY.github.io/**NAME OF THE PROJECT</code></li>
-  <li>Don’t forget the <code>http://</code> prefix</li>
+  <li>In that field we ignored at first - <code class="highlighter-rouge">Edit -&gt; Website</code> - we will add another thing, not so obvious but pretty simple</li>
+  <li>As GitHub uses its domain github.com for repositories, it redirects all GH-Pages sites to another domain, ending in <code class="highlighter-rouge">github.io</code></li>
+  <li>In the field <code class="highlighter-rouge">Website</code>, add this: <code class="highlighter-rouge">http://NAME OF YOUR REPOSITORY.github.io/**NAME OF THE PROJECT</code></li>
+  <li>Don’t forget the <code class="highlighter-rouge">http://</code> prefix</li>
 </ul>
 
 <p><img src="https://c1.staticflickr.com/1/658/22519803402_5213812875_b.jpg" alt="Yeah!" /></p>
@@ -963,13 +995,13 @@ will be published</li>
       <li>Sometimes GitHub will take up to 30 seconds to recognize changes, so be patient</li>
     </ul>
   </li>
-  <li>One last thing: now that you have to branches in the same repo, <code>master</code> and <code>gh-pages</code>, you need to prioritize <code>gh-pages</code>
+  <li>One last thing: now that you have to branches in the same repo, <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">gh-pages</code>, you need to prioritize <code class="highlighter-rouge">gh-pages</code>
     <ul>
-      <li>If you do changes in <code>master</code>, you webpage won’t recognize it, because it is in a different branch</li>
+      <li>If you do changes in <code class="highlighter-rouge">master</code>, you webpage won’t recognize it, because it is in a different branch</li>
     </ul>
   </li>
-  <li>To make <code>gh-pages</code> you standard for this repo, go to `Settings_ &gt; <em>Branches</em> &gt; <em>Select gh-pages in the box</em> &gt; <em>Update</em></li>
-  <li>If you want, you can now erase the <code>master</code> branch in the <code>branches</code> tab back in your repo.
+  <li>To make <code class="highlighter-rouge">gh-pages</code> you standard for this repo, go to `Settings_ &gt; <em>Branches</em> &gt; <em>Select gh-pages in the box</em> &gt; <em>Update</em></li>
+  <li>If you want, you can now erase the <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">branches</code> tab back in your repo.
     <ul>
       <li>This won’t affect your page</li>
     </ul>

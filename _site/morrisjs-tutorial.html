@@ -50,7 +50,7 @@
     <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+      <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
     </div>
     <div id="navbar">
       <ul class="nav navbar-nav navbar-right">
@@ -61,6 +61,7 @@
     </div>
   </div>
 </nav>
+
 
     <div class="container">
 	<div class="blog-post">
@@ -103,11 +104,11 @@
 
 <p>Open JSbin. Notice that there will be some HTML code there already, saving you the trouble of adding some tags.</p>
 
-<p>Open another tab in your browser and go to the <a href="http://morrisjs.github.io/morris.js/">Morris.js</a> webpage. Scroll down a little bit to the “Getting started” section and copy and paste the four lines of code in the <code>&lt;head&gt;</code> of your HTML. You could also put it in the <code>&lt;body&gt;</code> tag, but it loads first if it is in the <code>&lt;head&gt;</code>.</p>
+<p>Open another tab in your browser and go to the <a href="http://morrisjs.github.io/morris.js/">Morris.js</a> webpage. Scroll down a little bit to the “Getting started” section and copy and paste the four lines of code in the <code class="highlighter-rouge">&lt;head&gt;</code> of your HTML. You could also put it in the <code class="highlighter-rouge">&lt;body&gt;</code> tag, but it loads first if it is in the <code class="highlighter-rouge">&lt;head&gt;</code>.</p>
 
 <p>Your code will look like this:</p>
 
-<pre><code>	&lt;head&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;head&gt;
 	  &lt;meta charset="utf-8"&gt;
 	  &lt;meta name="viewport" content="width=device-width"&gt;
 	  &lt;title&gt;This is a Morris.js chart!&lt;/title&gt;
@@ -117,13 +118,15 @@
 	  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"&gt;&lt;/script&gt;
 	&lt;/head&gt;
 </code></pre>
+</div>
 
-<p>Now that we have the libraries loaded the <code>&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code>&lt;body&gt;</code> tag.</p>
+<p>Now that we have the libraries loaded the <code class="highlighter-rouge">&lt;head&gt;</code> of our code (where nothing will be displayed in the screen), we have to proceed to the <code class="highlighter-rouge">&lt;body&gt;</code> tag.</p>
 
-<p>Add the following code inside the <code>&lt;body&gt;</code> tag:</p>
+<p>Add the following code inside the <code class="highlighter-rouge">&lt;body&gt;</code> tag:</p>
 
-<pre><code>		&lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>		&lt;div id="myfirstchart" style="height: 250px;"&gt;&lt;/div&gt;
 </code></pre>
+</div>
 
 <p>This will be where the chart will render once we put the javascript in it. We will modify this tag a little bit later, so don’t worry right now about it.
 ___</p>
@@ -132,13 +135,13 @@ ___</p>
 
 <p>Now the real fun begins.</p>
 
-<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code>&lt;head&gt;</code> earlier.</p>
+<p>Our next step is to add some javascript code so it can retrieve the charting libraries from those tags we included to the <code class="highlighter-rouge">&lt;head&gt;</code> earlier.</p>
 
 <p>Morris.js way of “calling” the line chart is fairly simple. I will use the basic example given by their website, and we will change it later.</p>
 
 <p>Go ahead and add the following code [^Notice that this tutorial “cleaned” the code provided in the Morris.js website, taking of the comments and putting the data in the end of the code] into the javascript:</p>
 
-<pre><code>	new Morris.Line({
+<div class="highlighter-rouge"><pre class="highlight"><code>	new Morris.Line({
 	  element: 'myfirstchart',
 	  xkey: 'year',
 	  ykeys: ['value'],
@@ -152,6 +155,7 @@ ___</p>
 	  ]
 	});
 </code></pre>
+</div>
 
 <p>Voilá! You will now be able to see a small chart with a blue line and five points in it.</p>
 
@@ -167,9 +171,9 @@ ___</p>
 
 <p>Lets use as example this <a href="https://github.com/miguelpaz/jlab/blob/master/data/example5_us_time_short.json">simple dataset</a> compiled by this tutorial - in this case US GDP unemployment rate.</p>
 
-<p>Copy and past the json after the <code>data:</code> in your javascript. It will result in something like this:</p>
+<p>Copy and past the json after the <code class="highlighter-rouge">data:</code> in your javascript. It will result in something like this:</p>
 
-<pre><code>	data:
+<div class="highlighter-rouge"><pre class="highlight"><code>	data:
 		[
   {
     "index": "Unemployment rate",
@@ -197,28 +201,30 @@ ___</p>
   }
 ]
 </code></pre>
+</div>
 
 <p>Right after you input the data, nothing will happen just yet, but that is just because the code is not reading your data columns properly, so we will now address that issue.</p>
 
 <p>We will now work with the axis of our chart: the X (horizontal) and the Y (vertical).</p>
 
-<p>In your javascript panel, go to <code>xkey</code> option. This will define which data that will be used to define the X axis of the graphic - in this case, the <em>dates</em>[^We deliberately added the ’s’ after ‘date’ so you know where to look].</p>
+<p>In your javascript panel, go to <code class="highlighter-rouge">xkey</code> option. This will define which data that will be used to define the X axis of the graphic - in this case, the <em>dates</em>[^We deliberately added the ’s’ after ‘date’ so you know where to look].</p>
 
-<p><em>Note that the <strong>year</strong> is here recognized as a <strong>number</strong>, not a <strong>string</strong> - so Morris.js would see it as a date with quotation marks, like this <code>”2012”</code>. Check all the valid date formats for this library <a href="http://morrisjs.github.io/morris.js/lines.html">here</a>.</em></p>
+<p><em>Note that the <strong>year</strong> is here recognized as a <strong>number</strong>, not a <strong>string</strong> - so Morris.js would see it as a date with quotation marks, like this <code class="highlighter-rouge">”2012”</code>. Check all the valid date formats for this library <a href="http://morrisjs.github.io/morris.js/lines.html">here</a>.</em></p>
 
-<p>We will leave the <code>ykeys</code> with the <code>value</code> field. In the <code>label</code> field you can add anything you want, as long as it is in quotes - this will reflect in the <em>tooltip</em> of your chart - we will add <code>'Unemployment rate'</code>.</p>
+<p>We will leave the <code class="highlighter-rouge">ykeys</code> with the <code class="highlighter-rouge">value</code> field. In the <code class="highlighter-rouge">label</code> field you can add anything you want, as long as it is in quotes - this will reflect in the <em>tooltip</em> of your chart - we will add <code class="highlighter-rouge">'Unemployment rate'</code>.</p>
 
-<p>Also add this line: <code>xLabels: ['year'],</code>. This will avoid your chart to read the months when it renders, leaving only the years in the X axis.</p>
+<p>Also add this line: <code class="highlighter-rouge">xLabels: ['year'],</code>. This will avoid your chart to read the months when it renders, leaving only the years in the X axis.</p>
 
 <p>So this part of your code will look like this:</p>
 
-<pre><code>new Morris.Line({
+<div class="highlighter-rouge"><pre class="highlight"><code>new Morris.Line({
 	  element: 'myfirstchart',
 	  xkey: 'dates',
 	  ykeys: ['rate'],
 	  labels: ['Unemployment rate'],
 	  xLabels: ['year'],
 </code></pre>
+</div>
 
 <p>Which will render this:</p>
 
@@ -234,7 +240,7 @@ ___</p>
 
 <p>Lets start with the text-size, the colors and some goals (references in the chart). After the code mentioned above, and before the data, lets add the following lines:</p>
 
-<pre><code>	lineColors: [''],
+<div class="highlighter-rouge"><pre class="highlight"><code>	lineColors: [''],
   postUnits: [''],
   goals: [''],
   goalStrokeWidth: [''],
@@ -243,23 +249,24 @@ ___</p>
   gridTextSize: [''],
   gridTextColor: [''],
 </code></pre>
+</div>
 
 <ul>
-  <li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code>#C00</code>;</li>
-  <li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code>%</code> inside the brackets and it will add the sign to the Y axis;</li>
-  <li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code>[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
-  <li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code>#000</code>;</li>
+  <li>First, the colors of the lines. Lets give it a red look, so inside the brackets add <code class="highlighter-rouge">#C00</code>;</li>
+  <li>Second, the post units. Since we are talking about unemployment rate, it is a percentage, so add <code class="highlighter-rouge">%</code> inside the brackets and it will add the sign to the Y axis;</li>
+  <li>Then, its time for the goals, which are nothing more than the main marks you want to add to your chart. It can be the average, the median, the regression line - it can be any number. I will make it the average of all the values we inputed, or 7.7. This is cool to serve as reference, and you can add several, separate by commas, like this <code class="highlighter-rouge">[‘GOAL 1’, ‘GOAL 2’, ‘GOAL 3’]</code>;</li>
+  <li>The goal stroke width is noting more than how thick it is. I will set to 2px (default is 1px), and make it black <code class="highlighter-rouge">#000</code>;</li>
   <li>Point size is how big are the data points. If you want no points, use it 0. I will use 3px;</li>
-  <li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code>#777</code>;</li>
+  <li>The grid text size will define, well, the size of your text - I will use a 14px font. The text color define, well, the color - I will use some medium gray <code class="highlighter-rouge">#777</code>;</li>
 </ul>
 
 <p>In case you have noticed, Morris make it default to show the tooltip all the time, even if you don’t want. It is kind of annoying, so we will set for the tooltip to appear only when you hover.</p>
 
-<p>Add the following line: <code>hideHover: ['auto’],</code>. This will do the trick.</p>
+<p>Add the following line: <code class="highlighter-rouge">hideHover: ['auto’],</code>. This will do the trick.</p>
 
 <p>So far out code looks like this (I am not adding the data for size limits):</p>
 
-<pre><code>	new Morris.Line({
+<div class="highlighter-rouge"><pre class="highlight"><code>	new Morris.Line({
 					  element: 'myfirstchart',
 					  xkey: 'dates',
 					  ykeys: ['rate'],
@@ -275,6 +282,7 @@ ___</p>
 			      gridTextColor: ['#777'],
 	          hideHover: ['auto'],
 </code></pre>
+</div>
 
 <p>The result for now is this:</p>
 
@@ -286,15 +294,15 @@ ___</p>
 
 <p>In the <a href="https://www.google.com/fonts#QuickUsePlace:quickUse">Roboto page</a>, make sure you select the light (400) and bold (700) types of font (for body and header).</p>
 
-<p>Copy and paste this link into the <code>&lt;head&gt;</code> of your HTML: <code>&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
+<p>Copy and paste this link into the <code class="highlighter-rouge">&lt;head&gt;</code> of your HTML: <code class="highlighter-rouge">&lt;link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'&gt;</code></p>
 
-<p>Then, back to your javascript panel, proceed to add the option to enable it into the chart: <code>gridTextFamily: ['Roboto'],</code></p>
+<p>Then, back to your javascript panel, proceed to add the option to enable it into the chart: <code class="highlighter-rouge">gridTextFamily: ['Roboto'],</code></p>
 
 <p>Very nice. We are now almost done, lets just add some title, legend and source back in the HTML panel.</p>
 
-<p>Above the <code>&lt;div&gt;</code> tag, add <code>&lt;h1&gt;</code> (title) and <code>&lt;p&gt;</code> (legend), as well as some <code>&lt;h5&gt;</code> (source) below the chart. Like this:</p>
+<p>Above the <code class="highlighter-rouge">&lt;div&gt;</code> tag, add <code class="highlighter-rouge">&lt;h1&gt;</code> (title) and <code class="highlighter-rouge">&lt;p&gt;</code> (legend), as well as some <code class="highlighter-rouge">&lt;h5&gt;</code> (source) below the chart. Like this:</p>
 
-<pre><code>	&lt;body&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;body&gt;
 	  &lt;h1&gt;US unemployment rate&lt;/h1&gt;
 	  &lt;p&gt;Unemployment refers to the share of the labor force that is without work but available for and seeking employment. Measured in % of total labor force&lt;/p&gt;
 	  &lt;div id="myfirstchart" style="height: 250px;"&gt;
@@ -303,10 +311,11 @@ ___</p>
 
 	&lt;/body&gt;
 </code></pre>
+</div>
 
 <p>To apply the font - and some other styles (like margin or padding) that you want - go to the CSS panel and add your styles. We will only add a few things:</p>
 
-<pre><code>	body {
+<div class="highlighter-rouge"><pre class="highlight"><code>	body {
 	  padding: 0px 20px 10px 30px;
 	  font-family: 'Roboto', sans-serif;
 	}
@@ -321,12 +330,13 @@ ___</p>
 	  font-weight: 400;
 	}
 </code></pre>
+</div>
 
 <h3 id="make-it-responsive">Make it responsive</h3>
 
 <p>Finally, we have to make our chart responsive, so it fits several kinds of screens.</p>
 
-<p>Fortunately, Morris allows us to do it rather easily. Just add the following line to the code: <code>resize: ['true'],</code></p>
+<p>Fortunately, Morris allows us to do it rather easily. Just add the following line to the code: <code class="highlighter-rouge">resize: ['true'],</code></p>
 
 <p>This will apply the 100% width to fit the screen. Let’s make it a little bit higher too: in the HTML, apply the height to 350px, like this: ` &lt;div id="myfirstchart" style="height: 350px;"&gt;`</p>
 
