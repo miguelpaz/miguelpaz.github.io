@@ -101,6 +101,10 @@ body {
 .container a:hover {
   color: #16214d;
 }
+
+img {
+  max-width: 100%;
+}
 .img-responsive {
  display: block;
  height: auto;

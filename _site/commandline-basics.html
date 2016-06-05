@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Miguel Paz" />
+    <meta name="description" content="Courses, tools, tutorial, classes, events and other stuff">
+    <link rel="favicon" href="static/img/favicon.png">
+
+    
+      <title>Basic command line shortcuts</title>
+    
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="https://www.linkedin.com/in/miguelpaz">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="container">
+	<div class="blog-post">
+		<h3 id="title_main">
+		  <strong>Basic command line shortcuts</strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		June  5, 2016
+			&nbsp;&nbsp;
+			
+			 <span class="label label-success">Courses</span>
+			
+			 <span class="label label-success">Tutorials</span>
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>Command line is an user interface to navigate within directories and files in your computer, to install applications and to run local servers, among other things.</p>
+
+<p>Although it may seem confusing at first, the command line is widely used by developers and more savvy coders to enhance productivity and to run applications. When you really get the hang of it, you can be really faster than navigating around folders in Finder (OSX) or Windows.</p>
+
+<p>The tools of command line are Command Prompt or PowerShell, in Windows, and Terminal in Linux and Mac.</p>
+
+<p>This tutorial will include the most basic commands, and, if you want a more complete and technical tutorial, access <a href="https://www.davidbaumgold.com/tutorials/command-line/">this tutorial</a>, by David Baumgold. He called the command line “ the ultimate seat of power on your computer”.</p>
+
+<p>In this tutorial you need:</p>
+
+<ol>
+  <li>Access to Terminal or Command Prompt or PowerShell</li>
+</ol>
+
+<hr />
+
+<h2 id="application">Application</h2>
+
+<p>The following commands are, basically, a way to get around your computer, create files, delete them and move them. You can do this things in the more friendly user interface of your operating system, but it is a good thing to know these basic commands here.</p>
+
+<ul>
+  <li>Go to a certain directory</li>
+</ul>
+
+<p>When you start the command line tool, you will generally be within the main user directory. To go to another directory (folder), you have to use the <code class="highlighter-rouge">cd</code> command:</p>
+
+<p><code class="highlighter-rouge">cd MyFolder/MuSubfolder/MuSubfolder2</code></p>
+
+<p>To come back to the main directory, use just <code class="highlighter-rouge">cd</code>.</p>
+
+<p>To come back one step, for instance <code class="highlighter-rouge">MuSubfolder2</code> to <code class="highlighter-rouge">MuSubfolder</code>, type <code class="highlighter-rouge">cd ..</code>.</p>
+
+<ul>
+  <li>Check out what is inside your folder</li>
+</ul>
+
+<p>To see what is within a foder, use the <code class="highlighter-rouge">ls</code> command when you are inside the folder you want. You can also use a more structured command to see a better organized list:</p>
+
+<p><code class="highlighter-rouge">ls -l ~/MyFolder</code> in Mac and Linux and <code class="highlighter-rouge">dir</code> in Windows.</p>
+
+<ul>
+  <li>Create a directory</li>
+</ul>
+
+<p>Once inside a directory, if you want to create another directory there, the basic command is <code class="highlighter-rouge">mkdir</code>, or make directory, followed by the name you want to give this directory.</p>
+
+<p><code class="highlighter-rouge">mkdir MyNewDirectory</code></p>
+
+<p>To create more than one directory at once, just use space between the names of the folders you are creating.</p>
+
+<ul>
+  <li>Create a file</li>
+</ul>
+
+<p>To create a new file within a directory, use the <code class="highlighter-rouge">touch</code> command, followed by the file name and extension.</p>
+
+<p><code class="highlighter-rouge">touch ThisIsTextFile.txt</code> or <code class="highlighter-rouge">touch ThisIsDataFile.csv</code></p>
+
+<p>In Windows, use the <code class="highlighter-rouge">copy con</code> command.</p>
+
+<ul>
+  <li>Copy a file</li>
+</ul>
+
+<p>To copy a file you will need to use the <code class="highlighter-rouge">cp</code> command in Mac and Linux and <code class="highlighter-rouge">copy</code> in Windows, and then the directory you want to copy it to.</p>
+
+<p><code class="highlighter-rouge">cp ~/Desktop/ThisIsTextFile.txt ~/Documents</code> or <code class="highlighter-rouge">copy ThisIsTextFile.txt c:/Documents</code></p>
+
+<ul>
+  <li>Move a file or directory</li>
+</ul>
+
+<p>To move a file or directory, you have to use the <code class="highlighter-rouge">mv</code> command, followed by the directory you can send the object to.</p>
+
+<p>`mv ~/Desktop/MyFile.rtf ~/Documents/MyDocFolder</p>
+
+<ul>
+  <li>Remove (Delete) files</li>
+</ul>
+
+<p>To remove or delete files, use the <code class="highlighter-rouge">rm</code> command. Be very careful to use this command, as all decisions are final - no second change in the trash bin.</p>
+
+<p><code class="highlighter-rouge">rm MyFile.rtf</code> in Mac and Linux and <code class="highlighter-rouge">del MyFile.rtf</code> in Windows.</p>
+
+<ul>
+  <li>The permission command</li>
+</ul>
+
+<p>To install some applications on your computer, you will need to use <code class="highlighter-rouge">sudo</code> command in Mac and Linux, of the <code class="highlighter-rouge">runas</code> command in Windows.</p>
+
+<ul>
+  <li>Installing stuff</li>
+</ul>
+
+<p>In a Mac or Linux, to install or update applications, you have to use the <code class="highlighter-rouge">apt-get</code> command.</p>
+
+<p><code class="highlighter-rouge">sudo apt-get install MySoftware</code></p>
+
+<p>To update an existing application: <code class="highlighter-rouge">sudo apt-get upgrade</code></p>
+
+<ul>
+  <li>Clear the mess</li>
+</ul>
+
+<p>When you want to clear your command line of all the messy code, use the <code class="highlighter-rouge">clear</code> command, in Max or Linux, or <code class="highlighter-rouge">cls</code> in Windows.</p>
+
+<hr />
+
+<p>For the Windows reference and some other tricks, <a href="https://masteruby.github.io/productivity-booster/2014/03/26/top-ten-commands-in-terminal-you-will-use-everyday.html#.V1Osi5MrLdT">visit Master Ruby website</a>. You can also dig deeper in the <a href="https://www.codecademy.com/learn/learn-the-command-line">Code Academy course</a>, if that is your thing.</p>
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  4, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/highcharts-tutorial.html">Building interactive charts easily with Highcharts</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  1, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/csvkit-tutorial.html">Working on your data with CSVKit</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	May 30, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/morrisjs-tutorial.html">Making a bar chart with MorrisJS</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+
+        <div class="container">
+            <p class="text-muted">2016</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
