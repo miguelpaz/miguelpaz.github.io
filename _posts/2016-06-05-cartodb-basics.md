@@ -77,7 +77,7 @@ We are already by default using the *simple* type and, as the *Category* and the
 
 Remember: this example dataset only contains country name, year and source, not other data points. 
 
-You map should look like this: 
+Your map should look like this: 
 
 ![Carto - Wizards](https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_category.png?raw=true)
 
