@@ -21,7 +21,7 @@ This brief tutorial will teach how to use the most basic Carto tools to create a
 You will need: 
 
 1. [This example dataset](https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv)
-2. An account in [CartoDB](https://miguelpaz.carto.com)
+2. An account in [Carto](https://miguelpaz.carto.com)
 
 ___
 
