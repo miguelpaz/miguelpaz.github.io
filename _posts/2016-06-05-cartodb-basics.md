@@ -9,7 +9,7 @@ tags:
 Maps are a good way to visualize data about places, geographic patterns, show change over time and obviosuly when a story is completely based on geography.
 
 You can use Maps to show comparisons, proportions, relationships, hierarchy, parts to a whole, distribution of elements, patterns and
-<a href="http://www.ericson.net/content/2011/06/mapping-the-news/" target="_blank">more</a>. Always beware, as Matthew Ericson writes in <a href="http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/" target="_blank">"When Maps Shouldn't be Maps"</a>: **just because something can be mapped, it does not mean it should be mapped**. Avoid creating maps “when the interesting patterns aren’t geographic patterns” and “when the geographic data is more effective for analysis”. And always <a href="https://source.opennews.org/en-US/learning/distrust-your-data/" target="_blank">distrust your data</a> (specially when it has <a href="http://fusion.net/story/287592/internet-mapping-glitch-kansas-farm/" target="_blank">IP addresses</a> in <a href="http://fusion.net/story/290772/ip-mapping-maxmind-new-us-default-location/" target="_blank">it</a>
+<a href="http://www.ericson.net/content/2011/06/mapping-the-news/" target="_blank">more</a>. Always beware, as Matthew Ericson writes in <a href="http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/" target="_blank">"When Maps Shouldn't be Maps"</a>: **just because something can be mapped, it does not mean it should be mapped**. Avoid creating maps “when the interesting patterns aren’t geographic patterns” and “when the geographic data is more effective for analysis”. And always <a href="https://source.opennews.org/en-US/learning/distrust-your-data/" target="_blank">distrust your data</a> (specially when it has <a href="http://fusion.net/story/287592/internet-mapping-glitch-kansas-farm/" target="_blank">IP addresses</a> in <a href="http://fusion.net/story/290772/ip-mapping-maxmind-new-us-default-location/" target="_blank">it</a>.
 
 With that said, in this short tutorial, we will create a Map with data from a .CSV file with <a href="https://www.carto.com" target="_blank">Carto</a>. 
 
@@ -23,7 +23,7 @@ You will need:
 
 1. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv" target="_blank">This example .csv dataset</a>
 2. An account in <a href="https://www.carto.com" target="_blank">Carto</a>
-3. Bookmark the [Carto Editor](https://carto.com/docs/carto-editor/) documentation. Includes every detail about working with Carto maps.
+3. Bookmark the <a href="https://carto.com/docs/carto-editor/" target="_blank">Carto Editor</a> documentation. It includes every detail about working with the Carto maps editor.
 
 ___
 
