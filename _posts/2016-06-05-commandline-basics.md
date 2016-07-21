@@ -8,7 +8,9 @@ tags:
 
 Before the [graphical user interface](https://en.wikipedia.org/wiki/Graphical_user_interface" targe='_blank) we are so accustomed to use in our computers existed, the way of interacting with a computer was to use the Command Line to **command** a program to do what you want it to do by writing your orders <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">"in the form of successive lines of text"</a> or... Command lines :) 
 
-Ok, I know what you are thinking: *Why on earth would I want to learn to use this obscure old school thing if I can just point and click stuff in my computer to open folder, files, move them around, save them, rename them or delet them?* 
+Ok, I know what you are thinking: 
+
+> *Why on earth would I want to learn to use this obscure old school thing if I can just point and click stuff in my computer to open folder, files, move them around, save them, rename them or delet them?* 
 
 Well, it turns out that the Command Line - *formally known as Command Line Interface or Command Language Interpeter (CLI)* - is more ubiquitous and present than ever if you work with information and software **(that's you)**:
 - It allows you to navigate within directories, folders and files in your computer.
