@@ -6,7 +6,7 @@ tags:
 - Tutorials
 ---
 
-Making maps is one of the coolest things in data journalism. It is really a good way to visualize data about places, geographic patterns, show change over time and obviosuly when a story is completely based on geography.
+Maps are a good way to visualize data about places, geographic patterns, show change over time and obviosuly when a story is completely based on geography.
 
 You can use Maps to show comparisons, proportions, relationships, hierarchy, parts to a whole, distribution of elements, patterns and [more](http://www.ericson.net/content/2011/06/mapping-the-news/). Always beware, as Matthew Ericson writes in ["When Maps Shouldn't be Maps"](http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/): that just because something can be map it does not mean it should be mapped. Avoid creating maps “when the interesting patterns aren’t geographic patterns” and “when the geographic data is more effective for analysis”.
 
@@ -22,6 +22,7 @@ You will need:
 
 1. [This example dataset](https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv)
 2. An account in [Carto](https://miguelpaz.carto.com)
+3. Bookmark the [Carto Editor](https://carto.com/docs/carto-editor/) documentation. Includes every detail about working with Carto maps.
 
 ___
 
@@ -77,7 +78,7 @@ We are already by default using the *simple* type and, as the *Category* and the
 
 Remember: this example dataset only contains country name, year and source, not other data points. 
 
-Your map should look like this: 
+You map should look like this: 
 
 ![Carto - Wizards](https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_category.png?raw=true)
 
@@ -105,4 +106,4 @@ Here is a [live link as well](https://miguelpaz.carto.com/viz/089e3328-4acb-11e6
 
 ## Be a pro
 
-Change the custom colors in the *CartoCSS editor* tab, add interactivity functionalities, publish the map and share the live link. 
+Change the custom colors in the [*CartoCSS editor*](https://carto.com/docs/carto-editor/maps/#cartocss) tab, add interactivity functionalities, publish the map and share the live link.  
