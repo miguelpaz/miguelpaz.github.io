@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Making a chart in Carto without geolocation data 
+title: How to make a map in Carto without geolocation data 
 tags:
 - Courses
 - Tutorials
