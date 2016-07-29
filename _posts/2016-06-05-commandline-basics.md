@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to start using the Command Line basic shortcuts
+title: Learn Command Line basic shortcuts
 tags:
 - Courses
 - Tutorials
