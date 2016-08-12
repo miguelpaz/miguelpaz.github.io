@@ -1,6 +1,6 @@
 ---
 layout: special
-title: Test Special Page
+title: GitHub Pages - publishing through the online interface 
 tags:
 - Courses
 - Tutorials
