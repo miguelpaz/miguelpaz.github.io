@@ -9,7 +9,7 @@
     <link rel="favicon" href="static/img/favicon.png">
 
     
-      <title>GitHub Pages - publishing through the online interface</title>
+      <title>Test Special Page</title>
     
 
     <!-- Bootstrap -->
@@ -44,10 +44,56 @@
   </head>
   <!-- Main Body-->
   <body>
+
   <!-- Wrap all page content here -->
   <div id="wrap">
     <!-- Navbar header -->
-    <nav class="navbar navbar-default">
+    <style>
+#banner {
+	/* background-image: url(assets/images/data-journalism.jpg);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	height: 100vh;
+	width: 100%;
+}
+
+#overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100vh;
+	z-index: 100;
+	position: absolute;
+	top:0;
+	padding-top: 20%;
+	width: 100%;
+}
+
+#special_title {
+	color: white;
+	text-align: center;
+	font-size: 3em;
+	text-transform: uppercase;
+}
+</style>
+
+
+<div id="banner">
+
+      <div id="overlay">
+          <div style="z-index: 1; position: relative">
+						<div class="blog-post">
+							<h3 id="special_title">
+							  <strong>Test Special Page</strong>
+							</h3>
+						</div>
+          </div>
+        </div>
+</div>
+
+
+<div class="container">
+<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
@@ -62,13 +108,7 @@
   </div>
 </nav>
 
-
-    <div class="container">
-	<div class="blog-post">
-		<h3 id="title_main">
-		  <strong>GitHub Pages - publishing through the online interface</strong>
-		</h3>
-	</div>
+<hr />
 	<div class="blog-title">
 		<h4>
 		May 27, 2016
@@ -83,7 +123,10 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  <p>This is a tutorial about how to use your online interface to publish a project in <a href="https://pages.github.com/">GitHub Pages</a>, GitHub’s
+			  <style>#banner {
+	background-image: url(assets/images/image2.jpeg);} </style>
+
+<p>This is a tutorial about how to use your online interface to publish a project in <a href="https://pages.github.com/">GitHub Pages</a>, GitHub’s
 website builder, directly from your code repository.</p>
 
 <p>The process is neither obvious nor intuitive, but rather simple - and in this case we won’t resort to Git, command line or other more

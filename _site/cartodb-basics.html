@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Miguel Paz" />
+    <meta name="description" content="Courses, tools, tutorial, classes, events and other stuff">
+    <link rel="favicon" href="static/img/favicon.png">
+
+    
+      <title>Making a chart in CartoDB without geolocation data</title>
+    
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="https://www.linkedin.com/in/miguelpaz">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="container">
+	<div class="blog-post">
+		<h3 id="title_main">
+		  <strong>Making a chart in CartoDB without geolocation data</strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		June  5, 2016
+			&nbsp;&nbsp;
+			
+			 <span class="label label-success">Courses</span>
+			
+			 <span class="label label-success">Tutorials</span>
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>Making charts is one of the coolest things in data journalism. It is really a good way to visualize data about places, that sometimes it just won’t fit a normal type of chart.</p>
+
+<p><a href="https://voltdatalab.cartodb.com">CartoDB</a> is one of the best tools out there to do that. You can make interactive maps, download static image files and customize colors and points. And it is free if you are OK with using their more basic resources (which are good by most standards).</p>
+
+<p>However, there are a few tricks in both better representing your data and making your map look good.</p>
+
+<p>This tutorial will teach how to use the most basic CartoDB tools, and that, even when you have few data points to show, it is still a good visual approach to use.</p>
+
+<p>For this tutorial you will need:</p>
+
+<ol>
+  <li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv">This example dataset</a></li>
+  <li>An account in <a href="https://voltdatalab.cartodb.com">CartoDB</a></li>
+</ol>
+
+<hr />
+
+<h2 id="using-the-dataset">Using the dataset</h2>
+
+<p>The example dataset bears no mystery at all. It shows countries where same-sex marriage is legally allowed, and holds only three columns of information: country, year and source. Data is from the <a href="http://www.pewresearch.org/topics/gay-marriage-and-homosexuality/">Pew Research Center</a>.</p>
+
+<p>However, with only two of those columns, it is possible to have a good, descriptive graphic about same sex-marriage in the world.</p>
+
+<p>Lets load the data.</p>
+
+<p>If you already have an account in CartoDB website, login and right away click on the green button <em>New Map</em>.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic.png?raw=true" alt="CartoDB - New Map" /></p>
+
+<p>This will take you to a screen so you can <em>Add a Dataset</em>.</p>
+
+<p>There are dozens of ways you can upload your data into the CartoDB server. It accepts several kinds of data formats (like CSV, XLS, ZIP, KML, GPX), and you can use their data library, connect your data from Dropbox, Twitter, Google Drive or upload a data file that you have in your computer.</p>
+
+<p>In our case, we will use a .csv file from a URL. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv">This is the dataset you will use for this tutorial</a>.</p>
+
+<p>Click on the <em>Data File</em> tab and paste the URL above in the white input field, than click <em>Submit</em> and then in the green button on the bottom <em>Connect Dataset</em>.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data.png?raw=true" alt="CartoDB - data" /></p>
+
+<p>This will lead you to a map canvas with some orange polygons in it. Polygons are the shapes and color fill of all geographic borders of countries (ou regions or cities). Great, you basically have a map now.</p>
+
+<p>CartoDB is a good tool and, when working with a more general kind of information - like country names - it can geocode your data by itself, without any settings from you, just from your column containing country names.</p>
+
+<blockquote>
+  <p>WARNING: if you have repeated or wrongly spelled country names, or that somehow miss the standards adopted by CartoDB data, this resource could not work.</p>
+</blockquote>
+
+<p>You could just put a title like “Countries in the World Where Same-sex Marriage is Allowed” and publish it, but you can make it even better. Lets see how to do that.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_no_custom.png?raw=true" alt="CartoDB - map with no customization" /></p>
+
+<p>In the <em>Data View</em> tab, you can see how the data was automatically parsed by CartoDB when you uploaded from the URL.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data_view.png?raw=true" alt="CartoDB - parsed data" /></p>
+
+<h2 id="customizing-your-map">Customizing your map</h2>
+
+<p>Now that you have successfully uploaded your data, lets add a title and some metadata, in the upper left corner of your screen, by clicking in <em>Edit Metadata</em>. This is not necessary, but it is a good practice.</p>
+
+<p>Now, lets adjust the look of the map. In the right side of your screen, there will be a tab with several options - <em>Sql</em>, <em>Wizards</em>, <em>Infowindow</em>, <em>Cartocss</em>, <em>Legends</em> and <em>Filters</em>. For this tutorial, we will only focus in the <em>Wizards</em>.</p>
+
+<p>Click on the <em>Wizards</em> tab. You will see some options that you can configure on your map.</p>
+
+<ol>
+  <li>Simple - plain color fill of a polygon or point</li>
+  <li>Choropleth - used to describe intensity of the data in certain areas</li>
+  <li>Category - color the polygons according to an assigned category</li>
+  <li>Bubble - shows the size of the data in certain areas</li>
+</ol>
+
+<p>We are already by default using the <em>simple</em> type and, as the <em>Category</em> and the <em>Bubble</em> are meant to show sizes, intensity and dimensions of certain values (which we don’t have in this dataset), so we will check the <em>Category</em> type - just so you know how it looks like. It may want to proceed with the <em>simple</em> or the <em>category</em> option.</p>
+
+<p>Remember: this example dataset only contains country name, year and source, not other data point.</p>
+
+<p>You map should look like this:</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_category.png?raw=true" alt="CartoDB - Wizards" /></p>
+
+<h2 id="change-the-map-background">Change the map background</h2>
+
+<p>CartoDB offers a series of <em>basemaps</em>, or the background maps you will use. This option is in the lower left corner of the screen.</p>
+
+<p>Click there and choose a basemap. This tutorial chooses <em>CartoDB World Eco</em>. You may choose the one you want.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_basemap.png?raw=true" alt="CartoDB - basemap" /></p>
+
+<p>Now we have a category-colored, background-customized map with year labels in it. We are just missing a proper title and the source.</p>
+
+<p>On the upper left corner, go to <code class="highlighter-rouge">Add element -&gt; Add title item</code> and put the title you think it is best. If you don’t know where to put the title box, you can go to <code class="highlighter-rouge">Options -&gt; Fixed-title</code> and it will automatically add an upper bar with the title you gave your map earlier, in the metadata section. That is what this tutorial will do.</p>
+
+<p>To add a source or annotation items, go to <code class="highlighter-rouge">Add element -&gt; Add text item</code>. We are adding that the data comes from Pew Research Center, and then change the text size to 14px.</p>
+
+<p>Now we are settled. Click export image or publish your map!</p>
+
+<p>It should look like this:</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_finalmap.png?raw=true" alt="CartoDB - Final" /></p>
+
+<h2 id="be-a-pro">Be a pro</h2>
+
+<p>Change the custom colors in the <em>CartoCSS editor</em> tab, add interactivity functionalities, publish the map and share the live link.</p>
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  6, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/googlesheets-basics.html">Using formulas for strings in Google Sheets</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  5, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/commandline-basics.html">Basic command line shortcuts</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  4, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/highcharts-tutorial.html">Building interactive charts easily with Highcharts</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+
+        <div class="container">
+            <p class="text-muted">2016</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

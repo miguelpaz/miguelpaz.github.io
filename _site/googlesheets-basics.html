@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="author" content="Miguel Paz" />
+    <meta name="description" content="Courses, tools, tutorial, classes, events and other stuff">
+    <link rel="favicon" href="static/img/favicon.png">
+
+    
+      <title>Using formulas for strings in Google Sheets</title>
+    
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://miguelpaz.github.io"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="https://www.linkedin.com/in/miguelpaz">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="container">
+	<div class="blog-post">
+		<h3 id="title_main">
+		  <strong>Using formulas for strings in Google Sheets</strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		June  6, 2016
+			&nbsp;&nbsp;
+			
+			 <span class="label label-success">Courses</span>
+			
+			 <span class="label label-success">Tutorials</span>
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>Google Sheets is a great tool to work with your data. You can store it, clean it, organize it, manipulate it, analyze it, scrape webpages with it and download it in several formats.</p>
+
+<p>This tutorial will give you a basic overview of the text formulas Google Sheets offers you, also with some basic, most used functions for strings.</p>
+
+<p>It will assume that you already knows how to do the most basic things, like removing or adding columns and rows (just right click them) and sheet tabs, for instance. We won’t talk about formatting the data here, with colors and fonts.</p>
+
+<p>For this, you will need:</p>
+
+<ol>
+  <li><a href="https://docs.google.com/a/voltdata.info/spreadsheets/d/1rQCG0ggtKzrfTxY2yQ4sDTo6SOz5QQONIz9vt6GhrQA/edit?usp=sharing">Access the exemple data</a></li>
+  <li>A Google account</li>
+  <li><a href="https://docs.google.com/spreadsheets">Going to Google Spreadsheets page</a></li>
+</ol>
+
+<hr />
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>Access the example data in the link above about newsrooms based in New York city - with addresses, social media following numbers, description and even latitude and longitude.</p>
+
+<p>Make a copy of this file by doing <code class="highlighter-rouge">File -&gt; Make a Copy</code>.</p>
+
+<p>After that, you will see we created a new sheet tab on the bottom, called “Test here”. This was made so you have a secure environment to work with your data without erasing the original dataset and having the trouble to look for the original file to copy again.</p>
+
+<blockquote>
+  <p>Always make a copy of the original dataset</p>
+</blockquote>
+
+<p>You can either copy and paste the data in the second sheet or <strong>duplicate</strong> the original file as another sheet.</p>
+
+<h2 id="putting-values-together">Putting values together</h2>
+
+<p>Sometimes, you might need to put together values within certain cells, for whatever reason you deem necessary. For, there are two basic formulas - <code class="highlighter-rouge">CONCAT</code> for two values, and <code class="highlighter-rouge">CONCATENATE</code> for more than two values. The application is the same.</p>
+
+<p>In our example dataset, take a look at the LAT and LONG columns. Some people like to have that info in the same column. Lets do it then.</p>
+
+<p>Create a new column on the side of the LONG column and apply the formula:</p>
+
+<p><code class="highlighter-rouge">=CONCATENATE(D1, ", ",E1 )</code></p>
+
+<p>We are using <code class="highlighter-rouge">CONCATENATE</code> because we will want to separate the values with a comma - making it three strings to put together. If you for some reason don’t want the comma, you may use <code class="highlighter-rouge">CONCAT</code>.</p>
+
+<p>After that, just apply the same formula to the other cells, by dragging the blue square in the corner of the cell.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/google_sheets_concat.png?raw=true" alt="Google Sheets - Concat" /></p>
+
+<p>You can also use the <code class="highlighter-rouge">JOIN</code> formula, which is very similar, but allows you to use a specified delimiter.</p>
+
+<h2 id="splitting-values">Splitting values</h2>
+
+<p>As with merging cells, is also very common that you will need to split values within a cell. There is a basic command for that, the <code class="highlighter-rouge">SPLIT</code> function.</p>
+
+<p>You have to determine with character will be used to tell your cell to split into. Lets say you now want to undo the CONCAT operation you did, and now need to separate LAT and LONG.</p>
+
+<p>First, you are splitting two values, so you will need two more columns. Create them and apply the formula:</p>
+
+<p><code class="highlighter-rouge">=SPLIT(F1, ", ")</code></p>
+
+<p>This way, your telling the formula to split that values on that cell based on the comma your have there. The split value will disappear.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/google_sheets_split.png?raw=true" alt="Google Sheets - Split" /></p>
+
+<h2 id="find-and-replace">Find and replace</h2>
+
+<p>Finding and replacing values may be one of the most useful tools to clear and manipulate your data. And it might, just as well, be one of the most dangerous one. Be sure to use it carefully.</p>
+
+<p>As you can see in our dataset, the social media following count numbers are separated by commas. That is nice to make the number clearer, but if may cause confusion when using CSV or trying to parse data in charting tools. Lets clear those commas and make it a “clean” number.</p>
+
+<p>Make sure you select <strong>ONLY</strong> the columns your are trying to change. They will be highlighted in blue like in the picture below. To do that, hold <code class="highlighter-rouge">SHIFT</code> and click on the column top headers (the letters).</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/google_sheets_replace1.png?raw=true" alt="Google Sheets - Replace" /></p>
+
+<blockquote>
+  <p>WARNING: If you fail or forget to do that, you may put all your dataset at risk, in some cases even other sheet tabs, as you might erase all the commas in that entire dataset, even the ones you don’t want to.</p>
+</blockquote>
+
+<p>Then proceed to <code class="highlighter-rouge">Edit -&gt; Find and Replace</code>.</p>
+
+<p>The <code class="highlighter-rouge">Find</code> is where you will insert the character you want to change or remove, in this case the comma. The <code class="highlighter-rouge">Replace with</code> is where you put the value you want to add. Since are cleaning the number not to have any separator, we will leave it blank (no spaces). You can add a few parameters, like selecting specific ranges in your dataset to modify - but in this canse we want the entire column.</p>
+
+<p>Click the <em>Replace all</em> button.</p>
+
+<p>If nothing happens, it is because your spreadsheet formatting settings are adding the commas automatically, as it recognizes the values as numbers.</p>
+
+<p>There are some ways around this issue.</p>
+
+<ol>
+  <li>Go to <code class="highlighter-rouge">Format -&gt; Number -&gt; Plain Text</code> - this will tell your cell to recognize the cell as a string, not a number. Do the <em>Find and Replace</em> process again now. This can be a faster approach.</li>
+  <li><code class="highlighter-rouge">Format -&gt; Number -&gt; More Formats -&gt; Custom Number Formats</code>, and select a number format without commas or numbers. This could tell your whole spreadsheet to read numbers like that, if you want. This can be a better  practices approach.</li>
+</ol>
+
+<blockquote>
+  <p>TIP: Another approach for this is to use the <code class="highlighter-rouge">SUBSTITUTE</code> function. This is safer and more accurate, but certainly more intricate.</p>
+</blockquote>
+
+<p>This this function to solve the same problem:</p>
+
+<p><code class="highlighter-rouge">=SUBSTITUTE(H2, ",", "")</code></p>
+
+<p>This tells that in the cell H2, we are substituting comma for nothing. If you want to just substitute the</p>
+
+<hr />
+
+<h2 id="be-a-pro">Be a pro</h2>
+
+<p>Check out this <a href="https://support.google.com/docs/table/25273?hl=en">list of functions</a> and try them out.</p>
+
+<p>The <code class="highlighter-rouge">TRIM</code> function is pretty useful when you want to extract certain parts of a text in a cell or cut white spaces.</p>
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  5, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/commandline-basics.html">Basic command line shortcuts</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  5, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/cartodb-basics.html">Making a chart in CartoDB without geolocation data</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	June  4, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/highcharts-tutorial.html">Building interactive charts easily with Highcharts</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+
+        <div class="container">
+            <p class="text-muted">2016</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -6,13 +6,131 @@
   
   <link href="http://miguelpaz.github.io/"/>
   <id>http://miguelpaz.github.io/</id>
-  <updated>2016-06-05T03:27:09Z</updated>
+  <updated>2016-08-10T23:47:26Z</updated>
   <author>
     <name>Miguel Paz</name>
     <email>miguel.paz@journalism.cuny.edu</email>
   </author>
   <rights type="text">Copyright © 2016 Miguel Paz. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Using formulas for strings in Google Sheets</title>
+  <link rel="alternate" type="text/html" href="http://miguelpaz.github.io/googlesheets-basics.html" />
+  <id>http://miguelpaz.github.io/googlesheets-basics</id>
+  <published>2016-06-06T00:00:00Z</published>
+  <updated>2016-06-06T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>Google Sheets is a great tool to work with your data. You can store it, clean it, organize it, manipulate it, analyze it, scrape webpages with it and download it in several formats.</p>
+
+<p>This tutorial will give you a basic overview of the text formulas Google Sheets offers you, also with some basic, most used functions for strings.</p>
+
+<p>It will assume that you already knows how to do the most basic things, like removing or adding columns and rows (just right click them) and sheet tabs, for instance. We won’t talk about formatting the data here, with colors and fonts.</p>
+
+<p>For this, you will need:</p>
+
+<ol>
+  <li><a href="https://docs.google.com/a/voltdata.info/spreadsheets/d/1rQCG0ggtKzrfTxY2yQ4sDTo6SOz5QQONIz9vt6GhrQA/edit?usp=sharing">Access the exemple data</a></li>
+  <li>A Google account</li>
+  <li><a href="https://docs.google.com/spreadsheets">Going to Google Spreadsheets page</a></li>
+</ol>
+
+<hr />
+
+<h2 id="getting-started">Getting started</h2>
+
+<p>Access the example data in the link above about newsrooms based in New York city - with addresses, social media following numbers, description and even latitude and longitude.</p>
+
+<p>Make a copy of this file by doing <code class="highlighter-rouge">File -&gt; Make a Copy</code>.</p>
+
+<p>After that, you will see we created a new sheet tab on the bottom, called “Test here”. This was made so you have a secure environment to work with your data without erasing the original dataset and having the trouble to look for the original file to copy again.</p>
+
+<blockquote>
+  <p>Always make a copy of the original dataset</p>
+</blockquote>
+
+<p>You can either copy and paste the data in the second sheet or <strong>duplicate</strong> the original file as another sheet.</p>
+
+<h2 id="putting-values-together">Putting values together</h2>
+
+<p>Sometimes, you might need to put together values within certain cells, for whatever reason you deem necessary. For, there are two basic formulas - <code class="highlighter-rouge">CONCAT</code> for two values, and <code class="highlighter-rouge">CONCATENATE</code> for more than two values. The application is the same.</p>
+
+<p>In our example dataset, take a look at the LAT and LONG columns. Some people like to have that info in the same column. Lets do it then.</p>
+
+<p>Create a new column on the side of the LONG column and apply the formula:</p>
+
+<p><code class="highlighter-rouge">=CONCATENATE(D1, ", ",E1 )</code></p>
+
+<p>We are using <code class="highlighter-rouge">CONCATENATE</code> because we will want to separate the values with a comma - making it three strings to put together. If you for some reason don’t want the comma, you may use <code class="highlighter-rouge">CONCAT</code>.</p>
+
+<p>After that, just apply the same formula to the other cells, by dragging the blue square in the corner of the cell.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/google_sheets_concat.png?raw=true" alt="Google Sheets - Concat" /></p>
+
+<p>You can also use the <code class="highlighter-rouge">JOIN</code> formula, which is very similar, but allows you to use a specified delimiter.</p>
+
+<h2 id="splitting-values">Splitting values</h2>
+
+<p>As with merging cells, is also very common that you will need to split values within a cell. There is a basic command for that, the <code class="highlighter-rouge">SPLIT</code> function.</p>
+
+<p>You have to determine with character will be used to tell your cell to split into. Lets say you now want to undo the CONCAT operation you did, and now need to separate LAT and LONG.</p>
+
+<p>First, you are splitting two values, so you will need two more columns. Create them and apply the formula:</p>
+
+<p><code class="highlighter-rouge">=SPLIT(F1, ", ")</code></p>
+
+<p>This way, your telling the formula to split that values on that cell based on the comma your have there. The split value will disappear.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/google_sheets_split.png?raw=true" alt="Google Sheets - Split" /></p>
+
+<h2 id="find-and-replace">Find and replace</h2>
+
+<p>Finding and replacing values may be one of the most useful tools to clear and manipulate your data. And it might, just as well, be one of the most dangerous one. Be sure to use it carefully.</p>
+
+<p>As you can see in our dataset, the social media following count numbers are separated by commas. That is nice to make the number clearer, but if may cause confusion when using CSV or trying to parse data in charting tools. Lets clear those commas and make it a “clean” number.</p>
+
+<p>Make sure you select <strong>ONLY</strong> the columns your are trying to change. They will be highlighted in blue like in the picture below. To do that, hold <code class="highlighter-rouge">SHIFT</code> and click on the column top headers (the letters).</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/google_sheets_replace1.png?raw=true" alt="Google Sheets - Replace" /></p>
+
+<blockquote>
+  <p>WARNING: If you fail or forget to do that, you may put all your dataset at risk, in some cases even other sheet tabs, as you might erase all the commas in that entire dataset, even the ones you don’t want to.</p>
+</blockquote>
+
+<p>Then proceed to <code class="highlighter-rouge">Edit -&gt; Find and Replace</code>.</p>
+
+<p>The <code class="highlighter-rouge">Find</code> is where you will insert the character you want to change or remove, in this case the comma. The <code class="highlighter-rouge">Replace with</code> is where you put the value you want to add. Since are cleaning the number not to have any separator, we will leave it blank (no spaces). You can add a few parameters, like selecting specific ranges in your dataset to modify - but in this canse we want the entire column.</p>
+
+<p>Click the <em>Replace all</em> button.</p>
+
+<p>If nothing happens, it is because your spreadsheet formatting settings are adding the commas automatically, as it recognizes the values as numbers.</p>
+
+<p>There are some ways around this issue.</p>
+
+<ol>
+  <li>Go to <code class="highlighter-rouge">Format -&gt; Number -&gt; Plain Text</code> - this will tell your cell to recognize the cell as a string, not a number. Do the <em>Find and Replace</em> process again now. This can be a faster approach.</li>
+  <li><code class="highlighter-rouge">Format -&gt; Number -&gt; More Formats -&gt; Custom Number Formats</code>, and select a number format without commas or numbers. This could tell your whole spreadsheet to read numbers like that, if you want. This can be a better  practices approach.</li>
+</ol>
+
+<blockquote>
+  <p>TIP: Another approach for this is to use the <code class="highlighter-rouge">SUBSTITUTE</code> function. This is safer and more accurate, but certainly more intricate.</p>
+</blockquote>
+
+<p>This this function to solve the same problem:</p>
+
+<p><code class="highlighter-rouge">=SUBSTITUTE(H2, ",", "")</code></p>
+
+<p>This tells that in the cell H2, we are substituting comma for nothing. If you want to just substitute the</p>
+
+<hr />
+
+<h2 id="be-a-pro">Be a pro</h2>
+
+<p>Check out this <a href="https://support.google.com/docs/table/25273?hl=en">list of functions</a> and try them out.</p>
+
+<p>The <code class="highlighter-rouge">TRIM</code> function is pretty useful when you want to extract certain parts of a text in a cell or cut white spaces.</p>
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">Basic command line shortcuts</title>
   <link rel="alternate" type="text/html" href="http://miguelpaz.github.io/commandline-basics.html" />
@@ -128,6 +246,117 @@
 <hr />
 
 <p>For the Windows reference and some other tricks, <a href="https://masteruby.github.io/productivity-booster/2014/03/26/top-ten-commands-in-terminal-you-will-use-everyday.html#.V1Osi5MrLdT">visit Master Ruby website</a>. You can also dig deeper in the <a href="https://www.codecademy.com/learn/learn-the-command-line">Code Academy course</a>, if that is your thing.</p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">Making a chart in CartoDB without geolocation data</title>
+  <link rel="alternate" type="text/html" href="http://miguelpaz.github.io/cartodb-basics.html" />
+  <id>http://miguelpaz.github.io/cartodb-basics</id>
+  <published>2016-06-05T00:00:00Z</published>
+  <updated>2016-06-05T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>Making charts is one of the coolest things in data journalism. It is really a good way to visualize data about places, that sometimes it just won’t fit a normal type of chart.</p>
+
+<p><a href="https://voltdatalab.cartodb.com">CartoDB</a> is one of the best tools out there to do that. You can make interactive maps, download static image files and customize colors and points. And it is free if you are OK with using their more basic resources (which are good by most standards).</p>
+
+<p>However, there are a few tricks in both better representing your data and making your map look good.</p>
+
+<p>This tutorial will teach how to use the most basic CartoDB tools, and that, even when you have few data points to show, it is still a good visual approach to use.</p>
+
+<p>For this tutorial you will need:</p>
+
+<ol>
+  <li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv">This example dataset</a></li>
+  <li>An account in <a href="https://voltdatalab.cartodb.com">CartoDB</a></li>
+</ol>
+
+<hr />
+
+<h2 id="using-the-dataset">Using the dataset</h2>
+
+<p>The example dataset bears no mystery at all. It shows countries where same-sex marriage is legally allowed, and holds only three columns of information: country, year and source. Data is from the <a href="http://www.pewresearch.org/topics/gay-marriage-and-homosexuality/">Pew Research Center</a>.</p>
+
+<p>However, with only two of those columns, it is possible to have a good, descriptive graphic about same sex-marriage in the world.</p>
+
+<p>Lets load the data.</p>
+
+<p>If you already have an account in CartoDB website, login and right away click on the green button <em>New Map</em>.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic.png?raw=true" alt="CartoDB - New Map" /></p>
+
+<p>This will take you to a screen so you can <em>Add a Dataset</em>.</p>
+
+<p>There are dozens of ways you can upload your data into the CartoDB server. It accepts several kinds of data formats (like CSV, XLS, ZIP, KML, GPX), and you can use their data library, connect your data from Dropbox, Twitter, Google Drive or upload a data file that you have in your computer.</p>
+
+<p>In our case, we will use a .csv file from a URL. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv">This is the dataset you will use for this tutorial</a>.</p>
+
+<p>Click on the <em>Data File</em> tab and paste the URL above in the white input field, than click <em>Submit</em> and then in the green button on the bottom <em>Connect Dataset</em>.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data.png?raw=true" alt="CartoDB - data" /></p>
+
+<p>This will lead you to a map canvas with some orange polygons in it. Polygons are the shapes and color fill of all geographic borders of countries (ou regions or cities). Great, you basically have a map now.</p>
+
+<p>CartoDB is a good tool and, when working with a more general kind of information - like country names - it can geocode your data by itself, without any settings from you, just from your column containing country names.</p>
+
+<blockquote>
+  <p>WARNING: if you have repeated or wrongly spelled country names, or that somehow miss the standards adopted by CartoDB data, this resource could not work.</p>
+</blockquote>
+
+<p>You could just put a title like “Countries in the World Where Same-sex Marriage is Allowed” and publish it, but you can make it even better. Lets see how to do that.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_no_custom.png?raw=true" alt="CartoDB - map with no customization" /></p>
+
+<p>In the <em>Data View</em> tab, you can see how the data was automatically parsed by CartoDB when you uploaded from the URL.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data_view.png?raw=true" alt="CartoDB - parsed data" /></p>
+
+<h2 id="customizing-your-map">Customizing your map</h2>
+
+<p>Now that you have successfully uploaded your data, lets add a title and some metadata, in the upper left corner of your screen, by clicking in <em>Edit Metadata</em>. This is not necessary, but it is a good practice.</p>
+
+<p>Now, lets adjust the look of the map. In the right side of your screen, there will be a tab with several options - <em>Sql</em>, <em>Wizards</em>, <em>Infowindow</em>, <em>Cartocss</em>, <em>Legends</em> and <em>Filters</em>. For this tutorial, we will only focus in the <em>Wizards</em>.</p>
+
+<p>Click on the <em>Wizards</em> tab. You will see some options that you can configure on your map.</p>
+
+<ol>
+  <li>Simple - plain color fill of a polygon or point</li>
+  <li>Choropleth - used to describe intensity of the data in certain areas</li>
+  <li>Category - color the polygons according to an assigned category</li>
+  <li>Bubble - shows the size of the data in certain areas</li>
+</ol>
+
+<p>We are already by default using the <em>simple</em> type and, as the <em>Category</em> and the <em>Bubble</em> are meant to show sizes, intensity and dimensions of certain values (which we don’t have in this dataset), so we will check the <em>Category</em> type - just so you know how it looks like. It may want to proceed with the <em>simple</em> or the <em>category</em> option.</p>
+
+<p>Remember: this example dataset only contains country name, year and source, not other data point.</p>
+
+<p>You map should look like this:</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_category.png?raw=true" alt="CartoDB - Wizards" /></p>
+
+<h2 id="change-the-map-background">Change the map background</h2>
+
+<p>CartoDB offers a series of <em>basemaps</em>, or the background maps you will use. This option is in the lower left corner of the screen.</p>
+
+<p>Click there and choose a basemap. This tutorial chooses <em>CartoDB World Eco</em>. You may choose the one you want.</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_basemap.png?raw=true" alt="CartoDB - basemap" /></p>
+
+<p>Now we have a category-colored, background-customized map with year labels in it. We are just missing a proper title and the source.</p>
+
+<p>On the upper left corner, go to <code class="highlighter-rouge">Add element -&gt; Add title item</code> and put the title you think it is best. If you don’t know where to put the title box, you can go to <code class="highlighter-rouge">Options -&gt; Fixed-title</code> and it will automatically add an upper bar with the title you gave your map earlier, in the metadata section. That is what this tutorial will do.</p>
+
+<p>To add a source or annotation items, go to <code class="highlighter-rouge">Add element -&gt; Add text item</code>. We are adding that the data comes from Pew Research Center, and then change the text size to 14px.</p>
+
+<p>Now we are settled. Click export image or publish your map!</p>
+
+<p>It should look like this:</p>
+
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_finalmap.png?raw=true" alt="CartoDB - Final" /></p>
+
+<h2 id="be-a-pro">Be a pro</h2>
+
+<p>Change the custom colors in the <em>CartoCSS editor</em> tab, add interactivity functionalities, publish the map and share the live link.</p>
  ]]></content>
 </entry>
 
@@ -1093,6 +1322,186 @@ Go to <a href="https://www.google.com/fonts">Google Fonts</a> to fetch some nice
 <p>If you feel you are ready for more, try “breaking” your chart’s code so it is easier to read and manipulate. This takes more time to learn, but it is sure worth your while in the long run if you want to dig deeper.</p>
 
 <p><a href="https://jsbin.com/donapi/edit?html,js,output">The new code is here, in this JSbin.</a></p>
+ ]]></content>
+</entry>
+
+
+  <entry>
+  <title type="text">Test Special Page</title>
+  <link rel="alternate" type="text/html" href="http://miguelpaz.github.io/test-special-page.html" />
+  <id>http://miguelpaz.github.io/test-special-page</id>
+  <published>2016-05-27T00:00:00Z</published>
+  <updated>2016-05-27T00:00:00Z</updated>
+  <content type="html"><![CDATA[ <style>#banner {
+	background-image: url(assets/images/image2.jpeg);} </style>
+
+<p>This is a tutorial about how to use your online interface to publish a project in <a href="https://pages.github.com/">GitHub Pages</a>, GitHub’s
+website builder, directly from your code repository.</p>
+
+<p>The process is neither obvious nor intuitive, but rather simple - and in this case we won’t resort to Git, command line or other more
+advanced resources programmers generally use to be faster and collaborate on the same repo, but that could be more difficult to learn
+at first.</p>
+
+<p>GH-Pages is a good way for you to easly upload your website or project for free, without using any CMS.</p>
+
+<p><br /></p>
+
+<hr />
+<p><br /></p>
+
+<ul>
+  <li>First, open an account in <a href="http://github.com">no GitHub</a>, if you don’t have one. It is free and fast.
+    <ul>
+      <li>Don’t forget to confirm this account - you will get an email asking you to do so.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/719/22346475599_db39a9422d_z.jpg" alt="Follow the red arrows!" /></p>
+
+<ul>
+  <li>After this step, access your main GitHub webpage, where you will be able to create repositories, files and sites</li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/607/22544467521_46c261e0cd_z.jpg" alt="It will look like this" /></p>
+
+<ul>
+  <li>Now, you should create a new repository, by clicking in <code class="highlighter-rouge">New Repository</code>.</li>
+</ul>
+
+<p><img src="https://c2.staticflickr.com/6/5636/22507327496_b147043129_o.png" alt="Not that hard!" /></p>
+
+<ul>
+  <li>Give a name to your repository. Inicially, right now it can be just /<code class="highlighter-rouge">test</code>
+    <ul>
+      <li>Give it a brief description to your project. Something like: <code class="highlighter-rouge">this is a test, please don't mind this trial!</code>.</li>
+      <li>A description is optional but it is useful and adds a good practice touch even to a test</li>
+    </ul>
+  </li>
+  <li>Make sure to select the field <code class="highlighter-rouge">Initialize this repository with a README</code>.
+    <ul>
+      <li><strong>This is particularly important</strong>, because if you don’t, GitHub will assume you are initializing and
+organizing your repo through a different process, and you will not be able to populate your project just yet.
+It is easier to just check it.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://c2.staticflickr.com/6/5655/22345977598_c7a2a5f6c3_z.jpg" alt="Life-saving arrows" /></p>
+
+<ul>
+  <li>The repo page must appear exactly as shown in the image below
+    <ul>
+      <li>Of course, note for any difference in title, content etc, but otherwhise should be the same</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://c2.staticflickr.com/6/5739/22345360900_9b698a4ffa_z.jpg" alt="" /></p>
+
+<ul>
+  <li>Now that you are in the repo page, this is where you will add your codes.
+    <ul>
+      <li>If you have HTML and CSS ready, great!. If not, feel free to use <a href="https://github.com/voltdatalab/template-courses">this one as an example</a></li>
+    </ul>
+  </li>
+  <li>What you will do next is upload the codes, using either <code class="highlighter-rouge">CTRL+C + CTRL+V</code> or the <code class="highlighter-rouge">upload files</code> button</li>
+  <li>Add a description to your project if you haven’t done so, but ignore - for the time being - the field website.</li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/690/22519805902_c437a365f6_z.jpg" alt="Ignore the website field" /></p>
+
+<ul>
+  <li>If you want to copy and paste your code, click in <code class="highlighter-rouge">create a new file</code> button</li>
+  <li>If you want to upload files, like <code class="highlighter-rouge">.html</code> and <code class="highlighter-rouge">.css</code>, click <code class="highlighter-rouge">upload files</code></li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/590/22533313525_b7fc3c1a3d_o.png" alt="" /></p>
+
+<ul>
+  <li>In this example, I will proceed with the more arcaic approach: copying and pasting
+    <ul>
+      <li>Keep in mind that this is just a very simple, easy to implement approach, and its worth doing it to see how GitHub works</li>
+      <li>We will talk about the <a href="https://desktop.github.com/">desktop client</a> later</li>
+    </ul>
+  </li>
+  <li>If you copy and paste, add a name to your initial HMTL file. In this case, as this will be your initial page
+(the only one for the time being in the repo), the name <strong>must be</strong> <code class="highlighter-rouge">index.html</code></li>
+  <li>Paste the HTML in the field below <code class="highlighter-rouge">Edit New File</code></li>
+</ul>
+
+<p><img src="https://c2.staticflickr.com/6/5768/22507327876_fc823a3103_o.png" alt="Main file is &lt;em&gt;index.html&lt;/em&gt;" /></p>
+
+<ul>
+  <li>Scroll down and give a description to your additions/changes if you want, and click the <code class="highlighter-rouge">Commit</code> button.</li>
+  <li>In this case, <code class="highlighter-rouge">Commit</code> would work like, roughly speaking, the <code class="highlighter-rouge">Publishing</code> button in a CMS</li>
+  <li>Don’t worry just yet with the option <code class="highlighter-rouge">Create a new branch</code>, it is used when you are making a separate branch in your repo,
+which its not our case right now</li>
+</ul>
+
+<p><img src="https://c2.staticflickr.com/6/5677/22507327956_9550904276_b.jpg" alt="" /></p>
+
+<ul>
+  <li>Now we have a published file in our repo. Note that no webpage is yet <em>live</em> - what we just did was uploading a file that
+will be published</li>
+  <li>We put our HTML out there, the basic structure. Now, we need to add the styles, the CSS
+    <ul>
+      <li>Do the same process you did before, if you haven’t uploaded both at the same time</li>
+    </ul>
+  </li>
+  <li>IMPORTANT NOTE: remember to add, in the <code class="highlighter-rouge">&lt;head&gt;</code> tags of your HTML file, the link for the CSS, like this generic example:
+<code class="highlighter-rouge">&lt;link rel="stylesheet" href="home.css" type="text/css" charset="utf-8"&gt;</code>
+    <ul>
+      <li>If you don’t remember how to do it, use the code above and just change the <code class="highlighter-rouge">href=“#"</code> value to link to your CSS.</li>
+      <li>If you CSS is in the same folder as the HTML, just add <code class="highlighter-rouge">NAME OF CSS.css</code> to the <code class="highlighter-rouge">href</code>. If it is in a folder, add <code class="highlighter-rouge">FOLDER NAME/NAME OF CSS.css</code></li>
+    </ul>
+  </li>
+  <li>If you are done with all the steps, we are almost there</li>
+  <li>Go to the main page of your repository, where are your HTML and CSS files</li>
+  <li>Just above the files, on the left side, there is a small box that says <code class="highlighter-rouge">Branch: master</code></li>
+  <li>We will click on it and, in the text field, we will write <code class="highlighter-rouge">gh-pages</code></li>
+  <li>Then <code class="highlighter-rouge">Create Branch: gh-pages</code>
+    <ul>
+      <li>This is how GitHub will understand that you will want a proper published page, not just the files in a repo</li>
+      <li>Again, the main page will be <code class="highlighter-rouge">index.html</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://c2.staticflickr.com/6/5720/22519803312_2c0f356197_o.png" alt="Important" /></p>
+
+<ul>
+  <li>We are almost done</li>
+  <li>You page is practically published</li>
+  <li>In that field we ignored at first - <code class="highlighter-rouge">Edit -&gt; Website</code> - we will add another thing, not so obvious but pretty simple</li>
+  <li>As GitHub uses its domain github.com for repositories, it redirects all GH-Pages sites to another domain, ending in <code class="highlighter-rouge">github.io</code></li>
+  <li>In the field <code class="highlighter-rouge">Website</code>, add this: <code class="highlighter-rouge">http://NAME OF YOUR REPOSITORY.github.io/**NAME OF THE PROJECT</code></li>
+  <li>Don’t forget the <code class="highlighter-rouge">http://</code> prefix</li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/658/22519803402_5213812875_b.jpg" alt="Yeah!" /></p>
+
+<ul>
+  <li>Your project will be live in the URL you just added - click on it to see
+    <ul>
+      <li>Sometimes GitHub will take up to 30 seconds to recognize changes, so be patient</li>
+    </ul>
+  </li>
+  <li>One last thing: now that you have to branches in the same repo, <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">gh-pages</code>, you need to prioritize <code class="highlighter-rouge">gh-pages</code>
+    <ul>
+      <li>If you do changes in <code class="highlighter-rouge">master</code>, you webpage won’t recognize it, because it is in a different branch</li>
+    </ul>
+  </li>
+  <li>To make <code class="highlighter-rouge">gh-pages</code> you standard for this repo, go to `Settings_ &gt; <em>Branches</em> &gt; <em>Select gh-pages in the box</em> &gt; <em>Update</em></li>
+  <li>If you want, you can now erase the <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">branches</code> tab back in your repo.
+    <ul>
+      <li>This won’t affect your page</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://c1.staticflickr.com/1/733/21910569724_eb3275bddf_b.jpg" alt="" /></p>
+
  ]]></content>
 </entry>
 

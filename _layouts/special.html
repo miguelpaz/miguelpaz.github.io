@@ -1,0 +1,86 @@
+---
+layout: layoutesp
+---
+<style>
+#banner {
+	/* background-image: url(assets/images/data-journalism.jpg);*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	height: 100vh;
+	width: 100%;
+}
+
+#overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100vh;
+	z-index: 100;
+	position: absolute;
+	top:0;
+	padding-top: 20%;
+	width: 100%;
+}
+
+#special_title {
+	color: white;
+	text-align: center;
+	font-size: 3em;
+	text-transform: uppercase;
+}
+</style>
+
+
+<div id="banner">
+
+      <div id="overlay">
+          <div style="z-index: 1; position: relative">
+						<div class="blog-post">
+							<h3 id="special_title">
+							  <strong>{{ page.title }}</strong>
+							</h3>
+						</div>
+          </div>
+        </div>
+</div>
+
+
+<div class="container">
+{% include header.html %}
+<hr />
+	<div class="blog-title">
+		<h4>
+		{{ page.date | date: "%B %e, %Y" }}
+			&nbsp;&nbsp;
+			{% for tag in page.tags %}
+			 <span class="label label-success">{{ tag }}</span>
+			{% endfor %}
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  {{ content }}
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   {% for post in site.related_posts limit:3 %}
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	{{ post.date | date: "%B %e, %Y" }}
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					{% endfor %}
+			   </div>
+			</div>
+		</div>
+	</div>
+	{% include disqus.html %}
+</div>
