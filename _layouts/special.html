@@ -28,12 +28,22 @@ layout: layoutesp
 	font-size: 3em;
 	text-transform: uppercase;
 }
+
+#header_special {
+	position: absolute;
+	width: 100%;
+	top:0
+ }
 </style>
 
 
 <div id="banner">
 
       <div id="overlay">
+				<div id="header_special">
+					{% include header.html %}
+
+				</div>
           <div style="z-index: 1; position: relative">
 						<div class="blog-post">
 							<h3 id="special_title">
@@ -46,7 +56,6 @@ layout: layoutesp
 
 
 <div class="container">
-{% include header.html %}
 <hr />
 	<div class="blog-title">
 		<h4>

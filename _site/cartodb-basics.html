@@ -9,7 +9,7 @@
     <link rel="favicon" href="static/img/favicon.png">
 
     
-      <title>Making a chart in CartoDB without geolocation data</title>
+      <title>How to make a map in Carto without geolocation data</title>
     
 
     <!-- Bootstrap -->
@@ -66,7 +66,7 @@
     <div class="container">
 	<div class="blog-post">
 		<h3 id="title_main">
-		  <strong>Making a chart in CartoDB without geolocation data</strong>
+		  <strong>How to make a map in Carto without geolocation data</strong>
 		</h3>
 	</div>
 	<div class="blog-title">
@@ -83,60 +83,65 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  <p>Making charts is one of the coolest things in data journalism. It is really a good way to visualize data about places, that sometimes it just won’t fit a normal type of chart.</p>
+			  <p>Maps are a good way to visualize data about places, geographic patterns, show change over time and obviosuly when a story is completely based on geography.</p>
 
-<p><a href="https://voltdatalab.cartodb.com">CartoDB</a> is one of the best tools out there to do that. You can make interactive maps, download static image files and customize colors and points. And it is free if you are OK with using their more basic resources (which are good by most standards).</p>
+<p>You can use Maps to show comparisons, proportions, relationships, hierarchy, parts to a whole, distribution of elements, patterns and
+<a href="http://www.ericson.net/content/2011/06/mapping-the-news/" target="_blank">more</a>. Always beware, as Matthew Ericson writes in <a href="http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/" target="_blank">“When Maps Shouldn’t be Maps”</a>: <strong>just because something can be mapped, it does not mean it should be mapped</strong>. Avoid creating maps “when the interesting patterns aren’t geographic patterns” and “when the geographic data is more effective for analysis”. And always <a href="https://source.opennews.org/en-US/learning/distrust-your-data/" target="_blank">distrust your data</a> (specially when it has <a href="http://fusion.net/story/287592/internet-mapping-glitch-kansas-farm/" target="_blank">IP addresses</a> in <a href="http://fusion.net/story/290772/ip-mapping-maxmind-new-us-default-location/" target="_blank">it</a>.</p>
+
+<p>With that said, in this short tutorial, we will create a Map with data from a .CSV file with <a href="https://www.carto.com" target="_blank">Carto</a>.</p>
+
+<p>Carto (kwon before July 2016 as CartoDB) is one of the best tools out there to create web maps. You can make interactive maps, download static image files and customize colors and points. And it is free if you are OK with using the basic features plan (which includes enough resources by most standards).</p>
 
 <p>However, there are a few tricks in both better representing your data and making your map look good.</p>
 
-<p>This tutorial will teach how to use the most basic CartoDB tools, and that, even when you have few data points to show, it is still a good visual approach to use.</p>
+<p>This brief tutorial will teach how to use the most basic Carto tools to create a map that tells one simple clear story, with few data points.</p>
 
-<p>For this tutorial you will need:</p>
+<p>You will need:</p>
 
 <ol>
-  <li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv">This example dataset</a></li>
-  <li>An account in <a href="https://voltdatalab.cartodb.com">CartoDB</a></li>
+  <li><a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv" target="_blank">This example .csv dataset</a></li>
+  <li>An account in <a href="https://www.carto.com" target="_blank">Carto</a></li>
+  <li>Bookmark the <a href="https://carto.com/docs/carto-editor/" target="_blank">Carto Editor</a> documentation. It includes every detail about working with the Carto maps editor.</li>
 </ol>
 
 <hr />
 
 <h2 id="using-the-dataset">Using the dataset</h2>
 
-<p>The example dataset bears no mystery at all. It shows countries where same-sex marriage is legally allowed, and holds only three columns of information: country, year and source. Data is from the <a href="http://www.pewresearch.org/topics/gay-marriage-and-homosexuality/">Pew Research Center</a>.</p>
+<p>The example dataset bears no mystery at all. It shows countries where same-sex marriage is legally allowed, and holds only three columns of information: country, year and source. The data is from the <a href="http://www.pewresearch.org/topics/gay-marriage-and-homosexuality/" target="_blank">Pew Research Center</a>.</p>
 
-<p>However, with only two of those columns, it is possible to have a good, descriptive graphic about same sex-marriage in the world.</p>
+<p>With only two of those columns it is possible to have a good, descriptive graphic representation about same sex-marriage in the world. 
+Lets load the data.</p>
 
-<p>Lets load the data.</p>
+<p>If you already have an account in Carto, login and right away click on the green button <em>New Map</em>.</p>
 
-<p>If you already have an account in CartoDB website, login and right away click on the green button <em>New Map</em>.</p>
-
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic.png?raw=true" alt="CartoDB - New Map" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic.png?raw=true" alt="Carto - New Map" /></p>
 
 <p>This will take you to a screen so you can <em>Add a Dataset</em>.</p>
 
-<p>There are dozens of ways you can upload your data into the CartoDB server. It accepts several kinds of data formats (like CSV, XLS, ZIP, KML, GPX), and you can use their data library, connect your data from Dropbox, Twitter, Google Drive or upload a data file that you have in your computer.</p>
+<p>There are dozens of ways you can upload your data into the Carto server. One of it’s great features is that it accepts several kinds of data formats (like CSV, XLS, ZIP, KML, GPX), and you can use their data library, connect your data from Dropbox, Twitter, Google Drive or upload a data file that you have in your computer.</p>
 
 <p>In our case, we will use a .csv file from a URL. <a href="https://raw.githubusercontent.com/miguelpaz/jlab/master/data/cartodb_example_1_countries.csv">This is the dataset you will use for this tutorial</a>.</p>
 
-<p>Click on the <em>Data File</em> tab and paste the URL above in the white input field, than click <em>Submit</em> and then in the green button on the bottom <em>Connect Dataset</em>.</p>
+<p>Copy the URL of the dataset, then click on the <em>Data File</em> tab and paste the URL, above in the white input field, then click <em>Submit</em> and then in the green button on the bottom <em>Connect Dataset</em>.</p>
 
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data.png?raw=true" alt="CartoDB - data" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data.png?raw=true" alt="Carto - data" /></p>
 
-<p>This will lead you to a map canvas with some orange polygons in it. Polygons are the shapes and color fill of all geographic borders of countries (ou regions or cities). Great, you basically have a map now.</p>
+<p>This will lead you to a map canvas with some orange polygons in it. Polygons are the shapes and color fill of all geographic borders of countries (or regions, cities, neighborhoods, etc.). Great, you basically have a map now.</p>
 
-<p>CartoDB is a good tool and, when working with a more general kind of information - like country names - it can geocode your data by itself, without any settings from you, just from your column containing country names.</p>
+<p>Carto has powerful geocoding features and it will understand things like country names (instead of lat/long, for example) and geocode them from your column containing country names.</p>
 
 <blockquote>
-  <p>WARNING: if you have repeated or wrongly spelled country names, or that somehow miss the standards adopted by CartoDB data, this resource could not work.</p>
+  <p>WARNING: if you have repeated or misspelled country names, or somehow does not comply with the standards adopted by Carto, it may not work. Be sure to always check how your data is formatted.</p>
 </blockquote>
 
 <p>You could just put a title like “Countries in the World Where Same-sex Marriage is Allowed” and publish it, but you can make it even better. Lets see how to do that.</p>
 
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_no_custom.png?raw=true" alt="CartoDB - map with no customization" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_no_custom.png?raw=true" alt="Carto - map with no customization" /></p>
 
 <p>In the <em>Data View</em> tab, you can see how the data was automatically parsed by CartoDB when you uploaded from the URL.</p>
 
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data_view.png?raw=true" alt="CartoDB - parsed data" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_data_view.png?raw=true" alt="Carto - parsed data" /></p>
 
 <h2 id="customizing-your-map">Customizing your map</h2>
 
@@ -153,37 +158,39 @@
   <li>Bubble - shows the size of the data in certain areas</li>
 </ol>
 
-<p>We are already by default using the <em>simple</em> type and, as the <em>Category</em> and the <em>Bubble</em> are meant to show sizes, intensity and dimensions of certain values (which we don’t have in this dataset), so we will check the <em>Category</em> type - just so you know how it looks like. It may want to proceed with the <em>simple</em> or the <em>category</em> option.</p>
+<p>We are already by default using the <em>simple</em> type and, as the <em>Category</em> and the <em>Bubble</em> are meant to show sizes, intensity and dimensions of certain values (which we don’t have in this dataset), we will choose the <em>Category</em> type - just so you know how it looks like. It may want to proceed with the <em>simple</em> or the <em>category</em> option.</p>
 
-<p>Remember: this example dataset only contains country name, year and source, not other data point.</p>
+<p>Remember: this example dataset only contains country name, year and source, not other data points.</p>
 
 <p>You map should look like this:</p>
 
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_category.png?raw=true" alt="CartoDB - Wizards" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_category.png?raw=true" alt="Carto - Wizards" /></p>
 
 <h2 id="change-the-map-background">Change the map background</h2>
 
-<p>CartoDB offers a series of <em>basemaps</em>, or the background maps you will use. This option is in the lower left corner of the screen.</p>
+<p>Carto offers a series of <em>basemaps</em>, or the background maps you will use. This option is in the lower left corner of the screen under <em>Change basemap</em>.</p>
 
-<p>Click there and choose a basemap. This tutorial chooses <em>CartoDB World Eco</em>. You may choose the one you want.</p>
+<p>Click there and choose a basemap. Let’s pick <em>CartoDB World Eco</em> (you may choose another one if you want).</p>
 
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_basemap.png?raw=true" alt="CartoDB - basemap" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_basemap.png?raw=true" alt="Carto - basemap" /></p>
 
 <p>Now we have a category-colored, background-customized map with year labels in it. We are just missing a proper title and the source.</p>
 
-<p>On the upper left corner, go to <code class="highlighter-rouge">Add element -&gt; Add title item</code> and put the title you think it is best. If you don’t know where to put the title box, you can go to <code class="highlighter-rouge">Options -&gt; Fixed-title</code> and it will automatically add an upper bar with the title you gave your map earlier, in the metadata section. That is what this tutorial will do.</p>
+<p>On the upper left corner, go to <code class="highlighter-rouge">Add element -&gt; Add title item</code> and put the title you think it is best. If you don’t know where to put the title box, you can go to <code class="highlighter-rouge">Options -&gt; Fixed-title</code> and it will automatically add an upper bar with the title you gave your map earlier, in the metadata section. That is what we will do for this tutorial.</p>
 
-<p>To add a source or annotation items, go to <code class="highlighter-rouge">Add element -&gt; Add text item</code>. We are adding that the data comes from Pew Research Center, and then change the text size to 14px.</p>
+<p>To add a source or annotation items, go to <code class="highlighter-rouge">Add element -&gt; Add text item</code>. In this case we want to credit Pew Research Center as the source of the data, and then change the text size to 14px.</p>
 
 <p>Now we are settled. Click export image or publish your map!</p>
 
-<p>It should look like this:</p>
+<p>It should look something like this:</p>
 
-<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_finalmap.png?raw=true" alt="CartoDB - Final" /></p>
+<p><img src="https://github.com/miguelpaz/jlab/blob/master/images/map_cartodb_basic_finalmap.png?raw=true" alt="Carto - Final" /></p>
+
+<p>Here is the <a href="https://miguelpaz.carto.com/viz/089e3328-4acb-11e6-b760-0ee66e2c9693/public_map" target="_blank">published map</a>.</p>
 
 <h2 id="be-a-pro">Be a pro</h2>
 
-<p>Change the custom colors in the <em>CartoCSS editor</em> tab, add interactivity functionalities, publish the map and share the live link.</p>
+<p>Change the custom colors in the <a href="https://carto.com/docs/carto-editor/maps/#cartocss" target="_blank"><em>CartoCSS editor</em></a> tab, add interactivity functionalities, publish the map and share the link.</p>
 
 			   <hr>
 			   <div class="related-posts">
@@ -210,7 +217,7 @@
 							 </div>
 							 <div class="col-sm-8 col-md-8 col-lg-8">
 								 <h6 style="text-align: left">
-								 	<strong><a href="/commandline-basics.html">Basic command line shortcuts</a></strong>
+								 	<strong><a href="/commandline-basics.html">Learn Command Line basic shortcuts</a></strong>
 								 </h6>
 							 </div>
 						</div>
