@@ -63,40 +63,40 @@ Since you want to build your portfolio and online presence, first try to get you
 
 2. If you don’t have a domain yet, use this search box to add the name you want and look for options and prices. For example I searched for possible domains for my name.
 
-![Choose Domain](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_1.png)
+![Choose Domain](assets/images/image_1.png)
 
 3. I got this options. 
 
-![Options to choose a domain name from](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_2.png)
+![Options to choose a domain name from](assets/images/image_2.png)
 
 4. I bought the cheapest one for this tutorial: miguelpaz.site
 
-![I am cheap](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_3.png) 
+![I am cheap](assets/images/image_3.png) 
 
 5. Then add your information and pay for it.
 
-![Pade six dollars for domain and 1 month of hosting](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_4.png)
+![Pade six dollars for domain and 1 month of hosting](assets/images/image_4.png)
 
 6. Confirm the order and set your password.
 
-![Almos there](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_5.png)
+![Almos there](assets/images/image_5.png)
 
-![Set your password](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_6.png)
+![Set your password](assets/images/image_6.png)
 
 7. You will see a [Dashboard and a Icon Drive for Share Hosting](https://www.midphase.com/knowledgebase/display/MID/How+To+Access+cPanel+Through+The+Shared+Hosting+Tab). Click on that to see the basic information of whatever domain you bought. 
 
-![Set up how to renew your plan](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_7.png)
+![Set up how to renew your plan](assets/images/image_7.png)
 
 8. Only if you want to or feel the need to read again about FTP, go to the left icon for Shared Hosting and follow the tutorial that explains very well how to connect via FTP. This is your cPanel (dashboard to manage your website). You will also get an email from Midphase with information for you to remember. Save it.
 
-![FTP tutorial](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_8.png)
+![FTP tutorial](assets/images/image_8.png)
 
 9. Now, **important**, to access your domain and hosting and get your FTP credentials **you must** log into your Control Panel or CPanel at [https://chi.midphase.com/home](https://chi.midphase.com/home) with your username and password. Once you are in, click on the left drive icon of Shared Hosting, look for your domain name and click on it. You will see your credentials to use in your FTP:  
 Host: miguelpaz.site
 Username: miguelpa
 Password: the one you created when you created your account in MidPhase. In here you can create a new specific password for your FTP (recommended).
 
-![Your shared hosting](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_9.png)
+![Your shared hosting](assets/images/image_9.png)
 
 You are done with that 👍🏼🍾. 
 
@@ -114,7 +114,7 @@ Think of FTP clients as the grandparents of Dropbox or Google Drive, and of FTP 
 
 13. Open FileZilla. On the top side you will see 4 boxes: Host, Username, Password, Port where you must write your web hosting credentials and the click on the Quickconnect button, to connect to your web hosting and upload files.
 
-![add your credentials](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_11.png)  
+![add your credentials](assets/images/image_11.png)  
 
 -In the "Host" field, add your domain name.   
 Ex. Host: miguelpaz.site
