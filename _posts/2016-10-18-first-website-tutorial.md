@@ -10,9 +10,9 @@ tags:
 	background-image: url(assets/images/firstwebpage-sky.jpeg);} </style>
 
 By Miguel Paz. Photo by [Greg Rakozy](https://unsplash.com/@grakozy)
-</b>
 
-💡 *This is a simple tutorial I wrote for my students at CUNY Graduate School of Journalism. It is entry level and includes a couple class specific details.**
+
+💡 **This is a simple tutorial I wrote for my students at CUNY Graduate School of Journalism. It is entry level and includes a couple class specific details.**
 
 ## Choosing a domain
 
