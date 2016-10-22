@@ -137,4 +137,8 @@ Still confused? Here is a [video tutorial](https://www.youtube.com/watch?v=O3Dud
 That’s it! Now go celebrate you have your first website online.🎉  
 
 
+<<<<<<< HEAD
 **_Disclaimer:_** None of the professors or coaches are connected in any way with any of the companies mentioned. We have chosen Midphase as a web hosting provider due to it’s low price, ok service, and because it is easier to pick one provider to explain the entire class how to setup your website. We'll all have a common dashboard which makes it easier for everyone. You can choose other providers. Feel free to ask me about other options.*  
+=======
+**_Disclaimer:_** None of the professors or coaches are connected in any way with any of the companies mentioned. We have chosen Midphase as a web hosting provider due to it’s low price, ok service, and because it is easier to pick one provider to explain the entire class how to setup your website. We'll all have a common dashboard which makes it easier for everyone. You can choose other providers. Feel free to ask me about other options.*  
+>>>>>>> origin/master
