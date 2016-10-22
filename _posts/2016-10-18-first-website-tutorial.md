@@ -17,7 +17,7 @@ By Miguel Paz. Photo by [Greg Rakozy](https://unsplash.com/@grakozy)
 
 A domain is the name of your website and it’s made of 2 things: 
 
-A name: *what-ever-you-want-to-name-your-website. *
+A name: *what-ever-you-want-to-name-your-website*
 
 A top level domain: .com, .org, .net, etc.
 
