@@ -1,13 +1,10 @@
 ---
-layout: special
+layout: post
 title: Basic guide to get a domain, set up web hosting and upload your first website via FTP
 tags:
 - Courses
 - Tutorials
 ---
-
-<style>#banner {
-	background-image: url(assets/images/firstwebpage-sky.jpeg);} </style>
 
 
 By Miguel Paz. Photo by [Greg Rakozy](https://unsplash.com/@grakozy)
