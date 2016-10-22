@@ -59,7 +59,7 @@ Since you want to build your portfolio and online presence, first try to get you
 
 1. Go to [Midphase](https://www.midphase.com/website-hosting/) and [purchase domain](https://www.midphase.com/knowledgebase/display/MID/How+To+Register+A+Domain) and hosting (I recommend the cheapest plan). Do this as soon as you can. Domain names and hosting can take up to 48 hours to start working properly. 
 
-![Choose Plan](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/image_0.png)
+![Choose Plan](assets/images/image_0.png)
 
 2. If you don’t have a domain yet, use this search box to add the name you want and look for options and prices. For example I searched for possible domains for my name.
 
