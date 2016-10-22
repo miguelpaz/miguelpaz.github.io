@@ -146,10 +146,14 @@ Think of FTP clients as the grandparents of Dropbox or Google Drive, and of FTP 
 
 -In the "Host" field, add your domain name.   
 Ex. Host: miguelpaz.site
+
 -In the "Username" field, enter your cPanel or FTP username.  
 Ex. Username: miguelpa
+
 -In the "Password" field, enter your MidPhase cPanel password.  
+
 -Leave port set blank or at "21”.
+
 -Click "Quick Connect".   
 
 
