@@ -58,44 +58,44 @@ Since you want to build your portfolio and online presence, first try to get you
 
 1. Go to [Midphase](https://www.midphase.com/website-hosting/) and [purchase domain](https://www.midphase.com/knowledgebase/display/MID/How+To+Register+A+Domain) and hosting (I recommend the cheapest plan). Do this as soon as you can. Domain names and hosting can take up to 48 hours to start working properly. 
 
-![image alt text](image_0.png)
+![image alt text](assets/images/image_0.png)
 
 2. If you don’t have a domain yet, use this search box to add the name you want and look for options and prices. For example I searched for possible domains for my name.
 
-![image alt text](image_1.png)
+![image alt text](assets/images/image_1.png)
 
 3. I got this options. 
 
-![image alt text](image_2.png)
+![image alt text](assets/images/image_2.png)
 
 4. I bought the cheapest one for this tutorial: miguelpaz.site
 
-![image alt text](image_3.png) 
+![image alt text](assets/images/image_3.png) 
 
 5. Then add your information and pay for it.
 
-![image alt text](image_4.png)
+![image alt text](assets/images/image_4.png)
 
 6. Confirm the order and set your password.
 
-![image alt text](image_5.png)
+![image alt text](assets/images/image_5.png)
 
-![image alt text](image_6.png)
+![image alt text](assets/images/image_6.png)
 
 7. You will see a [Dashboard and a Icon Drive for Share Hosting](https://www.midphase.com/knowledgebase/display/MID/How+To+Access+cPanel+Through+The+Shared+Hosting+Tab). Click on that to see the basic information of whatever domain you bought. 
 
-![image alt text](image_7.png)
+![image alt text](assets/images/image_7.png)
 
 8. Only if you want to or feel the need to read again about FTP, go to the left icon for Shared Hosting and follow the tutorial that explains very well how to connect via FTP. This is your cPanel (dashboard to manage your website). You will also get an email from Midphase with information for you to remember. Save it.
 
-![image alt text](image_8.png)
+![image alt text](assets/images/image_8.png)
 
 9. Now, **important**, to access your domain and hosting and get your FTP credentials **you must** log into your Control Panel or CPanel at [https://chi.midphase.com/home](https://chi.midphase.com/home) with your username and password. Once you are in, click on the left drive icon of Shared Hosting, look for your domain name and click on it. You will see your credentials to use in your FTP:  
 Host: miguelpaz.site
 Username: miguelpa
 Password: the one you created when you created your account in MidPhase. In here you can create a new specific password for your FTP (recommended).
 
-![image alt text](image_9.png)
+![image alt text](assets/images/image_9.png)
 
 You are done with that 👍🏼🍾. 
 
@@ -113,7 +113,7 @@ Think of FTP clients as the grandparents of Dropbox or Google Drive, and of FTP 
 
 13. Open FileZilla. On the top side you will see 4 boxes: Host, Username, Password, Port where you must write your web hosting credentials and the click on the Quickconnect button, to connect to your web hosting and upload files.
 
-![image alt text](image_11.png)  
+![image alt text](assets/images/image_11.png)  
 
 -In the "Host" field, add your domain name.   
 Ex. Host: miguelpaz.site
@@ -125,7 +125,7 @@ Ex. Username: miguelpa
 
 >>Tip: If your hosting says login failed due to password issues, you should create a new password that is stronger.
 
-![image alt text](image_10.png)
+![image alt text](assets/images/image_10.png)
 
 14. Not sure about how FileZilla looks and organizes stuff? The **left** side of FileZilla shows the files stored on your Computer. The **right** side shows the file on your server, where you will see a set of folders and files. The **onlye important folder** for you in the server side now is the one called **"public_html"**. This folder is where you will upload your files from the **left** side (stored in your computer) to the **right** side (your web hosting server). All you need to do is find the files you want to upload on the left side of the screen, click once on them and then drag them to the right side of the screen. This will upload the files to your website. 
 
