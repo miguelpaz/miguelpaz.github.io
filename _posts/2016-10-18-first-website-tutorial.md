@@ -1,14 +1,15 @@
 ---
-layout: post
+layout: special
 title: Basic guide to get a domain, set up web hosting and upload your first website via FTP
 tags:
 - Courses
 - Tutorials
 ---
 
-# Basic guide to get a domain, set up web hosting and upload your first website via FTP
+<style>#banner {
+	background-image: url(assets/images/firstwebpage-sky.jpeg);} </style>
 
-**By Miguel Paz**
+**By Miguel Paz**. Photo by [Greg Rakozy](https://unsplash.com/@grakozy)
 
 💡 *This is a simple tutorial I wrote for my students at CUNY Graduate School of Journalism. It is entry level and includes a couple class specific details.**
 
