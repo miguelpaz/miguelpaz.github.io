@@ -9,6 +9,7 @@ tags:
 <style>#banner {
 	background-image: url(assets/images/firstwebpage-sky.jpeg);} </style>
 
+
 By Miguel Paz. Photo by [Greg Rakozy](https://unsplash.com/@grakozy)
 
 
@@ -36,11 +37,11 @@ Depending on popularity and availability, prices of domains vary. A .com domain 
 
 Things to look for when you buy a domain name from a domain registrar: 
 
--FTP access
--Includes cPanel (a dashboard to manage your domain and DNS)
--Full control of your DNS
--Includes a [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) certificate free for one or more years (so your website uses [HTTPS](https://en.wikipedia.org/wiki/HTTPS) protocol by default). If it doesn’t and the price of the domain is very cheap, you can get it and then go get a free certificate with [Lets Encrypt](https://letsencrypt.org/getting-started/).
--Does not charge you extra if you want to transfer your domain name to another registrar. 
+-FTP access  
+-Includes cPanel (a dashboard to manage your domain and DNS)  
+-Full control of your DNS  
+-Includes a [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) certificate free for one or more years (so your website uses [HTTPS](https://en.wikipedia.org/wiki/HTTPS) protocol by default). If it doesn’t and the price of the domain is very cheap, you can get it and then go get a free certificate with [Lets Encrypt](https://letsencrypt.org/getting-started/).  
+-Does not charge you extra if you want to transfer your domain name to another registrar.  
 -Provides Domain forwarding
 
 ## Buy a domain and web hosting
@@ -57,64 +58,64 @@ Since you want to build your portfolio and online presence, first try to get you
 
 ## Step by step to getting a domain and hosting with Midphase*
 
-1. Go to [Midphase](https://www.midphase.com/website-hosting/) and [purchase domain](https://www.midphase.com/knowledgebase/display/MID/How+To+Register+A+Domain) and hosting (I recommend the cheapest plan). Do this as soon as you can. Domain names and hosting can take up to 48 hours to start working properly. 
+1.  Go to [Midphase](https://www.midphase.com/website-hosting/) and [purchase domain](https://www.midphase.com/knowledgebase/display/MID/How+To+Register+A+Domain) and hosting (I recommend the cheapest plan). Do this as soon as you can. Domain names and hosting can take up to 48 hours to start working properly. 
 
-![Choose Plan](assets/images/image_0.png)
+![Choose Plan](assets/images/image_0.png)  
 
-2. If you don’t have a domain yet, use this search box to add the name you want and look for options and prices. For example I searched for possible domains for my name.
+5.  If you don’t have a domain yet, use this search box to add the name you want and look for options and prices. For example I searched for possible domains for my name.
 
-![Choose Domain](assets/images/image_1.png)
+![Choose Domain](assets/images/image_1.png)  
 
-3. I got this options. 
+9. I got this options. 
 
-![Options to choose a domain name from](assets/images/image_2.png)
+![Options to choose a domain name from](assets/images/image_2.png)  
 
-4. I bought the cheapest one for this tutorial: miguelpaz.site
+13. I bought the cheapest one for this tutorial: miguelpaz.site
 
 ![I am cheap](assets/images/image_3.png) 
 
-5. Then add your information and pay for it.
+17. Then add your information and pay for it.
 
-![Pade six dollars for domain and 1 month of hosting](assets/images/image_4.png)
+![Paid six dollars for domain and 1 month of hosting](assets/images/image_4.png)
 
-6. Confirm the order and set your password.
+21. Confirm the order and set your password.
 
-![Almos there](assets/images/image_5.png)
+![Almost there](assets/images/image_5.png)  
 
-![Set your password](assets/images/image_6.png)
+![Set your password](assets/images/image_6.png)    
 
-7. You will see a [Dashboard and a Icon Drive for Share Hosting](https://www.midphase.com/knowledgebase/display/MID/How+To+Access+cPanel+Through+The+Shared+Hosting+Tab). Click on that to see the basic information of whatever domain you bought. 
+27. You will see a [Dashboard and a Icon Drive for Share Hosting](https://www.midphase.com/knowledgebase/display/MID/How+To+Access+cPanel+Through+The+Shared+Hosting+Tab). Click on that to see the basic information of whatever domain you bought. 
 
-![Set up how to renew your plan](assets/images/image_7.png)
+![Set up how to renew your plan](assets/images/image_7.png)  
 
-8. Only if you want to or feel the need to read again about FTP, go to the left icon for Shared Hosting and follow the tutorial that explains very well how to connect via FTP. This is your cPanel (dashboard to manage your website). You will also get an email from Midphase with information for you to remember. Save it.
+31. Only if you want to or feel the need to read again about FTP, go to the left icon for Shared Hosting and follow the tutorial that explains very well how to connect via FTP. This is your cPanel (dashboard to manage your website). You will also get an email from Midphase with information for you to remember. Save it.
 
-![FTP tutorial](assets/images/image_8.png)
+![FTP tutorial](assets/images/image_8.png)  
 
-9. Now, **important**, to access your domain and hosting and get your FTP credentials **you must** log into your Control Panel or CPanel at [https://chi.midphase.com/home](https://chi.midphase.com/home) with your username and password. Once you are in, click on the left drive icon of Shared Hosting, look for your domain name and click on it. You will see your credentials to use in your FTP:  
+35. Now, **important**, to access your domain and hosting and get your FTP credentials **you must** log into your Control Panel or CPanel at [https://chi.midphase.com/home](https://chi.midphase.com/home) with your username and password. Once you are in, click on the left drive icon of Shared Hosting, look for your domain name and click on it. You will see your credentials to use in your FTP:    
 Host: miguelpaz.site
 Username: miguelpa
-Password: the one you created when you created your account in MidPhase. In here you can create a new specific password for your FTP (recommended).
+Password: the one you created when you created your account in MidPhase. In here you can create a new specific password for your FTP (recommended).  
 
-![Your shared hosting](assets/images/image_9.png)
+![Your shared hosting](assets/images/image_9.png)  
 
-You are done with that 👍🏼🍾. 
+You are done with that 👍🏼🍾.   
 
-10. Now you will download an FTP client to use it to upload your website to your hosting server. 
+44. Now you will download an FTP client to use it to upload your website to your hosting server.   
 
-FTP stands for [“File Transfer Protocol”](https://en.wikipedia.org/wiki/File_Transfer_Protocol) and it is used to connect between your computer 💻 (client) and the server 🖥 of your web hosting. 
+FTP stands for [“File Transfer Protocol”](https://en.wikipedia.org/wiki/File_Transfer_Protocol) and it is used to connect between your computer 💻 (client) and the server 🖥 of your web hosting.   
 
-In order to do that you need to install in your computer an FTP client. This is basically a software that allows you to upload your webpage folder and it’s contents from your computer to your web hosting so it can be displayed in your web page under your domain name. It can also be used to download stuff from your web hosting. 
+In order to do that you need to install in your computer an FTP client. This is basically a software that allows you to upload your webpage folder and it’s contents from your computer to your web hosting so it can be displayed in your web page under your domain name. It can also be used to download stuff from your web hosting.   
 
-Think of FTP clients as the grandparents of Dropbox or Google Drive, and of FTP as the protocol that helps your machine talk to another machine (since 1971 by the way) to get your stuff into the web. 
+Think of FTP clients as the grandparents of Dropbox or Google Drive, and of FTP as the protocol that helps your machine talk to another machine (since 1971 by the way) to get your stuff into the web.   
 
-11. We're going to use FileZilla FTP client, since it's free, open source and offers a straight forward (ugly) but useful interface.  
+52. We're going to use FileZilla FTP client, since it's free, open source and offers a straight forward (ugly) but useful interface.    
 
-12. Download [FileZilla](https://filezilla-project.org/). If you have issues, try [downloading it here](https://sourceforge.net/projects/filezilla/?source=typ_redirect). FYI: if you don’t like it there are other programs that will work just as well such as Cyberduck. 
+54. Download [FileZilla](https://filezilla-project.org/). If you have issues, try [downloading it here](https://sourceforge.net/projects/filezilla/?source=typ_redirect). FYI: if you don’t like it there are other programs that will work just as well such as Cyberduck.   
 
-13. Open FileZilla. On the top side you will see 4 boxes: Host, Username, Password, Port where you must write your web hosting credentials and the click on the Quickconnect button, to connect to your web hosting and upload files.
+56. Open FileZilla. On the top side you will see 4 boxes: Host, Username, Password, Port where you must write your web hosting credentials and the click on the Quickconnect button, to connect to your web hosting and upload files.  
 
-![add your credentials](assets/images/image_11.png)  
+![add your credentials](assets/images/image_11.png)    
 
 -In the "Host" field, add your domain name.   
 Ex. Host: miguelpaz.site
@@ -122,17 +123,18 @@ Ex. Host: miguelpaz.site
 Ex. Username: miguelpa
 -In the "Password" field, enter your MidPhase cPanel password.  
 -Leave port set blank or at "21”.
--Click "Quick Connect".
+-Click "Quick Connect".  
 
->>Tip: If your hosting says login failed due to password issues, you should create a new password that is stronger.
+> Tip: If your hosting says login failed due to password issues, you should create a new password that is stronger.  
 
-14. Not sure about how FileZilla looks and organizes stuff? The **left** side of FileZilla shows the files stored on your Computer. The **right** side shows the file on your server, where you will see a set of folders and files. The **onlye important folder** for you in the server side now is the one called **"public_html"**. This folder is where you will upload your files from the **left** side (stored in your computer) to the **right** side (your web hosting server). All you need to do is find the files you want to upload on the left side of the screen, click once on them and then drag them to the right side of the screen. This will upload the files to your website. 
+Not sure about how FileZilla looks and organizes stuff? The **left** side of FileZilla shows the files stored on your Computer. The **right** side shows the file on your server, where you will see a set of folders and files. The **only important folder** for you in the server side now is the one called **"public_html"**. This folder is where you will upload your files from the **left** side (stored in your computer) to the **right** side (your web hosting server). All you need to do is find the files you want to upload on the left side of the screen, click once on them and then drag them to the right side of the screen. This will upload the files to your website.   
 
-15. **Never** erase your "public_html" folder. If you don’t know what other folders or files are for at your server, **DO NOT** delete, rename or move them.
-
-Still confused? Here is a [video tutorial](https://www.youtube.com/watch?v=O3DudpEMPiY), a list of [crazy awkward domain names](http://www.boredpanda.com/worst-domain-names/) and some of the [longest domains ever](http://archive.oreilly.com/pub/post/the_worlds_longest_domain_name.html)
-
-That’s it! Now go celebrate you have your first website online.🎉
+72. **Never** erase your "public_html" folder. If you don’t know what other folders or files are for at your server, **DO NOT** delete, rename or move them.  
 
 
-**_Disclaimer:_** None of the professors or coaches are connected in any way with any of the companies mentioned. We have chosen Midphase as a web hosting provider due to it’s low price, ok service, and because it is easier to pick one provider to explain the entire class how to setup your website. We'll all have a common dashboard which makes it easier for everyone. You can choose other providers. Feel free to ask me about other options.*
+Still confused? Here is a [video tutorial](https://www.youtube.com/watch?v=O3DudpEMPiY), a list of [crazy awkward domain names](http://www.boredpanda.com/worst-domain-names/) and some of the [longest domains ever](http://archive.oreilly.com/pub/post/the_worlds_longest_domain_name.html)  
+
+That’s it! Now go celebrate you have your first website online.🎉  
+
+
+**_Disclaimer:_** None of the professors or coaches are connected in any way with any of the companies mentioned. We have chosen Midphase as a web hosting provider due to it’s low price, ok service, and because it is easier to pick one provider to explain the entire class how to setup your website. We'll all have a common dashboard which makes it easier for everyone. You can choose other providers. Feel free to ask me about other options.*  
