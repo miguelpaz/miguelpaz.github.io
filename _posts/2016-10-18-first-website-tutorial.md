@@ -6,6 +6,7 @@ tags:
 - Tutorials
 ---
 
+![It all starts with an idea](assets/images/firstwebpage-sky.jpeg)
 
 By Miguel Paz. Photo by [Greg Rakozy](https://unsplash.com/@grakozy)
 
