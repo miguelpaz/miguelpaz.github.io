@@ -1,7 +1,14 @@
-# ¿Qué es Markdown y por qué los periodistas lo usan?
+---
+layout: post
+title: ¿Qué es Markdown y por qué los periodistas lo usan?
+tags:
+- Courses
+- Tutorials
+---
+
 (Guía rápida)
 
-![Logo_Markdown_by_DCurtis](https://github.com/dcurtis/markdown-mark/blob/master/svg/markdown-mark-solid.svg)
+![Image](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/markdownlogo.png)
 
 Markdown es ["una herramienta de conversión de texto a HTML para escritores web"](http://daringfireball.net/projects/markdown/), creada por John Gruber con el objetivo de ayudarte a concentrar en la escritura en vez de en el formateo del documento y lo qué sucede con dicho formato cuando exportas el documento a otro formato (un revoltijo).
 
