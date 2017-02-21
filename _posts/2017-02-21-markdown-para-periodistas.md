@@ -89,15 +89,4 @@ Si sigues buscando verás que hay [muchas](https://www.slant.co/topics/899/~best
 
 ¿Mencioné que puedes añadir [emojis](http://www.webpagefx.com/tools/emoji-cheat-sheet/) en algunas versiones extendidas de Markdown, como la que usa Github?
 
-```
-  :metal:
-  :clap:
-  :rocket:
-  :tada:
- ```
- :metal:
- :clap:
- :rocket:
- :tada:
-
- [//]: # (Así es como escribes comentarios en tu Markdown para que no se vean en tu página web HTML.)
+[//]: # (Así es como escribes comentarios en tu Markdown para que no se vean en tu página web HTML.)
