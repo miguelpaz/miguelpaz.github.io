@@ -47,6 +47,7 @@ Bloque de código con sintaxis resaltada
 **Negritas**
 *Itálica*
 ***Itálica & negritas juntas***
+
 `Código`
 
 Línea horizontal
