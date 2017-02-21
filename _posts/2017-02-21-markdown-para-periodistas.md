@@ -8,7 +8,9 @@ tags:
 
 (Guía rápida)
 
-![Image](https://github.com/miguelpaz/miguelpaz.github.io/blob/master/assets/images/markdownlogo.png)
+
+![Markdown logo](https://cdn0.iconfinder.com/data/icons/octicons/1024/markdown-512.png)
+
 
 Markdown es ["una herramienta de conversión de texto a HTML para escritores web"](http://daringfireball.net/projects/markdown/), creada por John Gruber con el objetivo de ayudarte a concentrar en la escritura en vez de en el formateo del documento y lo qué sucede con dicho formato cuando exportas el documento a otro formato (un revoltijo).
 
