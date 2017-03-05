@@ -7,6 +7,11 @@ tags:
 - Español
 ---
 
+<style> #banner {
+	background-image: url(assets/images/markdownpreviewinatom.png);
+}
+</style>
+
 (Una guía rápida)
 
 Markdown es ["una herramienta de conversión de texto a HTML para escritores web"](http://daringfireball.net/projects/markdown/), creada por John Gruber con el objetivo de ayudarte a concentrar en la escritura en vez de en el formateo del documento y lo qué sucede con dicho formato cuando exportas el documento a otro formato (un revoltijo).

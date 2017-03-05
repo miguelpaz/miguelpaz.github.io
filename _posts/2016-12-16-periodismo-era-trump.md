@@ -3,7 +3,7 @@ layout: special
 title: Periodismo en la era Trump
 tags:
 - Presentations
-- Spanish
+- Español
 ---
 
 <style> #banner {
