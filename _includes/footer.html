@@ -1,7 +1,8 @@
+<!-- added div class social to test
 <footer>
     <div id="footer">
         <div class="container">
-<!-- added div class social to test -->
+ added div class social to test
           <div class="social">
             <h4>
               {% if site.email %}
@@ -21,9 +22,41 @@
               {% endif %}
             </h4>
           </div>
-          <!-- added div class social to test -->
+    added div class social to test
             <p class="text-muted"><b>Copyright © 2017 Miguel Paz.</b> Some rights reserved.</p>
         </div>
     </div>
 </footer>
-<div class="footer"></div>
+<div class="footer"></div> -->
+
+
+<footer id="footer">
+        <div class="container">
+          <div class="content">
+          <h4>
+          <ul id="footer-menu">
+              <li>{% if site.email %}
+              <a href="mailto:{{ site.email}}"><i class="fa fa-envelope"></i></a>
+              {% endif %}</li>
+              <li>{% if site.twitter %}
+              <a href="http://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter"></i></a>
+              {% endif %}</li>
+              <li>{% if site.linkedin %}
+              <a href="http://linkedin.com/in/{{ site.linkedin }}"><i class="fa fa-linkedin"></i></a>
+              {% endif %}</li>
+              <li>{% if site.github %}
+              <a href="http://github.com/{{ site.github }}"><i class="fa fa-github"></i></a>
+              {% endif %}</li>
+              <li>{% if site.stackoverflow %}
+              <a href="http://stackoverflow.com/{{ site.stackoverflow }}"><i class="fa fa-stack-overflow"></i></a>
+              {% endif %}</li>
+              <li><a href="{{ site.baseurl }}contact.html">CONTACT</a></li>
+          </ul>
+          </h4>
+        <div class="copyright">
+          <!-- Copyright -->
+          <p class="text-muted"><b>Copyright © 2017 Miguel Paz.</b> Some rights reserved.</p>
+        </div>
+      </div>
+      </div>
+</footer>
