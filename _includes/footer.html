@@ -31,27 +31,29 @@
 
 
 <footer id="footer">
-        <div class="container" align="center">
-          <h4>
+        <section class="container" align="center">
+          <div class="social">
+          	<h4>
               {% if site.email %}
-              <a href="mailto:{{ site.email}}"><i class="fa fa-envelope"></i></a>
+          	  <a href="mailto:{{ site.email}}"><i class="fa fa-envelope"></i></a>
               {% endif %}
               {% if site.twitter %}
-              <a href="http://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter"></i></a>
+          	  <a href="http://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter"></i></a>
               {% endif %}
               {% if site.linkedin %}
-              <a href="http://linkedin.com/in/{{ site.linkedin }}"><i class="fa fa-linkedin"></i></a>
+          	  <a href="http://linkedin.com/in/{{ site.linkedin }}"><i class="fa fa-linkedin"></i></a>
               {% endif %}
-              {% if site.github %}
-              <a href="http://github.com/{{ site.github }}"><i class="fa fa-github"></i></a>
+          		{% if site.github %}
+          	  <a href="http://github.com/{{ site.github }}"><i class="fa fa-github"></i></a>
               {% endif %}
-              {% if site.stackoverflow %}
-              <a href="http://stackoverflow.com/{{ site.stackoverflow }}"><i class="fa fa-stack-overflow"></i></a>
+          		{% if site.stackoverflow %}
+          		<a href="http://stackoverflow.com/{{ site.stackoverflow }}"><i class="fa fa-stack-overflow"></i></a>
               {% endif %}
-          </h4>
-        <div class="copyright">
+          	</h4>
+          </div>
+          <div class="copyright">
           <!-- Copyright -->
           <p class="text-muted"><b>Copyright © 2017 Miguel Paz.</b> Some rights reserved.</p>
-        </div>
-      </div>
+          </div>
+      </section>
 </footer>
