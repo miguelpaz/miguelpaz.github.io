@@ -2,8 +2,8 @@
 layout: post
 title: Periodismo en la era Trump
 tags:
-- Spanish
 - Presentations
+- Spanish
 ---
 
 ![Slides](assets/images/periodismo_en_la_era_trump.png)
