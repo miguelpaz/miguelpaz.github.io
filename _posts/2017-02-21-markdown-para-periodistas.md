@@ -1,5 +1,5 @@
 ---
-layout: special
+layout: post
 title: ¿Qué es Markdown y por qué los periodistas lo usan?
 tags:
 - Courses
