@@ -7,10 +7,9 @@ tags:
 - Español
 ---
 
-<style> #banner {
-	background-image: url(assets/images/markdownpreviewinatom.png);
-}
-</style>
+![Markdown preview](assets/images/markdownpreview.png);
+
+Por Miguel Paz
 
 (Una guía rápida)
 

@@ -6,10 +6,9 @@ tags:
 - Español
 ---
 
-<style> #banner {
-	background-image: url(assets/images/periodismo_en_la_era_trump.png);
-}
-</style>
+![Screenshot de la presentación](assets/images/periodismo_en_la_era_trump.png);
+
+Por Miguel Paz
 
 La cobertura de elecciones en los Estados Unidos abrió un gran debate en el periodismo del mundo entero. En medio de una campaña en la que hubo insultos, escándalos, datos y noticias falsas, encuestas que no lograron predecir los resultados y -en general- una sociedad polarizada, para el periodismo surgieron varias preguntas claves que merecen una reflexión urgente.
 
