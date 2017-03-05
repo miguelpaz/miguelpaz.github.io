@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    Copyright 2017 Miguel Paz. Some rights reserved, under Creative Commons license Attribution-NonCommercial-NoDerivatives 4.0 International. The license details are available here
+    https://creativecommons.org/licenses/by-nc-nd/4.0/
+-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +11,19 @@
 	  <meta name="author" content="{{ site.author }}" />
     <meta name="description" content="{{ site.description }}">
     <link rel="favicon" href="{{ site.baseurl }}static/img/favicon.png">
+    <!--
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Miguel Paz, journalist personal website"/>
+    <meta property="og:title" content="Craft 2 en Español: Curso del Programa Bilingüe de Periodismo. CUNY Graduate School of Journalism">
+    <meta property="og:longTitle" content="Craft 2 en Español es un curso de Periodismo y Reportería avanzada para estudiantes del Programa Bilingüe de CUNY Graduate School of Journalism en Nueva York">
+    <meta property="og:image" content="INCLUIR LINL A IMAGEN EN WEB"/>
+    <meta property="og:description" content="El futuro del Periodismo en Estados Unidos es bilingüe y en el programa de CUNY Graduate School of Journalism te preparamos para ser parte de él."/>
+    <meta name="keywords" content="Periodismo, Syllabus, CUNY Graduate School of Journalism, Periodismo Bilingüe"/>
+    <meta property="og:url" content="AGREGAR LA URL DEL SYLLABUS"/>
+    <meta property="og:type" content="article"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@cunyjschool"/>
+-->
 
     {% if page.title %}
       <title>{{ page.title }}</title>
@@ -43,8 +60,10 @@
     {% include header.html %}
 
     {{ content }}
-
+    <!-- Social links before footer -->
+    {% include social.html %}
   </div>
+
   <!-- Footer -->
   {% include footer.html %}
 
