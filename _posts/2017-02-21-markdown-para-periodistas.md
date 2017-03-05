@@ -7,7 +7,7 @@ tags:
 - Español
 ---
 
-![Markdown preview](assets/images/markdownpreview.png);
+![Markdown preview](assets/images/markdownpreview.png)
 
 Por Miguel Paz
 
