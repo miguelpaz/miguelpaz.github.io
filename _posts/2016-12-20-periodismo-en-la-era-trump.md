@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Periodismo en la era Trump: Desafíos y preguntas sobre medios, redes sociales y la verdad
+title: Periodismo en la era Trump
 tags:
 - Spanish
 - Presentations
 ---
 
-![Presentación](assets/images/periodismo_en_la_era_trump.png)
+![Slides](assets/images/periodismo_en_la_era_trump.png)
 
 La cobertura de elecciones en los Estados Unidos abrió un gran debate en el periodismo del mundo entero. En medio de una campaña en la que hubo insultos, escándalos, datos y noticias falsas, encuestas que no lograron predecir los resultados y -en general- una sociedad polarizada, para el periodismo surgieron varias preguntas claves que merecen una reflexión urgente.
 
