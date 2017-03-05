@@ -2,7 +2,7 @@
 layout: post
 title: Periodismo en la era Trump
 tags:
-- Presentaciones
+- Talks
 - Español
 ---
 
