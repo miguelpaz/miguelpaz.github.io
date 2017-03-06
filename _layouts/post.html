@@ -17,9 +17,14 @@ layout: layout
 			{% endfor %}
 		</h4>
 	</div>
+<!-- Test share in social media -->
+	<div class="share">
+		{% include share.html %}
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
+
 			  {{ content }}
 			   <hr>
 			   <div class="related-posts">
@@ -42,5 +47,6 @@ layout: layout
 			</div>
 		</div>
 	</div>
+<!-- Disqus disabled for the moment -->
 	{% include disqus.html %}
 </div>
