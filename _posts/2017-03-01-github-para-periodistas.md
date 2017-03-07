@@ -1,8 +1,17 @@
-# Github para Periodistas: Una introducción
+---
+layout: post
+title: Github para Periodistas
+tags:
+- Courses
+- Tutorials
+- Español
+---
+
+Por Miguel Paz
 
 En este tutorial aprenderás los rudimentos básicos para usar Github para crear tu sitio web, para administrar desde tu computador tus proyectos de sitios web usando Github Desktop y a publicarlos en la web. También aprenderás la jerga de Github, necesaria para entender sus herramientas de administración y publicación.
 
-## 1. Creáte una cuenta en Github
+## 1. Crea tu cuenta en Github
 
 Como ya dijimos [Github](https://www.github.com/) es el equivalente a un Dropbox para proyectos de código, datos y web. Permite mantener una versión de tu proyecto en tu computador (local) y otra en Github (en sus servidores: "la nube") para sincronizar cambios y mantener un registro de todos los cambios del proyecto. Así si te equivocas **puedes volver atrás**. Github está construido sobre [Git,](http://git-scm.com/) un sistema de control de versiones usado por programadores. Pero como es un poco complicado al principio, iremos por el camino fácil.
 
