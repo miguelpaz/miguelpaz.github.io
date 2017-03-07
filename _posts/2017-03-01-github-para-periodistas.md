@@ -102,7 +102,7 @@ Bueno [Github Desktop](https://desktop.github.com/) sirve el mismo propósito en
 
 ## 8. Guarda el repositorio clonado en tu carpeta repos
 
-Al **clonar **y guardar el repositorio en tu carpeta madre repos lo que estás haciendo es **bajar a tu computador una copia de tu repositorio** que estaba alojado en Github.com.
+Al **clonar** y guardar el repositorio en tu carpeta madre repos lo que estás haciendo es **bajar a tu computador una copia de tu repositorio** que estaba alojado en Github.com.
 
 ![][9]
 
