@@ -7,8 +7,6 @@ tags:
 - Español
 ---
 
-Por Miguel Paz
-
 En este tutorial aprenderás los rudimentos básicos para usar Github para crear tu sitio web, para administrar desde tu computador tus proyectos de sitios web usando Github Desktop y a publicarlos en la web. También aprenderás la jerga de Github, necesaria para entender sus herramientas de administración y publicación.
 
 ## 1. Crea tu cuenta en Github
