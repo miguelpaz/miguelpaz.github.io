@@ -125,7 +125,7 @@ La regla de oro es que hagas commits muy frecuentemente y que expliques brevemen
 
 Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques brevemente qué cambios hiciste.
 
-- Abre tu repositorio en Sublime, escribe un mensaje tipo (el que quieras), guarda el archivo como index.html dentro del repositorio (carpeta).
+- Abre tu repositorio con tu editor de texto de preferencia (Sublime, Atom, etc.), escribe un mensaje tipo (el que quieras), guarda el archivo como index.html dentro del repositorio (carpeta).
 - Anda a Github Desktop y revisa la parte superior de Commited o Uncommited Changes. ¿Qué ves?
 - Haz tu segundo commit.
 
@@ -140,7 +140,7 @@ Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques
 
 [12]: assets/images/11-resultado.png
 
-## Ejercicios para aplicar lo aprendido
+## 12. Ejercicios para aplicar lo aprendido
 
 ### Crea tu primer sitio web personal en Github
 
@@ -186,7 +186,7 @@ Incluye:
 ### Haz un "fork"
 
 1. Lee y revisa el ensayo ["What is Code"](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/) de Paul Ford en Bloomberg. Ford escribió el texto y cada línea de código con la que construyó la página web del artículo. ¿Te gustaría saber la estructura del código y verlo con tus propios ojos? Visita el [repositorio del artículo que el autor publicó en Github](https://github.com/BloombergMedia/whatiscode) con un objetivo más bien educacional.
-2. Pulsa el botón **Fork** ubicado en la parte superior derecha de la página del repositorio. Hacer un Fork significa crear una **copia** de un proyecto de otra persona u organización en tu Github. En este caso haces fork de [https://github.com/BloombergMedia/whatiscode](https://github.com/BloombergMedia/whatiscode) y se crear'a la copia del repositorio en tu cuenta **github.com/tunombredeusuario**.
+2. Pulsa el botón **Fork** ubicado en la parte superior derecha de la página del repositorio. Hacer un Fork significa crear una **copia** de un proyecto de otra persona u organización en tu Github. En este caso haces fork de [https://github.com/BloombergMedia/whatiscode](https://github.com/BloombergMedia/whatiscode) y se creará la copia del repositorio en tu cuenta **github.com/tunombredeusuario**.
 3. Verás la copia en **github.com/tunombredeusuario/whatiscode**
 4. Pulsa el botón verde Clone or download y luego haz click en **Open in Desktop**.
 5. Guarda el repositorio en tu carpeta **repos**
