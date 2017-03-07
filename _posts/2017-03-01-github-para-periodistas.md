@@ -33,17 +33,17 @@ Una vez registrado verás una pantalla igual o similar a la que se ve acá abajo
 
 ## 3. Nombra tu repositorio
 
-1. Nombra tu repositorio en minúsculas, sin espacios ni símbolos extraños.
-1. Incluye una descripción breve.
-1. Define si el repositorio será público o privado.
-1. Haz check en la caja de "Initialize this repository with a README"
-1. Ahora podrás pulsar el botón “Create repository”.
+- Nombra tu repositorio en minúsculas, sin espacios ni símbolos extraños.
+- Incluye una descripción breve.
+- Define si el repositorio será público o privado.
+- Haz check en la caja de "Initialize this repository with a README"
+- Ahora podrás pulsar el botón “Create repository”.
 
 ![][3]
 
 [3]: assets/images/3-nombra-tu-repositorio.png
 
-## ¡Voilá! Ya tienes tu primer repositorio.
+## ¡Voilá! Ya tienes tu primer repositorio
 
 Lo vas a copiar a tu computador. Antes, anda a tu computador y lee el siguiente paso.
 
@@ -51,12 +51,12 @@ Lo vas a copiar a tu computador. Antes, anda a tu computador y lee el siguiente 
 
 [4]: assets/images/-iexcl-voil-aacute---ya-tienes-tu-primer-repositorio-.png
 
-## 4. Crea una carpeta dónde guardarás todos tus repositorios
+## 4. Crea una carpeta donde guardarás todos tus repositorios
 
 Realizar proyectos digitales requiere que seas ordenado y definas dónde guardarás este y otros proyectos. En mi caso, tengo una carpeta madre en la cual guardo todos los repositorios de clases y otros proyectos. La llamo para no olvidarme: **repos.**
 
-1. Crea tu carpeta **repos **así todos sabremos siempre dónde tienes tus repositorios y no lo olvidarás
-1. Cuando copies tu repositorio desde Github a tu computador, guarda el repositorio dentro de** repos.**
+- Crea tu carpeta **repos** así todos sabremos siempre dónde tienes tus repositorios y no lo olvidarás
+- Cuando copies tu repositorio desde Github a tu computador, guarda el repositorio dentro de **repos.**
 
 ![][5]
 
@@ -68,10 +68,10 @@ Realizar proyectos digitales requiere que seas ordenado y definas dónde guardar
 
 Bueno [Github Desktop](https://desktop.github.com/) sirve el mismo propósito en Github. Es la herramienta más rápida y fácil de comenzar a trabajar con repositorios para subirlos y bajarlos de los servidores de Github.
 
-1. Descarga [Github Desktop](https://desktop.github.com/) e instálalo. Muévelo a tu carpeta de Aplicaciones o Applications.
-1. Haz click sobre el ícono de Github Desktop (el [octogato](https://octodex.github.com/)) y cuando se abra la aplicación, anda al menú superior izquierdo y pulsa sobre Preferencias o **Preferences**.
+- Descarga [Github Desktop](https://desktop.github.com/) e instálalo. Muévelo a tu carpeta de Aplicaciones o Applications.
+- Haz click sobre el ícono de Github Desktop (el [octogato](https://octodex.github.com/)) y cuando se abra la aplicación, anda al menú superior izquierdo y pulsa sobre Preferencias o **Preferences**.
 
-*Si tienes dudas, más adelante revisa las *[*guías de ayuda*](https://help.github.com/desktop/)* de la aplicación.*
+*Si tienes dudas, más adelante revisa las [guías de ayuda](https://help.github.com/desktop/) de la aplicación.*
 
 ![][6]
 
@@ -79,11 +79,9 @@ Bueno [Github Desktop](https://desktop.github.com/) sirve el mismo propósito en
 
 ## 6. Agrega tu nombre de usuario y contraseña
 
-1. En la ventana de **Preferences** selecciona **Accounts**.
-1. Ingresa tu nombre de usuario en login y tu contraseña y haz click en **Sign In**.  
-1. Ya estás adentro.
-
-*Si tienes dudas, más adelante revisa las *[*guías de ayuda*](https://help.github.com/desktop/)* de la aplicación.*
+- En la ventana de **Preferences** selecciona **Accounts**.
+- Ingresa tu nombre de usuario en login y tu contraseña y haz click en **Sign In**.  
+- Ya estás adentro.
 
 ![][7]
 
@@ -91,8 +89,8 @@ Bueno [Github Desktop](https://desktop.github.com/) sirve el mismo propósito en
 
 ## 7. Clona (copia) tu repositorio a tu computador con Github Desktop
 
-1. En la barra lateral izquierda de Github Desktop debieras ver en la lista de repositorios el repositorio que creaste.
-1. Si no lo ves, como es mi caso, sigue los pasos que se ven en la imagen de abajo y haz click en "Clone micasa"
+- En la barra lateral izquierda de Github Desktop debieras ver en la lista de repositorios el repositorio que creaste.
+- Si no lo ves, como es mi caso, sigue los pasos que se ven en la imagen de abajo y haz click en "Clone micasa"
 
 *Si tienes dudas, más adelante revisa las *[*guías de ayuda*](https://help.github.com/desktop/)* de la aplicación.*
 
@@ -114,7 +112,7 @@ Git y Github llevan un registro de todos los cambios que haces en tu repositorio
 
 El objetivo es que tu puedas conocer e identificar todos los cambios importantes que hagas y tener a mano las distintas versiones. Algo así como llevar un registro de cambios de todos los borradores que escribes hasta que tu reportaje es publicado.
 
-Peeeero.. para que te sea fácil identificar los cambios debes contarle a Github que los hiciste y publicarlos. Esto se llama "Commit changes" ("cometer cambios" o hacer cambios). En corto "Commit".
+Peeeero... para que te sea fácil identificar los cambios debes contarle a Github que los hiciste y publicarlos. Esto se llama "Commit changes" ("cometer cambios" o hacer cambios). En corto "Commit".
 
 La regla de oro es que hagas commits muy frecuentemente y que expliques brevemente qué cambios hiciste.
 
@@ -127,9 +125,9 @@ La regla de oro es que hagas commits muy frecuentemente y que expliques brevemen
 
 Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques brevemente qué cambios hiciste.
 
-1. Abre tu repositorio en Sublime, escribe un mensaje tipo (el que quieras), guarda el archivo como index.html dentro del repositorio (carpeta).
-1. Anda a Github Desktop y revisa la parte superior de Commited o Uncommited Changes. ¿Qué ves?
-1. Haz tu segundo commit.
+- Abre tu repositorio en Sublime, escribe un mensaje tipo (el que quieras), guarda el archivo como index.html dentro del repositorio (carpeta).
+- Anda a Github Desktop y revisa la parte superior de Commited o Uncommited Changes. ¿Qué ves?
+- Haz tu segundo commit.
 
 ![][11]
 
@@ -146,9 +144,9 @@ Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques
 
 ### 1. Crea tu primer sitio web personal en Github
 
-1. Ir a [https://pages.github.com/](https://pages.github.com/)
-1. Haz click en [User or organization site](https://pages.github.com/#user-site)
-1. Anda a [GitHub](https://github.com/) y [crea un nuevo repositorio](https://github.com/new) que se llame **username.github.io**, donde *username* es tu tu nombre de usuario en Github.
+- Ir a [https://pages.github.com/](https://pages.github.com/)
+- Haz click en [User or organization site](https://pages.github.com/#user-site)
+- Anda a [GitHub](https://github.com/) y [crea un nuevo repositorio](https://github.com/new) que se llame **username.github.io**, donde *username* es tu tu nombre de usuario en Github.
 
 *Si tienes dudas más adelante revisa las *[*guías de ayuda*](https://help.github.com/desktop/)* de la aplicación.*
 
@@ -157,8 +155,6 @@ Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques
 [13]: assets/images/ejercicio-1--crear-tu-primer-sitio-web-personal-en-github.png
 
 ## Clónalo a tu computador
-
-
 
 ![][14]
 
@@ -187,11 +183,10 @@ Incluye:
 - Resultado: Esta es la página que estás leyendo ahora mismo [https://miguelpaz.github.io/](https://miguelpaz.github.io)
 
 
-
 ## 3. Haz un "fork"
 
 1. Lee y revisa el ensayo ["What is Code"](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/) de Paul Ford en Bloomberg. Ford escribió el texto y cada línea de código con la que construyó la página web del artículo. ¿Te gustaría saber la estructura del código y verlo con tus propios ojos? Visita el [repositorio del artículo que el autor publicó en Github](https://github.com/BloombergMedia/whatiscode) con un objetivo más bien educacional.
-2. Pulsa el botón **Fork** ubicado en la parte superior derecha de la página del repositorio. Hacer un Fork significa crear una **copia** de un proyecto de otra persona u organización en tu Github. En este caso haes fork de [https://github.com/BloombergMedia/whatiscode](https://github.com/BloombergMedia/whatiscode) y se crear'a la copia del repositorio en tu cuenta **github.com/tunombredeusuario**.
+2. Pulsa el botón **Fork** ubicado en la parte superior derecha de la página del repositorio. Hacer un Fork significa crear una **copia** de un proyecto de otra persona u organización en tu Github. En este caso haces fork de [https://github.com/BloombergMedia/whatiscode](https://github.com/BloombergMedia/whatiscode) y se crear'a la copia del repositorio en tu cuenta **github.com/tunombredeusuario**.
 3. Verás la copia en **github.com/tunombredeusuario/whatiscode**
 4. Pulsa el botón verde Clone or download y luego haz click en **Open in Desktop**.
 5. Guarda el repositorio en tu carpeta **repos**
