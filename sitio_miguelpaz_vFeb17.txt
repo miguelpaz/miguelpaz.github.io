@@ -1,0 +1,109 @@
+# Sitio web, nueva versión
+Febrero, 2017
+
+## Site structure 
+
+
+- Home    
+- About
+- Articles
+	- Article page:  
+- Projects
+	- Project page	
+- Teaching
+- Talks	
+- Books
+- In the news  
+- Contact
+
+
+## Structure and components of jekyll theme 
+TBD
+
+
+## Details of content structure in site
+
+
+- Home    
+	- Content: logo, nav, hero image or color, title and lead, the latest 
+- **About**. 
+	- Content:   
+Miguel Paz. Photo. Text: Miguel Paz is a ONE PARAGRAPH, Download resume miguelpaz.resume.pdf
+Bio summary long. 
+	- Awards?	Press?
+- **Articles**
+Date. Type. Title (link). Newsroom. Country. LANGUAGE?   
+	- June, 2016. Column. Todos somos Bachelet: El oportunismo ético del debate sobre su querella contra Qué Pasa. TheClinic.cl, Chile
+
+	- Article page:  
+Title, date of publication, by The Clinic (link), author(s)  
+Text of story  
+Category (Type)  
+Language:  
+Newsroom:  
+Country:
+See more in category, language, newsroom
+	
+- **Projects, experiments and consulting**
+
+Date. Type of project. Title. Extra details. Client.  Country. Language.
+-October 2014. Iberoamerican Data Journalism Handbook, a free and open project, written by dozens of journalists, programmers and designers to show the state of Data Journalism in Iberoamerica and be a useful tool for developing Data Journalism projects and tools in the region. Poderomedia, U Alberto Hurtado. Chile. Spanish.
+
+- **Books** Incluir foto de cada libro?
+
+Articles that I have written have been featured in two compilation books: - "Journalism Award of Excellence” (Universidad Alberto Hurtado, 2006).  - "The Best Chilean Journalism" (Ediciones B, 2009).  I am also featured in the interviews book “Intermedios: Media and Democracy in Chile” (Arturo Arriagada and Patricio Navia, Universidad Diego Portales, 2013).
+- Manual de Periodismo de Datos Iberoamericano, editor
+
+
+- **Teaching**
+	- 1. Spring 2017. Course. Data Journalism (LINK). CUNY Graduate School of Journalism, New York, US.
+  
+- **Talks**
+Date. Type of talk. Title. Extra details. Event. City, Country. LANGUAGE?  
+	- 1. October 2016, Keynote “Myths, legends and truth about campaign funding and politics in Chile”, panel “Transparencia en los tiempos del cólera”, Festival Internacional de Innovación Social (FIIS), Santiago, Chile, October 2015. 
+	
+- **Press and media mentions or appearances???????????**  
+Date. Type. Title (link). Newsroom. Country. LANGUAGE?   
+
+- **Contact**
+
+
+## Content by type
+
+- info
+  
+
+    `text with lists
+    photo with text`
+
+- teaching (courses, work shops)
+
+    `title  
+    date
+    where 
+    description
+    link`
+    
+
+- blog post or article
+
+    `article with no photo
+    article with photo
+    announcement with logo or photo
+    tutorial with source code
+    tutorial with screenshots`
+
+- project
+
+    `image, title, date, where or for whom, team members, description, link(s)
+    logo, description, screenshots, https://www.viget.com/work/lebron
+    press: headline, newsorg, date, link`
+
+- list
+
+    `numbered text lists
+    bulleted text lists
+    thumbnail lists`
+
+
+
