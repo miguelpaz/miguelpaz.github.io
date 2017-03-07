@@ -17,7 +17,7 @@ Como ya dijimos [Github](https://www.github.com/) es el equivalente a un Dropbox
 
 Ok. Partamos.
 
-1. Anda a [Github](https://www.github.com/) y crea tu nombre de usuario y pasword. Usa un nombre fácil de recordar, en minúsculas y sin espacios. Algo como juanperez. Nada de JuAn32pEreZ1. Prohibido.  
+Anda a [Github](https://www.github.com/) y crea tu nombre de usuario y pasword. Usa un nombre fácil de recordar, en minúsculas y sin espacios. Algo como **juanperez**. Nada de **JuAn32pEreZ1. Prohibido.**  
 
 ![Github homepage][1]
 
