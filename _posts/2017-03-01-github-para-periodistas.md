@@ -23,7 +23,7 @@ Anda a [Github](https://www.github.com/) y crea tu nombre de usuario y pasword. 
 
 [1]: assets/images/github-homepage.png
 
-## 2. Creáte una cuenta en Github
+## 2. Crea tu primer repositorio
 
 Una vez registrado verás una pantalla igual o similar a la que se ve acá abajo. Busca el botón **"New repository"** y púlsalo para crear tu primer **repositorio**. Como dijimos, Github usa su propio *lingo* para nombrar las cosas. **Repositorio es igual a proyecto o a carpeta** (dentro de la cual tendrás los archivos y más carpetas de tu proyecto). Más adelante veremos como acceder y guardar otros proyectos, **clonándolos** (copiándolos) o haciendo un **fork** (algo así como tomar un pedazo de carne con un tenedor y llevarlo a nuestra plato). ¿Ya pulsaste en "New repository"?
 
