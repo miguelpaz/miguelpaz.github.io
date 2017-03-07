@@ -92,7 +92,7 @@ Bueno [Github Desktop](https://desktop.github.com/) sirve el mismo propósito en
 - En la barra lateral izquierda de Github Desktop debieras ver en la lista de repositorios el repositorio que creaste.
 - Si no lo ves, como es mi caso, sigue los pasos que se ven en la imagen de abajo y haz click en "Clone micasa"
 
-*Si tienes dudas, más adelante revisa las *[*guías de ayuda*](https://help.github.com/desktop/)* de la aplicación.*
+*Si tienes dudas, más adelante revisa las [guías de ayuda](https://help.github.com/desktop/) de la aplicación.*
 
 ![][8]
 
@@ -142,7 +142,7 @@ Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques
 
 ## Ejercicios para aplicar lo aprendido
 
-### 1. Crea tu primer sitio web personal en Github
+### Crea tu primer sitio web personal en Github
 
 - Ir a [https://pages.github.com/](https://pages.github.com/)
 - Haz click en [User or organization site](https://pages.github.com/#user-site)
@@ -154,36 +154,36 @@ Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques
 
 [13]: assets/images/ejercicio-1--crear-tu-primer-sitio-web-personal-en-github.png
 
-## Clónalo a tu computador
+#### Clónalo a tu computador
 
 ![][14]
 
 [14]: assets/images/cl-oacute-nalo-a-tu-computador.png
 
-## Debiera verse así
+#### Debiera verse así
 
 ![][15]
 
 [15]: assets/images/debiera-verse-as-iacute-.png
 
-### 2. Crea una página web y súbela a tu repositorio tunombredeusuario.github.io haciendo "Commit"
+### Crea una página web y súbela a tu repositorio tunombredeusuario.github.io haciendo "Commit"
 
 Incluye:
 
-* Index.html
-* Carpeta de archivos de imágenes y dentro, las imágenes.
-* Carpeta de archivos de css y dentro, el o los archivos .css
+- Index.html
+- Carpeta de archivos de imágenes y dentro, las imágenes.
+- Carpeta de archivos de css y dentro, el o los archivos .css
 
-****Ojo: ****Puedes usar una página web que ya hayas hecho.*
+**Ojo:** Puedes usar una página web que ya hayas hecho.
 
 1. Copia los archivos (Index.html y las carpetas de imágenes y de css) y pégalos dentro de la carpeta o repositorio **tunombredeusuario.github.io** en tu computador.
-1. Recuerda: la carpeta o repositorio **tunombredeusuario.github.com **está dentro de la carpeta madre **repos.** que ya creaste.
-1. Ahora abre en Github Desktop la carpeta o repositorio **tunombredeusuario.github.com **y haz un **commit** detallando los cambios.
+1. Recuerda: la carpeta o repositorio **tunombredeusuario.github.com** está dentro de la carpeta madre **repos.** que ya creaste.
+1. Ahora abre en Github Desktop la carpeta o repositorio **tunombredeusuario.github.com** y haz un **commit** detallando los cambios.
 
 - Resultado: Esta es la página que estás leyendo ahora mismo [https://miguelpaz.github.io/](https://miguelpaz.github.io)
 
 
-## 3. Haz un "fork"
+### Haz un "fork"
 
 1. Lee y revisa el ensayo ["What is Code"](https://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/) de Paul Ford en Bloomberg. Ford escribió el texto y cada línea de código con la que construyó la página web del artículo. ¿Te gustaría saber la estructura del código y verlo con tus propios ojos? Visita el [repositorio del artículo que el autor publicó en Github](https://github.com/BloombergMedia/whatiscode) con un objetivo más bien educacional.
 2. Pulsa el botón **Fork** ubicado en la parte superior derecha de la página del repositorio. Hacer un Fork significa crear una **copia** de un proyecto de otra persona u organización en tu Github. En este caso haces fork de [https://github.com/BloombergMedia/whatiscode](https://github.com/BloombergMedia/whatiscode) y se crear'a la copia del repositorio en tu cuenta **github.com/tunombredeusuario**.
