@@ -118,9 +118,6 @@ Peeeero.. para que te sea fácil identificar los cambios debes contarle a Github
 
 La regla de oro es que hagas commits muy frecuentemente y que expliques brevemente qué cambios hiciste.
 
-1. Back in the GitHub application, you should see your files in the left column. Make sure they are all checked. If so, enter a message in the text box called “commit summary”, something like “initial commit.” Then, click the commit button.
-
-  Al clonar y guardar el repositorio en tu carpeta madre repos lo que estás haciendo es bajar a tu computador unacopia de tu repositorio alojada en Github.com.
 
 ![][10]
 
@@ -139,7 +136,6 @@ Reitero: La regla de oro es que hagas commits muy frecuentemente y que expliques
 [11]: assets/images/10-crea-un-indexhtml--haz-tu-segundo--commit--y-s-uacute-belo-a-github.png
 
 ## 11. Resultado
-
 
 
 ![][12]
