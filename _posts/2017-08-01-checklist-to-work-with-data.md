@@ -10,6 +10,9 @@ tags:
 ---
 
 
+![Image of Bart´s checklist](https://media.giphy.com/media/3o6MbaYjCiZbA9RRza/giphy.gif)
+
+
 *Summarized by Miguel Paz from ProPublica’s [Guide to bulletproofing your data](https://github.com/propublica/guides/blob/master/data-bulletproofing.md) and [The Quartz guide to bad data](https://github.com/Quartz/bad-data-guide). For more advice in detail, please go to the sources of this tip-sheet.*
 
 
