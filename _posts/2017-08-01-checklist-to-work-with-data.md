@@ -13,8 +13,9 @@ tags:
 *Summarized by Miguel Paz from ProPublica’s [Guide to bulletproofing your data](https://github.com/propublica/guides/blob/master/data-bulletproofing.md) and [The Quartz guide to bad data](https://github.com/Quartz/bad-data-guide). For more advice in detail, please go to the sources of this tip-sheet.*
 
 
-**☑  Never touch the original dataset**
--**Never work in the original dataset**. Save the original, create a backup and make a copy of the file to work on it. If it's a workbook (Excel file) or Google Spreadsheet or a .CSV or any other file format, follow the same principles. 
+*☑  Never touch the original dataset*
+
+- **Never work in the original dataset**. Save the original, create a backup and make a copy of the file to work on it. If it's a workbook (Excel file) or Google Spreadsheet or a .CSV or any other file format, follow the same principles. 
 
 **☑  Add important notes to the document with information about the data**
 
